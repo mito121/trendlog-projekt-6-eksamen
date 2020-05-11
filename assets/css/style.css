@@ -9,14 +9,24 @@
     -o-transition: none !important;
 }
 html, body{
+    margin:0;
+    padding:0;
     line-height:1.5em;
     color:#3b3b3b;
-    font-family: 'Titillium Web', sans-serif;
+    /*font-family: 'Titillium Web', sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
+    min-height:100vh;
 }::selection{
     background-color:#00c52c;
     color:white;
+}
+.global-wrapper{
+    position:relative;
+    width:100%;
+    display:flex;
+    padding-top:50px;
 }
 p, span{
     font-size:16px;
@@ -36,6 +46,12 @@ a{
     width:1140px;
     margin:0 auto;
     padding:12px 0;
+}
+.container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 section{
     width:100%;
@@ -67,6 +83,12 @@ h4{
 .block{
     display:block !important;
 }
+.vertical-a-off{
+    align-items:flex-start !important;
+}
+.block{
+    display: block !important;
+}
 .flex{
     display:flex !important;
     align-items:center;
@@ -80,9 +102,16 @@ h4{
 .flex-c{
     justify-content: center;
 }
+.p-rel{
+    position:relative;
+}
 .mr{
     margin-right:8px;
 }
+.mt{
+    margin-top:16px;
+}
+/* STYLEGUIDE */
 .styleGuideHeader{
     font-size:28px;
     color:#00c52c;
@@ -106,6 +135,7 @@ code span{
     display:block;
     margin:4px 0;
 }
+/* /STYLEGUIDE */
 .btn{
     display: inline-block;
     font-weight: 400;
@@ -244,9 +274,178 @@ form input[type=submit]{
     margin-right: -6px;
     float:right;
 }
+select{
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+}
 form input[type=submit]::after{
     clear:both;
 }
 form input[type=submit]:hover{
     cursor:pointer;
+}
+
+/*** HEADER ***/
+header{
+    z-index:100;
+    position:fixed;
+    width:100%;
+    border-bottom:1px solid #080808;
+}
+nav{
+    font-weight:bold;
+    width:100%;
+    margin:0;
+    padding:0px 15px;
+    background-color:#222;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:50px;
+    user-select:none;
+}
+
+.navlinks{
+    display:flex;
+    align-items:center;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+nav span{
+    font-weight:400;
+    color:#9d9d9d;
+    margin-right:5px;
+    margin-left:15px;
+    font-size:13.333px;
+}
+
+img.header-logo{
+    width:130px;
+    padding:6px 15px 0px 0px;
+    box-sizing:content-box;
+}
+
+.navlinks a{
+    padding:15px;
+    font-size:14px;
+    color:white;
+}
+.navlinks a:hover{
+    background-color:#444 !important;
+}
+
+#nav-profile-dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:#000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    z-index:2;
+}
+#nav-profile-dropdown ul{
+    list-style-type:none;
+    padding:0;
+}
+#nav-profile-dropdown ul li{
+    width:100%;
+}
+#nav-profile-dropdown ul li a{
+    font-weight:400;
+    display:block;
+    padding:3px 20px;
+}
+.dropdown-divider{
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.navlinks input, .navlinks select{
+    margin:0px 15px;
+}
+
+.navlinks .profile-dropdown span{
+    font-size:14px;
+    color:white;
+    font-weight:bold;
+    margin:0;
+}
+.navlinks .profile-dropdown svg{
+    margin-left:10px;
+}
+.navlinks .profile-dropdown:hover{
+    cursor:pointer;
+    background-color:#444 !important;
+}
+
+.navlinks svg{
+    margin-bottom:-4px;
+}
+
+/*** HOME ***/
+main{
+    width:100%;
+    min-height:100vh;
+}
+
+.module{
+    width:calc(100% - 200px);
+}
+
+/*** SIDE BAR ***/
+aside{
+    font-weight:400;
+    width:200px;
+    min-height:100vh;
+    background-color:lightgrey;
+}
+
+aside ul{
+    margin:0;
+    padding:0;
+}
+aside ul li{
+    list-style-type:none;
+    background-color:#222;
+    width:100%;
+    height:40px;
+}
+aside ul li a{
+    font-weight:500;
+    font-size:13.333px;
+    color:white;
+    display: block;
+    padding: 10px 15px;
+}
+aside ul li:hover{
+    background-color:#444 !important;
 }

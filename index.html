@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trendlog maintenance</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="trendlog.webnation.dk">
+
+        <!--== CSS ==-->
+        <!-- fontawesome -->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- custom css -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+        <!--== JS --==>
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Angularjs -->
+        <script src="assets/js/angular.js"></script>
+
+        <!-- Angularjs route -->
+        <script src="assets/js/route.js"></script>
+
+        <!-- app -->
+        <script src="assets/js/app.js"></script>
+
+        <!-- controller -->
+        <script src="assets/js/controller.js"></script>
+    </head>
+    <body ng-app="trendlog_app">
+        <!-- header -->
+        <header>
+            <nav>
+                <div class="flex">
+                    <a href="index.html" class="nav-logo">
+                        <img src="assets/img/trendlog-logo.png" alt="Trendlog.io logo" class="header-logo"/>
+                    </a>
+
+                    <ul class="navlinks">
+                        <!-- house icon -->
+                        <li><a ng-href="/#home"><svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg></a></li>
+                        <li><a ng-href="#" class="doNothing">Trendboards</a></li>
+                        <li><a ng-href="#" class="doNothing">Reports</a></li>
+                        <li><a ng-href="#" class="doNothing">Views</a></li>
+                        <li><a ng-href="#" class="doNothing">Feeds</a></li>
+                        <li><a ng-href="#" class="doNothing">Settings</a></li>
+                        <li><a ng-href="#" class="doNothing">Shares</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex">
+                    <ul class="navlinks">
+                        <!-- wrench icon -->
+                        <li><a href="#" class="doNothing"><svg style="width:17px;height:17px" viewBox="0 0 24 24"><path fill="currentColor" d="M22.7,19L13.6,9.9C14.5,7.6 14,4.9 12.1,3C10.1,1 7.1,0.6 4.7,1.7L9,6L6,9L1.6,4.7C0.4,7.1 0.9,10.1 2.9,12.1C4.8,14 7.5,14.5 9.8,13.6L18.9,22.7C19.3,23.1 19.9,23.1 20.3,22.7L22.6,20.4C23.1,20 23.1,19.3 22.7,19Z" /></svg></a></li>
+                        <!-- stop follow icon -->
+                        <li><a href="#" class="doNothing"><svg style="width:17px;height:17px" viewBox="0 0 24 24"><path fill="currentColor" d="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" /></svg></a></li>
+                        <!-- bell icon -->
+                        <li><a href="#" class="doNothing"><svg style="width:17px;height:17px" viewBox="0 0 24 24"><path fill="currentColor" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" /></svg></a></li>
+                        <li><span>Channels</span></li>
+                        <li>
+                            <select>
+                                <option>20 Plug&Log Production Unit</option>
+                            </select>
+                        </li>
+
+                        <li class="dropdown p-rel">
+                            <a class="profile-dropdown" id="profile-dropdown-btn">
+                                <span>Example user</span>
+                                <!-- user icon -->
+                                <span><svg style="width:21px;height:21px" viewBox="0 0 21 21"><path fill="#00ff00" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg></span>
+                            </a>
+
+                            <div id="nav-profile-dropdown">
+                                <ul id="nav-profile-list">
+                                    <li><a href="#" class="doNothing">My profile</a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a href="#" class="doNothing">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- view (pages) -->
+        <main ng-controller="mainCtrl">
+            <ng-view autoscroll="false"></ng-view>
+        </main>
+
+        <!-- footer -->
+        <footer></footer>
+    </body>
+</html>
