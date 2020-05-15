@@ -11,7 +11,7 @@ app.controller("mainCtrl", function ($scope, $http) {
       e.preventDefault();
    });
 
-   // Navbar profile dropdown
+   // Navbar profile dropdown (desktop)
    var n = 0;
    $('#profile-dropdown-btn').click(function () {
       if (n === 0) {
@@ -27,6 +27,9 @@ app.controller("mainCtrl", function ($scope, $http) {
       $('#nav-profile-dropdown').removeClass("block");
       n = 0;
    });
+   
 
+
+   $scope.personer = ['Thomas', 'Gitte', 'Arne', 'Ulla', 'Rokula', 'Niellermann'];
 
 });
