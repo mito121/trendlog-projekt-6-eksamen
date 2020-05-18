@@ -550,8 +550,11 @@ aside ul li:hover{
 }
 
 /* Resource list */
-#desktopResources{
+#desktop-resource-container{
     width:100%;
+}
+#mobile-resource-container{
+    display:none;
 }
 
 /** Mobile **/
@@ -670,15 +673,15 @@ aside ul li:hover{
     }
 
     /* Resource list */
-    #desktopResources{
+    #desktop-resource-container{
         display:none;
     }
 
     #mobile-resource-container{
         display:block;
         background-color:#222;
-        height:100vh;
-        margin:12px auto;
+        height:70vh;
+        margin:12px auto 0 auto;
         padding-top: 4px;
     }
 
@@ -727,7 +730,7 @@ aside ul li:hover{
         padding:0;
         margin:0;
     }
-    
+
     .mobile-last-service p:last-of-type{
         margin-top:4px;
     }
