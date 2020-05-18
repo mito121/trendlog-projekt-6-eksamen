@@ -336,19 +336,6 @@ header{
     user-select:none;
 }
 
-/*#mobile-nav{
-    display:none;
-    font-weight:bold;
-    width:100%;
-    margin:0;
-    padding:0px 15px;
-    background-color:#222;
-    color:white;
-    justify-content:space-between;
-    align-items:center;
-    height:50px;
-    user-select:none;
-}*/
 .mobile-nav-container{
     display:none;
 }
@@ -550,7 +537,7 @@ aside ul li:hover{
 }
 
 /* Resource list */
-#desktop-resource-container{
+#desktop-resource-container, #desktop-resource-container table{
     width:100%;
 }
 #mobile-resource-container{
