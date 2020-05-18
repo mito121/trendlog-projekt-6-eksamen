@@ -6,12 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <style>
-            body{
-                font-family: 'Titillium Web', sans-serif;
-            }
-        </style>
 
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body onload="loaded()" class="preload">
         <div class="container">
@@ -193,9 +190,13 @@
                         <input type="text" placeholder="E-mail"/>
                         <input type="password" placeholder="Password"/>
 
+                        <label class="file-upload">
+                            <input type="file"><span class="btn btn-success">Choose file</span><span>No file selected</span>
+                        </label>
+
                         <textarea placeholder="Message"></textarea>
 
-                        <input type="submit" value="Send message" onclick="event.preventDefault()"/>
+                        <input class="btn btn-primary" type="submit" value="Send message" onclick="event.preventDefault()"/>
                     </form>
                 </div>
 
@@ -207,10 +208,14 @@
                         &lt;input type="text" placeholder="Name"/><br>
                         &lt;input type="text" placeholder="E-mail"/><br>
                         &lt;input type="password" placeholder="Password"/><br><br>
+                        
+                        &lt;label class="file-upload"><br>
+                        &lt;input type="file"><br>&lt;span class="btn btn-success">Choose file&lt;/span><br>&lt;span>No file selected&lt;/span>
+                        <br>&lt;/label><br><br>
 
                         &lt;textarea placeholder="Message">&lt;/textarea><br><br>
 
-                        &lt;input type="submit" value="Send message"/><br>
+                        &lt;input class="btn btn-primary" type="submit" value="Send message"/><br>
                         &lt;/form>
                     </code>
                 </div>

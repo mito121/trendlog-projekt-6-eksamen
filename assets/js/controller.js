@@ -29,7 +29,18 @@ app.controller("mainCtrl", function ($scope, $http) {
    });
    
 
-
-   $scope.personer = ['Thomas', 'Gitte', 'Arne', 'Ulla', 'Rokula', 'Niellermann'];
+   // Service items
+   $scope.resources = [
+      {id: '1', enabled: 'true', name: 'Rødbederesner', group: 'Machine', type: '1', nextService: '20-04-4020', lastService: '17-05-2020'},
+      {id: '2', enabled: 'true', name: 'Rødbederusker', group: 'Machine', type: '1', nextService: '15-12-2020', lastService: '23-12-2018'},
+      {id: '3', enabled: 'true', name: 'Rødbedevasker', group: 'Machine', type: '1', nextService: '15-12-2020', lastService: '23-12-2018'},
+      {id: '4', enabled: 'true', name: 'Rødbedeskrubber', group: 'Machine', type: '2', nextService: '15-12-2020', lastService: '23-12-2018'},
+      {id: '5', enabled: 'true', name: 'Rødbedefejer', group: 'Machine', type: '1', nextService: '15-12-2020', lastService: '23-12-2018'},
+      {id: '6', enabled: 'false', name: 'Rødbederasler', group: 'Machine', type: '2', nextService: '21-01-2022', lastService: '16-03-2020'},
+      {id: '7', enabled: 'true', name: 'Rødbededusker', group: 'Machine', type: '1', nextService: '18-04-2021', lastService: '04-04-2024'},
+      {id: '8', enabled: 'true', name: 'Rødbederuller', group: 'Machine', type: '1', nextService: '24-06-2021', lastService: '02-04-2024'},
+      {id: '9', enabled: 'true', name: 'Rødbedehakker', group: 'Machine', type: '1', nextService: '31-09-2021', lastService: '08-07-2024'},
+      {id: '10', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: '1', nextService: '28-01-2021', lastService: '06-08-2024'}
+   ];
 
 });

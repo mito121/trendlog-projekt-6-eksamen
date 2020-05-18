@@ -7,13 +7,80 @@
             </li>
         </ul>
     </aside>
-    
-    <div class="module">
-        
-        <input type="text" ng-model="name">
-        <ul>
-            <li ng-repeat="person in personer | filter: name">{{person}}</li>
-        </ul>
 
+    <div class="module">
+        <div class="module-tabs" ng-init="tab = 1">
+            <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
+            <a href ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
+            <a href ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
+            <!--<a href ng-show="tab > 1" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
+            <a href ng-show="tab > 1" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>-->
+        </div>
+
+        <!-- Tab 1 -->
+        <div class="tab-1" ng-show="tab === 1">
+            <!-- Resource filter menu -->
+            <div class="resourceFilterMenu">
+                <div class="searchBar row">
+                    <label for="search">Search</label>
+                    <input type="text" ng-model="search" id="search"/>
+                </div>
+                
+                <div class="row flex flex-b">
+                    <div class="flex align">
+                        <span>Filter</span>
+                        <img src="assets/icons/filter-icon.svg" alt="Filter search"/>
+                    </div>
+                    
+                    <div class="flex align">
+                        <span>Add new</span>
+                        <img src="assets/icons/add-icon.svg" alt="Add new resource"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Resource list -->
+            
+            <!-- Desktop resource list -->
+            <table id="desktopResources">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Group</th>
+                    <th>Enabled</th>
+                    <th>Last service</th>
+                    <th>Next service</th>
+                </tr>
+            </table>
+            
+            <!-- Tablet resource list -->
+            
+            <!-- Mobile resource list -->
+            <div id="mobile-resource-container">
+                <div class="mobile-resource">
+                    <div class="mobile-resource-content mobile-resource-header">
+                        <span>ID: 12</span>
+                        <span>Rødbederenser</span>
+                        <span>Enabled</span>
+                    </div>
+                    
+                    <div class="mobile-resource-content mobile-resource-body">
+                        <div class="mobile-next-service">
+                            <span>Next service:</span>
+                            <div class="loading">23-03-2021</div>
+                        </div>
+                        
+                        <div class="mobile-last-service">
+                            <span>09-11-2001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-resource-content mobile-resource-footer">
+                        <span>Group: Machine</span>
+                        <span>Type: Hoebag</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
