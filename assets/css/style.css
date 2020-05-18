@@ -506,7 +506,7 @@ aside ul li:hover{
 }
 
 /* Resource filter menu */
-.resourceFilterMenu img{
+.resourceTopMenu img{
     height:30px;
     margin:0 0 0 6px;
 }
@@ -665,29 +665,29 @@ aside ul li:hover{
     .module{
         width:100%;
     }
-    
+
     /* Resource list */
     #desktopResources{
         display:none;
     }
-    
+
     #mobile-resource-container{
         display:block;
         width:80%;
         height:100vh;
         margin:12px auto;
     }
-    
+
     .mobile-resource{
         background:grey;
         padding:6px;
     }
-    
+
     .mobile-resource-content{
         display:flex;
         justify-content: space-between;
     }
-    
-    
+
+
 
 }
