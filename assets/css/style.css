@@ -667,7 +667,6 @@ aside ul li:hover{
     #mobile-resource-container{
         display:block;
         background-color:#222;
-        height:70vh;
         margin:12px auto 0 auto;
         padding-top: 4px;
     }
