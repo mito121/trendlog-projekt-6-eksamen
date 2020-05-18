@@ -85,6 +85,9 @@ h4{
 .w60{
     width:60%;
 }
+.strong{
+    font-weight:700;
+}
 .block{
     display:block !important;
 }
@@ -673,21 +676,87 @@ aside ul li:hover{
     
     #mobile-resource-container{
         display:block;
-        width:80%;
+        background-color:#222;
         height:100vh;
         margin:12px auto;
+        padding-top: 4px;
     }
     
     .mobile-resource{
-        background:grey;
+        background-color:white;
         padding:6px;
+    }
+    
+    .mobile-resource-header span:nth-child(2){
+        font-size:16px;
+        font-weight:900;
+    }
+    
+    .mobile-resource p, .mobile-resource span{
+        font-size:14px;
     }
     
     .mobile-resource-content{
         display:flex;
+        align-items:center;
         justify-content: space-between;
+        padding:4px 8px;
+        margin:0 6px;
     }
     
+    .mobile-resource-content:first-child{
+        border-bottom:1px solid black;
+        padding-bottom:6px;
+    }
+    
+    .mobile-resource-content:nth-child(2){
+        border-bottom:1px solid #d3d3d3;
+        padding-top:12px;
+        padding-bottom:18px;
+    }
+    
+    .mobile-resource-content:nth-child(3){
+        padding-top:8px;
+    }
+    
+    .mobile-next-service{
+        width:70%;
+    }
+    
+    .mobile-last-service p{
+        padding:0;
+        margin:0;
+    }
+    
+    .mobile-last-service p:last-of-type{
+        margin-top:4px;
+    }
+    
+    .loading{
+        width:100%;
+        border:1px solid #d3d3d3;
+        border-radius:5px;
+        display:flex;
+        justify-content: center;
+        position:relative;
+        z-index:1;
+    }
+    
+    .loading-text{
+        padding:2px 0;
+        z-index:2;
+    }
+    
+    .loading-bar{
+        width:40%;
+        height:99%;
+        z-index:1;
+        position:absolute;
+        top:0;
+        left:0;
+        background-color:green;
+        border-radius:5px 0px 0px 5px;
+    }
     
 
 }

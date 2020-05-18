@@ -5,6 +5,7 @@ function loaded() {
 
 // Mobile nav toggle
 $(document).ready(function () {
+   
    const menuIcon = document.querySelector(".burger-menu");
    const navbar = document.querySelector(".mobile-nav");
 
