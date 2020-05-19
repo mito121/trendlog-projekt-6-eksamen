@@ -30,13 +30,19 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    // Expand resource drop down menu
    $scope.expandResourceDropDown = function (resource) {
+
       let item = $('#drop-down' + resource);
       item.toggleClass("expand-resource");
 
-      // Scroll to selected item
-      $('html, body').animate({
-         scrollTop: $('#mobile-resource' + resource).offset().top - 50
-      }, 500);
+      $('.mobile-resource-dropdown').not(item).removeClass("expand-resource");
+      setTimeout(function () {
+         // Scroll to selected item
+         $('html, body').animate({
+            scrollTop: $('#mobile-resource' + resource).offset().top - 50
+         }, 250);
+      }, 450);
+      clearTimeout();
+
    };
 
 

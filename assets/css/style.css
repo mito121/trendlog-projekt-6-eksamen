@@ -823,7 +823,7 @@ aside ul li:hover{
         background-color: #ffffff;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 700ms ease-in-out;
+        transition: max-height 500ms ease-in-out;
     }
 
     .expand-resource{
