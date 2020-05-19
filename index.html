@@ -209,7 +209,7 @@
 
                         <!-- Mobile resource list -->
                         <div id="mobile-resource-container">
-                            <div class="mobile-resource">
+                            <div onclick="expandResourceDropDown()" class="mobile-resource">
                                 <div class="mobile-resource-content mobile-resource-header">
                                     <span>ID: <span class="strong">12</span></span>
                                     <span class="strong">Rødbederenser</span>
@@ -230,31 +230,41 @@
                                         <p class="strong">09-11-2001</p>
                                     </div>
                                 </div>
-
                                 <div class="mobile-resource-content mobile-resource-footer">
                                     <span>Group: <span class="strong">Machine</span></span>
                                     <span>Type: <span class="strong">Hoebag</span></span>
                                 </div>
-                            </div>
-                            <div class="mobile-resource-dropdown">
-                                <div class="tab-links">
-                                    <div class="tab-link"><a>History</a></div>
-                                    <div class="vertical-seperator"></div>
-                                    <div class="tab-link"><a>Settings</a></div>
-                                </div>
-                                <div class="center-links">
-                                    <div class="horizontal-seperator"></div>
-                                    <div class="center-link"><a>Show service report</a></div>
-                                    <div class="horizontal-seperator"></div>
-                                    <div class="center-link"><a>Create repair log</a></div>
-                                    <div class="horizontal-seperator"></div>
-                                    <div class="center-link"><a>Show QR code</a></div>
-                                    <div class="horizontal-seperator"></div>
-                                </div>
-                                <div class"bottom-links">
-                                    <div class="bottom-link"><a>Delete</a></div>
-                                    <div class="vertical-seperator"></div>
-                                    <div class="bottom-link"><a>Copy</a></div>
+<!-- ======================================================= Drop Down ====================================================================================== -->
+                                <div class="mobile-resource-dropdown" id="drop-down-123"> <!--placeholder navn, 123 skal erstattes med id fra den individuelle resource-->
+                                    <div class="tab-links">
+                                        <div class="tab-links-box">
+                                            <div class="tab-link"><a>History</a></div>
+                                        </div>
+                                        <div class="vertical-seperator"></div>
+                                        <div class="tab-links-box">
+                                            <div class="tab-link"><a>Settings</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="center-links">
+                                        <div class="horizontal-seperator"></div>
+                                        <div class="center-link"><a>Show service report</a></div>
+                                        <div class="horizontal-seperator"></div>
+                                        <div class="center-link"><a>Create repair log</a></div>
+                                        <div class="horizontal-seperator"></div>
+                                        <div class="center-link"><a>Show QR code</a></div>
+                                        <div class="horizontal-seperator"></div>
+                                    </div>
+                                    <div class="bottom-links">
+                                        <div class="logo-text-box">
+                                            <img src="assets/icons/delete-icon.svg" alt="Delete icon">
+                                            <div class="bottom-link"><a>Delete</a></div>
+                                        </div>
+                                        <div class="vertical-seperator"></div>
+                                        <div class="logo-text-box">
+                                            <div class="bottom-link"><a>Copy</a></div>
+                                            <img src="assets/icons/copy-icon.svg" alt="Copy icon">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
