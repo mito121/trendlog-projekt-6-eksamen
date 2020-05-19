@@ -336,19 +336,6 @@ header{
     user-select:none;
 }
 
-/*#mobile-nav{
-    display:none;
-    font-weight:bold;
-    width:100%;
-    margin:0;
-    padding:0px 15px;
-    background-color:#222;
-    color:white;
-    justify-content:space-between;
-    align-items:center;
-    height:50px;
-    user-select:none;
-}*/
 .mobile-nav-container{
     display:none;
 }
@@ -550,8 +537,11 @@ aside ul li:hover{
 }
 
 /* Resource list */
-#desktopResources{
+#desktop-resource-container, #desktop-resource-container table{
     width:100%;
+}
+#mobile-resource-container{
+    display:none;
 }
 
 /** Mobile **/
@@ -670,15 +660,14 @@ aside ul li:hover{
     }
 
     /* Resource list */
-    #desktopResources{
+    #desktop-resource-container{
         display:none;
     }
 
     #mobile-resource-container{
         display:block;
         background-color:#222;
-        height:100vh;
-        margin:12px auto;
+        margin:12px auto 0 auto;
         padding-top: 4px;
     }
 
@@ -727,7 +716,7 @@ aside ul li:hover{
         padding:0;
         margin:0;
     }
-    
+
     .mobile-last-service p:last-of-type{
         margin-top:4px;
     }
