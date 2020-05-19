@@ -27,7 +27,35 @@ app.controller("mainCtrl", function ($scope, $http) {
       $('#nav-profile-dropdown').removeClass("block");
       n = 0;
    });
-   
+
+
+
+
+   // Service layout options
+   $scope.serviceLayoutOptions = [
+      {id: '1', name: 'Cards'},
+      {id: '2', name: 'Lists'}
+   ];
+
+   // Resource data
+   $scope.resourceData = [
+      {id: '1', name: 'ID'},
+      {id: '2', name: 'Name'},
+      {id: '3', name: 'Type'},
+      {id: '4', name: 'Group'},
+      {id: '5', name: 'Enabled'},
+      {id: '6', name: 'Last service'},
+      {id: '7', name: 'Next service'}
+   ];
+
+   // Resource groups
+   $scope.resourceGroups = [
+      {id: '0', name: 'All'},
+      {id: '1', name: 'Machine'},
+      {id: '2', name: 'Car'},
+      {id: '3', name: 'Rødbedemaskine'},
+      {id: '4', name: 'Ugle'}
+   ];
 
    // Service items
    $scope.resources = [
@@ -42,5 +70,12 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '9', enabled: 'true', name: 'Rødbedehakker', group: 'Machine', type: '1', nextService: '31-09-2021', lastService: '08-07-2024'},
       {id: '10', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: '1', nextService: '28-01-2021', lastService: '06-08-2024'}
    ];
+   
+   // Preselect 'Sort by'
+   $scope.sortEntries = $scope.resourceData[0];
+   // Preselect 'Group'
+   $scope.groupEntries = $scope.resourceGroups[0];
+   // Preselect 'Entry layout'
+   $scope.layoutEntries = $scope.serviceLayoutOptions[0];
 
 });

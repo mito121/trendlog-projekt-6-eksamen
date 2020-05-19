@@ -658,6 +658,63 @@ aside ul li:hover{
     .module{
         width:100%;
     }
+    
+    /* Filter menu */
+    .filter-menu-overlay{
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        height:100vh;
+        width:100%;
+        background-color:rgba(34, 34, 34, .6);
+        z-index:99;
+    }
+    
+    .filter-menu{
+        padding:105px 0 0 15px;
+        width:70%;
+        height:100vh;
+        background-color:#fff;
+        position:relative;
+        left:-300px;
+    }
+    
+    #closeFilterMenu{
+        position:absolute;
+        top:60px;
+        right:-16px;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    
+    #filter-table{
+        border-collapse: collapse;
+    }
+    
+    #filter-table tr td{
+        box-sizing: border-box;
+        padding:8px 4px;
+    }
+    
+    #filter-table tr:first-child td select{
+        width:auto;
+    }
+    #filter-table tr td select{
+        width:100%;
+    }
+    
+    .filter-menu div:first-child{
+        margin-right:24px;
+    }
+    
+    .filter-menu p, .filter-menu span, .filter-menu label{
+        font-size:14px;
+    }
+    
+    .filter-menu select{
+        height:30px;
+    }
 
     /* Resource list */
     #desktop-resource-container{
