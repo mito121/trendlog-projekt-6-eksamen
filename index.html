@@ -175,7 +175,7 @@
                             </div>
 
                             <div class="row flex flex-b">
-                                <div class="flex align">
+                                <div class="flex align" id="filter-menu-btn">
                                     <span>Filter</span>
                                     <img src="assets/icons/filter-icon.svg" alt="Filter search"/>
                                 </div>
@@ -189,7 +189,7 @@
 
                         <!-- Filter menu -->
                         <div id="filter-menu" class="filter-menu-overlay">
-                            <div class="filter-menu">
+                            <div class="filter-menu" onclick="doNothing(event)">
                                 <table id="filter-table">
                                     <div id="closeFilterMenu">&#9932;</div>
                                     <tr>
@@ -260,8 +260,7 @@
                         </div>
 
 
-                        <!-- Resource list -->
-
+                        <!-- == Resource lists == -->
 
                         <!-- Desktop resource list -->
                         <div id="desktop-resource-container">
@@ -282,10 +281,10 @@
 
                         <!-- Mobile resource list -->
                         <div id="mobile-resource-container">
-                            <div onclick="expandResourceDropDown()" class="mobile-resource">
+                            <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource" ng-repeat="r in resources | filter: search" id="mobile-resource{{r.id}}">
                                 <div class="mobile-resource-content mobile-resource-header">
-                                    <span>ID: <span class="strong">12</span></span>
-                                    <span class="strong">Rødbederenser</span>
+                                    <span>ID: <span class="strong">{{r.id}}</span></span>
+                                    <span class="strong">{{r.name}}</span>
                                     <span><div class="enabled" style="height:16px;width:16px;background:green;border-radius:50%;"></div></span>
                                 </div>
 
@@ -293,22 +292,22 @@
                                     <div class="mobile-next-service">
                                         <span>Next service:</span>
                                         <div class="loading">
-                                            <div class="loading-text strong">23-03-2021</div>
+                                            <div class="loading-text strong">{{r.nextService}}</div>
                                             <div class="loading-bar"></div>
                                         </div>
                                     </div>
 
                                     <div class="mobile-last-service">
                                         <p>Last service:</p>
-                                        <p class="strong">09-11-2001</p>
+                                        <p class="strong">{{r.lastService}}</p>
                                     </div>
                                 </div>
                                 <div class="mobile-resource-content mobile-resource-footer">
-                                    <span>Group: <span class="strong">Machine</span></span>
-                                    <span>Type: <span class="strong">Hoebag</span></span>
+                                    <span>Group: <span class="strong">{{r.group}}</span></span>
+                                    <span>Type: <span class="strong">{{r.type}}</span></span>
                                 </div>
 <!-- ======================================================= Drop Down ====================================================================================== -->
-                                <div class="mobile-resource-dropdown" id="drop-down-123"> <!--placeholder navn, 123 skal erstattes med id fra den individuelle resource-->
+                                <div class="mobile-resource-dropdown" id="drop-down{{r.id}}" onclick="doNothing(event)"> <!--placeholder navn, 123 skal erstattes med id fra den individuelle resource-->
                                     <div class="tab-links">
                                         <div class="tab-links-box">
                                             <div class="tab-link"><a>History</a></div>

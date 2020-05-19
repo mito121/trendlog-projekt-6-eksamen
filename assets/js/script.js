@@ -3,15 +3,38 @@ function loaded() {
    document.body.classList.remove("preload");
 }
 
-//Resource drop down menu
-function expandResourceDropDown(){
-  $("#drop-down-123").toggleClass("expand-resource");
-}
+
+// Open mobile filter menu
+let open = false;
+$('#filter-menu-btn').click(function () {
+   if (open == false) {
+      $('.filter-menu-overlay').css("display", "block");
+      $('.filter-menu').css("left", "0");
+      let open = true;
+   }else{
+      $('.filter-menu-overlay').css("display", "none");
+      let open = false;
+   }
+});
+
+// Close mobile filter menu on overlay click
+$('.filter-menu-overlay').click(function (e) {
+   e.stopPropagation();
+   $('.filter-menu-overlay').css("display", "none");
+   let open = false;
+});
+
+// Close mobile filter menu on X click
+$('#closeFilterMenu').click(function (e) {
+   e.stopPropagation();
+   $('.filter-menu-overlay').css("display", "none");
+   let open = false;
+});
 
 
-// Mobile nav toggle
+
 $(document).ready(function () {
-
+   // Mobile nav toggle
    const menuIcon = document.querySelector(".burger-menu");
    const navbar = document.querySelector(".mobile-nav");
 
@@ -32,5 +55,9 @@ $(document).ready(function () {
       }
    });
 
-
 });
+
+// prevent event bubbling
+function doNothing(e) {
+    e.stopPropagation();
+}
