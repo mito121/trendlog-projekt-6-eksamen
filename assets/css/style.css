@@ -544,7 +544,7 @@ aside ul li:hover{
     display:none;
 }
 
-/** Mobile **/
+/**------------------------------------------------------------ Mobile --------------------------------------------------------------------**/
 @media only screen and (max-width: 768px) {
     /* Header & Navigation */
     #desktop-nav{
@@ -731,6 +731,8 @@ aside ul li:hover{
     .mobile-resource{
         background-color:white;
         padding:6px;
+        margin-bottom: 4px;
+
     }
 
     .mobile-resource-header span:nth-child(2){
@@ -802,6 +804,105 @@ aside ul li:hover{
         left:0;
         background-color:green;
         border-radius:5px 0px 0px 5px;
+    }
+
+    .mobile-resource-dropdown{
+      display: block;
+      background-color: #ffffff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 700ms ease-in-out;
+    }
+
+    .expand-resource{
+      max-height: 1000px !important;
+    }
+
+    .tab-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tab-links-box{
+      display: flex;
+      justify-content: center;
+      margin: 10px auto;
+      width: 100px;
+
+    }
+
+    .tab-link{
+      margin: 15px auto;
+    }
+
+    .tab-link a{
+      font-size: 15px;
+    }
+
+    .vertical-seperator{
+      width: 1px;
+      background-color: #d3d3d3;
+      height: 35px;
+
+    }
+
+    .center-links{
+      text-align: center;
+    }
+
+    .center-link{
+      margin: 12px 0px;
+    }
+
+    .center-link a{
+      font-size: 15px;
+      color: #222;
+    }
+
+    .horizontal-seperator{
+      margin: 0 auto;
+      width: 90%;
+      height: 1px;
+      background-color: #d3d3d3;
+    }
+
+    .bottom-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bottom-link{
+      padding: 10px;
+    }
+
+    .bottom-link a{
+      font-size: 15px;
+    }
+
+    .bottom-links .vertical-seperator{
+      height: 25px;
+    }
+
+    .logo-text-box{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px auto;
+      width: 100px;
+    }
+
+    .bottom-links .logo-text-box:first-child .bottom-link a{
+      color: #dc3545;
+    }
+
+    .bottom-links .logo-text-box:last-child .bottom-link a{
+      color: #007bff;
+    }
+
+    .bottom-links img{
+      height: 20px;
     }
 
 

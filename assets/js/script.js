@@ -3,9 +3,15 @@ function loaded() {
    document.body.classList.remove("preload");
 }
 
+//Resource drop down menu
+function expandResourceDropDown(){
+  $("#drop-down-123").toggleClass("expand-resource");
+}
+
+
 // Mobile nav toggle
 $(document).ready(function () {
-   
+
    const menuIcon = document.querySelector(".burger-menu");
    const navbar = document.querySelector(".mobile-nav");
 
@@ -25,5 +31,6 @@ $(document).ready(function () {
          $(this).parent().children("span:nth-child(3)").html('No file selected');
       }
    });
+
 
 });
