@@ -501,9 +501,15 @@ aside ul li:hover{
 .mobile-resource-top-menu{
     display:none;
 }
+
 .mobile-resource-top-menu img{
     height:30px;
     margin:0 0 0 12px;
+}
+
+.mobile-resource-top-menu select{
+    height:30px;
+    margin-left: 6px;
 }
 
 .searchBar{
@@ -550,7 +556,7 @@ aside ul li:hover{
 }
 
 /* Resource history */
-#mobile-history-table{
+#mobile-history-container{
     display:none;
 }
 
@@ -655,6 +661,7 @@ aside ul li:hover{
 }
 
 .add-new-menu-overlay{
+  display:none;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -1053,12 +1060,45 @@ aside ul li:hover{
     }
 
     /* Mobile history */
-
-
-    #mobile-history-table{
+    #mobile-history-container{
         display:block;
     }
 
+    #mobile-history-container h1{
+        font-size:2em;
+        padding:0 20px;
+    }
 
+    .mobile-history-table-container{
+        padding:20px 0;
+    }
+
+    .mobile-history-table{
+        width:100%;
+        border-collapse: collapse;
+    }
+
+    .mobile-history-table tr th{
+        padding:6px;
+        background-color:#222;
+        color:white;
+    }
+
+    .mobile-history-table tr td{
+        text-align:center;
+        padding:12px 0;
+    }
+
+    .mobile-history-table tr{
+        border-bottom:2px solid black;
+    }
+
+    .mobile-history-table tr:last-child{
+        border-bottom:0;
+    }
+
+    .repair{
+        background-color:#8BC88B;
+    }
 
 }

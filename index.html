@@ -299,9 +299,7 @@
                                   <a href="#" class="add-new-button">Back</a>
                                   <a href="#" class="add-new-button">Next</a>
                                 </div>
-                              </div>
                             </div>
-                          </div>
                         </div>
                         <!-- Service none selected -->
                         <div id="step-2-a" class="add-new-menu-overlay">
@@ -482,7 +480,7 @@
                                     <span>Group: <span class="strong">{{r.group}}</span></span>
                                     <span>Type: <span class="strong">{{r.type}}</span></span>
                                 </div>
-<!-- ======================================================= Drop Down ====================================================================================== -->
+                                <!-- ======================================================= Drop Down ====================================================================================== -->
                                 <div class="mobile-resource-dropdown" id="drop-down{{r.id}}">
                                     <div class="tab-links">
                                         <div class="tab-links-box">
@@ -520,29 +518,75 @@
 
                     <!-- Tab 2 (History) -->
                     <div class="tab-2" ng-show="tab === 2">
-                        <table id="mobile-history-table">
-                            <tr>
-                                <th>ID</th>
-                                <th>Date</th>
-                                <th>Value</th>
-                            </tr>
 
-                            <tr>
-                                <td> 2</td>
-                                <td>04-04-2020</td>
-                                <td>Service</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>04-06-2020</td>
-                                <td>Service</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>08-06-2020</td>
-                                <td>Repair</td>
-                            </tr>
-                        </table>
+                        <div id="mobile-history-container">
+                            <h1>Rødbede</h1>
+
+                            <!-- Mobile top menu -->
+                            <div class="mobile-resource-top-menu">
+                                <div class="searchBar row">
+                                    <label for="historySearch">Search</label>
+                                    <input type="text" id="historySearch"/>
+                                </div>
+
+                                <div class="row flex flex-b">
+                                    <div class="flex align">
+                                        <label for="historyEntries">Entries </label>
+                                        <select id="historyEntries">
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>50</option>
+                                            <option>100</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="flex align">
+                                        <label for="historySort">Sort by </label>
+                                        <select id="historySort">
+                                            <option>ID</option>
+                                            <option selected>Date</option>
+                                            <option>Value</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-history-table-container">
+                                <table class="mobile-history-table">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Date</th>
+                                        <th>Value</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>06-09-2020</td>
+                                        <td>Service</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>07-08-2020</td>
+                                        <td>Service</td>
+                                    </tr>
+                                    <tr class="repair">
+                                        <td>3</td>
+                                        <td>12-07-2020</td>
+                                        <td>Repair</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>14-06-2020</td>
+                                        <td>Service</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>01-05-2020</td>
+                                        <td>Service</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
