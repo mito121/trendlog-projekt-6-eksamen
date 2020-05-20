@@ -478,7 +478,6 @@ aside ul li:hover{
     display:block;
     margin:5px auto 0 24px;
     padding:17px 8px 4px 8px;
-    width:100%;
     border-bottom:1px solid #eee;
 }
 
@@ -504,7 +503,7 @@ aside ul li:hover{
 }
 .mobile-resource-top-menu img{
     height:30px;
-    margin:0 0 0 6px;
+    margin:0 0 0 12px;
 }
 
 .searchBar{
@@ -547,6 +546,11 @@ aside ul li:hover{
     width:100%;
 }
 #mobile-resource-container{
+    display:none;
+}
+
+/* Resource history */
+#mobile-history-table{
     display:none;
 }
 
@@ -760,6 +764,14 @@ aside ul li:hover{
     /* Top menu */
 
     /* Resource filter menu */
+    .module-tabs{
+        margin:5px;
+    }
+
+    .module-tabs a{
+        margin: 4px 10px 0px 0px;
+    }
+    
     .mobile-resource-top-menu{
         display:block;
     }
@@ -780,7 +792,6 @@ aside ul li:hover{
         background-color:white;
         padding:6px;
         margin-bottom: 4px;
-
     }
 
     .mobile-resource-header span:nth-child(2){
@@ -953,6 +964,12 @@ aside ul li:hover{
         height: 20px;
     }
 
+    /* Mobile history */
+    
+    
+    #mobile-history-table{
+        display:block;
+    }
 
 
 

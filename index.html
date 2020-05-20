@@ -429,14 +429,14 @@
 
                         <!-- Mobile resource list -->
                         <div id="mobile-resource-container">
-                            <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource" ng-repeat="r in resources | filter: search" id="mobile-resource{{r.id}}">
-                                <div class="mobile-resource-content mobile-resource-header">
+                            <div class="mobile-resource" ng-repeat="r in resources | filter: search" id="mobile-resource{{r.id}}">
+                                <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource-content mobile-resource-header">
                                     <span>ID: <span class="strong">{{r.id}}</span></span>
                                     <span class="strong">{{r.name}}</span>
                                     <span><div class="enabled" style="height:16px;width:16px;background:green;border-radius:50%;"></div></span>
                                 </div>
 
-                                <div class="mobile-resource-content mobile-resource-body">
+                                <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource-content mobile-resource-body">
                                     <div class="mobile-next-service">
                                         <span>Next service:</span>
                                         <div class="loading">
@@ -450,19 +450,19 @@
                                         <p class="strong">{{r.lastService}}</p>
                                     </div>
                                 </div>
-                                <div class="mobile-resource-content mobile-resource-footer">
+                                <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource-content mobile-resource-footer">
                                     <span>Group: <span class="strong">{{r.group}}</span></span>
                                     <span>Type: <span class="strong">{{r.type}}</span></span>
                                 </div>
 <!-- ======================================================= Drop Down ====================================================================================== -->
-                                <div class="mobile-resource-dropdown" id="drop-down{{r.id}}" onclick="doNothing(event)"> <!--placeholder navn, 123 skal erstattes med id fra den individuelle resource-->
+                                <div class="mobile-resource-dropdown" id="drop-down{{r.id}}">
                                     <div class="tab-links">
                                         <div class="tab-links-box">
-                                            <div class="tab-link"><a>History</a></div>
+                                            <div class="tab-link" ng-click="historyTab()"><a>History</a></div>
                                         </div>
                                         <div class="vertical-seperator"></div>
                                         <div class="tab-links-box">
-                                            <div class="tab-link"><a>Settings</a></div>
+                                            <div class="tab-link" ng-click="settingsTab()"><a>Settings</a></div>
                                         </div>
                                     </div>
                                     <div class="center-links">
@@ -488,11 +488,38 @@
                                 </div>
                             </div>
                         </div>
+                    </div> <!-- tab 1 end -->
+                    
+                    <!-- Tab 2 (History) -->
+                    <div class="tab-2" ng-show="tab === 2">
+                        <table id="mobile-history-table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Value</th>
+                            </tr>
+                            
+                            <tr>
+                                <td> 2</td>
+                                <td>04-04-2020</td>
+                                <td>Service</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>04-06-2020</td>
+                                <td>Service</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>08-06-2020</td>
+                                <td>Repair</td>
+                            </tr>
+                        </table>
                     </div>
+                    
                 </div>
             </div>
         </main>
-
         <!-- footer -->
         <footer></footer>
     </body>

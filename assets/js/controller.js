@@ -44,6 +44,17 @@ app.controller("mainCtrl", function ($scope, $http) {
       clearTimeout();
 
    };
+   
+   // Go to history tab
+   $scope.historyTab  = function(){
+      $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $scope.tab = 2;
+   };
+   // Go to settings tab
+   $scope.settingsTab  = function(){
+      $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $scope.tab = 3;
+   };
 
 
    // Service layout options
