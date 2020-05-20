@@ -476,27 +476,33 @@ aside ul li:hover{
 /* Tabs (Resources, history & settings) */
 .module-tabs{
     display:block;
-    margin:0 auto;
+    margin:5px auto 0 24px;
     padding:17px 8px 4px 8px;
     width:100%;
-    background-color:#D3D3D3;
+    border-bottom:1px solid #eee;
 }
 
 .module-tabs a{
     font-weight:400;
     font-size:15px;
-    margin:4px 10px 0px 10px;
-    padding:6px 12px;
+    margin: 4px 10px 0px -8px;
+    padding:10px 15px;
+    padding-bottom:6px;
     border-radius:5px 5px 0px 0px;
 }
 
 .activeTab{
     color:black;
     background-color:white;
+    border:1px solid #eee;
+    border-bottom:0;
 }
 
 /* Resource filter menu */
-.resourceTopMenu img{
+.mobile-resource-top-menu{
+    display:none;
+}
+.mobile-resource-top-menu img{
     height:30px;
     margin:0 0 0 6px;
 }
@@ -726,6 +732,13 @@ aside ul li:hover{
 
     .module{
         width:100%;
+    }
+
+    /* Top menu */
+
+    /* Resource filter menu */
+    .mobile-resource-top-menu{
+        display:block;
     }
 
     /* Resource list */
