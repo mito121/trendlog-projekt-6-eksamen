@@ -501,15 +501,9 @@ aside ul li:hover{
 .mobile-resource-top-menu{
     display:none;
 }
-
 .mobile-resource-top-menu img{
     height:30px;
     margin:0 0 0 12px;
-}
-
-.mobile-resource-top-menu select{
-    height:30px;
-    margin-left: 6px;
 }
 
 .searchBar{
@@ -556,7 +550,7 @@ aside ul li:hover{
 }
 
 /* Resource history */
-#mobile-history-container{
+#mobile-history-table{
     display:none;
 }
 
@@ -666,7 +660,6 @@ aside ul li:hover{
 }
 
 .add-new-menu-overlay{
-  display:none;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -1072,6 +1065,7 @@ aside ul li:hover{
     }
 
     /* Mobile history */
+<<<<<<< HEAD
     #mobile-history-container{
         display:block;
     }
@@ -1146,4 +1140,14 @@ aside ul li:hover{
         width:100%;
         margin:4px 0;
     }
+=======
+    
+    
+    #mobile-history-table{
+        display:block;
+    }
+
+
+
+>>>>>>> parent of 6f76582... history tab DONE
 }
