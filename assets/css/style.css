@@ -125,6 +125,25 @@ h4{
 .mx-auto{
     margin:0 auto;
 }
+.green-btn{
+    background-color:#01CC01;
+    height:30px;
+    width:30px;
+    margin:0 0 0 12px;
+    padding:4px;
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.green-btn img{
+    height:18px;
+}
+.green-btn-hacks img{
+    height: 21px !important;
+    margin-left: 2px !important;
+    margin-bottom: 2px !important;
+}
 /* STYLEGUIDE */
 .styleGuideHeader{
     font-size:28px;
@@ -293,8 +312,9 @@ input[type=submit]{
     cursor:pointer;
 }
 select{
-    display: inline-block;
+    margin:4px 0;
     width: auto;
+    display:block;
     vertical-align: middle;
     height: 34px;
     padding: 6px 12px;
@@ -502,10 +522,6 @@ aside ul li:hover{
     display:none;
 }
 
-.mobile-resource-top-menu img{
-    height:30px;
-    margin:0 0 0 12px;
-}
 
 .mobile-resource-top-menu select{
     height:30px;
@@ -638,112 +654,112 @@ aside ul li:hover{
 /* Add new menu*/
 
 #step-1{
-/* display: none; */
+    /* display: none; */
 }
 
 #step-2-a{
-  display: none;
+    display: none;
 }
 
 #step-2-b{
-  display: none;
+    display: none;
 }
 
 #step-2-c{
-  display: none;
+    display: none;
 }
 
 #step-3{
-  display: none;
+    display: none;
 }
 
 #step-4{
-  display: none;
+    display: none;
 }
 
 #step-5{
-  display: none;
+    display: none;
 }
 
 .add-new-menu-overlay{
-  display:none;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba(34, 34, 34, .5);
+    display:none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(34, 34, 34, .5);
 
-  top: 0;
-  z-index: 99;
+    top: 0;
+    z-index: 99;
 }
 
 .add-new-menu{
-  width: 70%;
-  height: 100vh;
-  padding-top: 50px;
-  background-color: #fff;
-  position: relative;
-  left: 30.5%;
+    width: 70%;
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #fff;
+    position: relative;
+    left: 30.5%;
 }
 
 .heading-container{
-  width: 100%;
-  height: 40px;
-  background-color: #222;
-  justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #222;
+    justify-content: center;
 }
 
 .heading-container h2{
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
 }
 
 .add-new-main{
-  width: 100%;
-  padding: 15px;
+    width: 100%;
+    padding: 15px;
 }
 
 .add-new-main .flex-b{
-  display: flex;
+    display: flex;
 }
 
 .add-new-main h3{
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-  color: #222;
-  font-weight: 500;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-weight: 500;
 }
 
 .add-new-main p{
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  color: #b3b3b3;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    color: #b3b3b3;
 }
 
 .add-new-content{
-  padding-top: 10px;
-  width: 100%;
-  border-top: 1px solid #222;
+    padding-top: 10px;
+    width: 100%;
+    border-top: 1px solid #222;
 }
 
 .add-new-buttons a:nth-child(1){
-  color: #dc3545;
+    color: #dc3545;
 }
 
 .add-new-buttons a:nth-child(2){
-  color: #222;
+    color: #222;
 }
 
 .add-new-buttons a:nth-child(3){
-  color: #007bff;
+    color: #007bff;
 }
 
 .add-new-button{
-  padding: 10px;
+    padding: 10px;
 }
 
 /* Mobilshit */
@@ -898,7 +914,7 @@ aside ul li:hover{
         font-size:16px;
         font-weight:900;
     }
-    
+
     .enabled{
         height:16px;
         width:16px;
@@ -1113,14 +1129,14 @@ aside ul li:hover{
         background-color:#8BC88B;
     }
 
-    
+
     /* Mobile resource settings */
     #mobile-settings-container{
         display:block;
         padding:0 20px;
         margin-top: -10px;
     }
-    
+
     .mobile-settings-head-row{
         display:flex;
         align-items:baseline;
@@ -1128,22 +1144,18 @@ aside ul li:hover{
         width:100%;
         border-bottom:2px solid #222;
     }
-    
+
     .mobile-settings-head-row h1{
         font-size:2em;
         margin-bottom:0;
     }
-    
+
     .mobile-settings-head-row span{
         color: #D3D3D3;
     }
-    
+
     .mobile-settings-row{
         margin:15px 0;
     }
-    
-    .mobile-settings-row select{
-        width:100%;
-        margin:4px 0;
-    }
+
 }
