@@ -65,7 +65,7 @@ h1{
     font-size:46px;
 }
 h2{
-    font-size:39px;
+    font-size: 39px;
 }
 h3{
     font-size:30px;
@@ -637,12 +637,43 @@ aside ul li:hover{
 
 /* Add new menu*/
 
+#step-1{
+/* display: none; */
+}
+
+#step-2-a{
+  display: none;
+}
+
+#step-2-b{
+  display: none;
+}
+
+#step-2-c{
+  display: none;
+}
+
+#step-3{
+  display: none;
+}
+
+#step-4{
+  display: none;
+}
+
+#step-5{
+  display: none;
+}
+
 .add-new-menu-overlay{
   display:none;
   width: 100%;
   height: 100vh;
   position: fixed;
-  background-color: green;
+  background-color: rgba(34, 34, 34, .5);
+
+  top: 0;
+  z-index: 99;
 }
 
 .add-new-menu{
@@ -651,12 +682,69 @@ aside ul li:hover{
   padding-top: 50px;
   background-color: #fff;
   position: relative;
-  right: 0;
-  top: 0;
+  left: 30.5%;
 }
 
+.heading-container{
+  width: 100%;
+  height: 40px;
+  background-color: #222;
+  justify-content: center;
+}
 
+.heading-container h2{
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 600;
+}
 
+.add-new-main{
+  width: 100%;
+  padding: 15px;
+}
+
+.add-new-main .flex-b{
+  display: flex;
+}
+
+.add-new-main h3{
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-weight: 500;
+}
+
+.add-new-main p{
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #b3b3b3;
+}
+
+.add-new-content{
+  padding-top: 10px;
+  width: 100%;
+  border-top: 1px solid #222;
+}
+
+.add-new-buttons a:nth-child(1){
+  color: #dc3545;
+}
+
+.add-new-buttons a:nth-child(2){
+  color: #222;
+}
+
+.add-new-buttons a:nth-child(3){
+  color: #007bff;
+}
+
+.add-new-button{
+  padding: 10px;
+}
 
 /* Mobilshit */
 @media only screen and (max-width: 768px) {
@@ -783,7 +871,7 @@ aside ul li:hover{
     .module-tabs a{
         margin: 4px 10px 0px 0px;
     }
-    
+
     .mobile-resource-top-menu{
         display:block;
     }
@@ -992,35 +1080,35 @@ aside ul li:hover{
         font-size:2em;
         padding:0 20px;
     }
-    
+
     .mobile-history-table-container{
         padding:20px 0;
     }
-    
+
     .mobile-history-table{
         width:100%;
         border-collapse: collapse;
     }
-    
+
     .mobile-history-table tr th{
         padding:6px;
         background-color:#222;
         color:white;
     }
-    
+
     .mobile-history-table tr td{
         text-align:center;
         padding:12px 0;
     }
-    
+
     .mobile-history-table tr{
         border-bottom:2px solid black;
     }
-    
+
     .mobile-history-table tr:last-child{
         border-bottom:0;
     }
-    
+
     .repair{
         background-color:#8BC88B;
     }
