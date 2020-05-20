@@ -256,17 +256,17 @@ form h1{
     font-size:22px;
     margin-left:6px;
 }
-form input:active, form input:focus, form textarea:focus{
+input:active, form input:focus, form textarea:focus{
     outline:none;
 }
-form textarea{
+textarea{
     resize:vertical;
     min-height:100px;
 }
-form input[type=text], form input[type=email], form input[type=password], form textarea{
+input[type=text], form input[type=email], form input[type=password], form textarea{
     display: block;
     width: 100%;
-    margin: 8px 4px;
+    margin: 4px 0;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -278,7 +278,7 @@ form input[type=text], form input[type=email], form input[type=password], form t
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     font-family: 'Titillium Web', sans-serif;
 }
-form input[type=submit]{
+input[type=submit]{
     float:right;
 }
 .file-upload input[type=file]{
@@ -560,6 +560,11 @@ aside ul li:hover{
     display:none;
 }
 
+/* Resource settings */
+#mobile-settings-container{
+    display:none;
+}
+
 /**------------------------------------------------------------ Mobile --------------------------------------------------------------------**/
 
 /* Mobile filter menu */
@@ -805,6 +810,13 @@ aside ul li:hover{
         font-size:16px;
         font-weight:900;
     }
+    
+    .enabled{
+        height:16px;
+        width:16px;
+        background:#01CC01;
+        border-radius:50%;
+    }
 
     .mobile-resource p, .mobile-resource span{
         font-size:14px;
@@ -868,7 +880,7 @@ aside ul li:hover{
         position:absolute;
         top:0;
         left:0;
-        background-color:green;
+        background-color:#01CC01;
         border-radius:5px 0px 0px 5px;
     }
 
@@ -1013,4 +1025,37 @@ aside ul li:hover{
         background-color:#8BC88B;
     }
 
+    
+    /* Mobile resource settings */
+    #mobile-settings-container{
+        display:block;
+        padding:0 20px;
+        margin-top: -10px;
+    }
+    
+    .mobile-settings-head-row{
+        display:flex;
+        align-items:baseline;
+        justify-content: space-between;
+        width:100%;
+        border-bottom:2px solid #222;
+    }
+    
+    .mobile-settings-head-row h1{
+        font-size:2em;
+        margin-bottom:0;
+    }
+    
+    .mobile-settings-head-row span{
+        color: #D3D3D3;
+    }
+    
+    .mobile-settings-row{
+        margin:15px 0;
+    }
+    
+    .mobile-settings-row select{
+        width:100%;
+        margin:4px 0;
+    }
 }

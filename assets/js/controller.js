@@ -79,8 +79,7 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '0', name: 'All'},
       {id: '1', name: 'Machine'},
       {id: '2', name: 'Car'},
-      {id: '3', name: 'Rødbedemaskine'},
-      {id: '4', name: 'Ugle'}
+      {id: '3', name: 'Rødbedemaskine'}
    ];
 
    // Service items
