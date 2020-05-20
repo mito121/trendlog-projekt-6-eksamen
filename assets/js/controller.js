@@ -44,14 +44,14 @@ app.controller("mainCtrl", function ($scope, $http) {
       clearTimeout();
 
    };
-   
+
    // Go to history tab
-   $scope.historyTab  = function(){
+   $scope.historyTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $scope.tab = 2;
    };
    // Go to settings tab
-   $scope.settingsTab  = function(){
+   $scope.settingsTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $scope.tab = 3;
    };
@@ -79,7 +79,7 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '0', name: 'All'},
       {id: '1', name: 'Machine'},
       {id: '2', name: 'Car'},
-      {id: '3', name: 'Rødbedemaskine'}
+      {id: '3', name: 'Washer'}
    ];
 
    // Service items
@@ -102,5 +102,27 @@ app.controller("mainCtrl", function ($scope, $http) {
    $scope.groupEntries = $scope.resourceGroups[0];
    // Preselect 'Entry layout'
    $scope.layoutEntries = $scope.serviceLayoutOptions[0];
+
+
+   // Resource settings checklist
+   $scope.todoList = [];
+   
+   let id = 1;
+   
+   $scope.todoAdd = function () {
+      $scope.todoList.push({id: id, todoText: $scope.todoInput});
+      $scope.todoInput = "";
+      document.getElementById("todoInput").focus();
+      id++;
+   };
+
+   $scope.remove = function () {
+      var oldList = $scope.todoList;
+      $scope.todoList = [];
+      angular.forEach(oldList, function (x) {
+         if (!x.done)
+            $scope.todoList.push(x);
+      });
+   };
 
 });

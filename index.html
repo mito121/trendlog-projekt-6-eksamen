@@ -12,12 +12,19 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 
         <!--== JS ==-->
+
         <!-- jQuery -->
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- jQuery UI -->
+        <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+            integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+        crossorigin="anonymous"></script>
 
         <!-- Angularjs -->
         <script src="assets/js/angular.js"></script>
@@ -159,7 +166,7 @@
                 </aside>
 
                 <div class="module">
-                    <div class="module-tabs" ng-init="tab = 1">
+                    <div class="module-tabs" ng-init="tab = 3">
                         <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
                         <a href ng-show="tab > 1" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
                         <a href ng-show="tab > 1" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
@@ -268,8 +275,8 @@
 
                         <!-- Add new menu -->
                         <!-- details -->
-                        <div class="add-new-menu-overlay">
-                            <div id="step-1" class="add-new-menu">
+                        <div class="add-new-menu-overlay" ng-init="step = 1">
+                            <div ng-show="step === 1" id="step-1" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -294,36 +301,36 @@
                                         <input id="step-1-name" placeholder="Text here..." type="text">
 
 
-                                        <div class="add-new-buttons flex flex-a">
+                                        <div class="add-new-buttons flex flex-b">
                                             <a href="#" class="add-new-button">Cancel</a>
                                             <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = '2a'">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Service none selected -->
-                            <div id="step-2-a" class="add-new-menu">
+                            <div ng-show="step == '2a'" id="step-2-a" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
                                         <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Service preventive -->
-                            <div id="step-2-b" class="add-new-menu">
+                            <div ng-show="step === '2b'" id="step-2-b" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -336,14 +343,14 @@
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Service predictive -->
-                            <div id="step-2-c" class="add-new-menu">
+                            <div ng-show="step === '2c'" id="step-2-c" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -356,14 +363,14 @@
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Checklist -->
-                            <div id="step-3" class="add-new-menu">
+                            <div ng-show="step === 3" id="step-3" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -383,7 +390,7 @@
                                 </div>
                             </div>
                             <!-- Attachments -->
-                            <div id="step-4" class="add-new-menu">
+                            <div ng-show="step === 4" id="step-4" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -403,7 +410,7 @@
                                 </div>
                             </div>
                             <!-- Notify -->
-                            <div id="step-5" class="add-new-menu">
+                            <div ng-show="step === 5" id="step-5" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
@@ -511,7 +518,7 @@
 
                         <!-- Mobile -->
                         <div id="mobile-history-container">
-                            <h1>Rødbede</h1>
+                            <h1>Rødbederenser</h1>
 
                             <div class="mobile-resource-top-menu">
                                 <div class="searchBar row">
@@ -592,18 +599,93 @@
 
                                 <div class="mobile-settings-row">
                                     <label for="settings-resource-name">Resource name</label>
-                                    <input type="text" placeholder="Resource name" value="Rødbede" id="settings-resource-name"/>
+                                    <input type="text" placeholder="Resource name" value="Rødbederenser" id="settings-resource-name"/>
                                 </div>
 
                                 <div class="mobile-settings-row">
                                     <label for="settings-resource-group">Group</label>
-                                    <select id="settings-resource-group">
-                                        <option>Machine</option>
-                                        <option>Cars</option>
-                                        <option>Washer</option>
-                                    </select>
+                                    <div class="flex">
+                                        <select id="settings-resource-group">
+                                            <option>Machine</option>
+                                            <option>Cars</option>
+                                            <option>Washer</option>
+                                        </select>
+                                        <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                    </div>
                                 </div>
 
+                                <div class="mobile-settings-row">
+                                    <label for="settings-resource-desc">Description</label>
+                                    <textarea id="settings-resource-desc" placeholder="Enter resource description"></textarea>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="mobile-settings-head-row">
+                                    <h1>Service</h1>
+                                    <span>Part 2 of 5</span>
+                                </div>
+
+                                <div class="mobile-settings-row">
+                                    <p>Type</p>
+                                    <div class="mobile-settings-type-select" ng-init="type = 1">
+                                        <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
+                                    </div>
+                                </div>
+
+                                <div class="mobile-settings-row">
+                                    <!-- Preventive -->
+                                    <div ng-show="type === 1">
+                                        <div class="mobile-settings-row">
+                                            <label for="settings-resource-ls">Last service</label>
+                                            <input type="text" id="settings-resource-ls">
+                                        </div>
+
+                                        <div class="mobile-settings-row flex flex-b">
+                                            <div>
+                                                <label for="settings-resource-interval">Service interval</label>
+                                                <input type="number" id="settings-resource-interval">
+                                            </div>
+                                            <div class="w50">
+                                                <label for="settings-resource-interval-unit">Unit</label>
+                                                <select id="settings-resource-interval-unit">
+                                                    <option>Days</option>
+                                                    <option>Weeks</option>
+                                                    <option>Months</option>
+                                                    <option>Years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mobile-settings-row">
+                                            <label for="settings-resource-ns">Next service</label>
+                                            <input type="text" disabled id="settings-resource-ns">
+                                        </div>
+                                    </div>
+
+                                    <!-- Predictive -->
+                                    <div ng-show="type === 2">
+                                        tab 2
+                                    </div>
+                                </div>
+
+                                <div class="mobile-settings-row">
+                                    <div class="mobile-settings-head-row">
+                                        <h1>Checklist</h1>
+                                        <span>Part 3 of 5</span>
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <p>To do's</p>
+                                        <div class="mobile-settings-todolist">
+                                            <div class="todoItem" ng-repeat="x in todoList">{{x.id}} {{x.todoText}}</div>
+                                            <form ng-submit="todoAdd()" class="addTodo">
+                                                <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
+                                                <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </section>
                         </div>
                     </div>
@@ -613,5 +695,11 @@
         </main>
         <!-- footer -->
         <footer></footer>
+
+        <script>
+            $(function () {
+               $("#settings-resource-ls").datepicker();
+            });
+        </script>
     </body>
 </html>

@@ -127,9 +127,10 @@ h4{
 }
 .green-btn{
     background-color:#01CC01;
+    color:white;
     height:30px;
-    width:30px;
-    margin:0 0 0 12px;
+    width:33px;
+    margin:0 0 0 13px;
     padding:4px;
     border-radius:4px;
     display:flex;
@@ -138,6 +139,10 @@ h4{
 }
 .green-btn img{
     height:18px;
+}
+.green-btn span{
+    font-size:33px;
+    margin-top: -7px;
 }
 .green-btn-hacks img{
     height: 21px !important;
@@ -282,7 +287,7 @@ textarea{
     resize:vertical;
     min-height:100px;
 }
-input[type=text], form input[type=email], form input[type=password], form textarea{
+input[type=text], input[type=number], form input[type=email], form input[type=password], form textarea{
     display: block;
     width: 100%;
     margin: 4px 0;
@@ -297,9 +302,25 @@ input[type=text], form input[type=email], form input[type=password], form textar
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     font-family: 'Titillium Web', sans-serif;
 }
+input[type="text"]:disabled {
+    background: #F0F0F0;
+}
 input[type=submit]{
     float:right;
 }
+/* hide arrows from input type=number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .file-upload input[type=file]{
     display:none;
 }
@@ -651,43 +672,12 @@ aside ul li:hover{
     }
 }
 
-/* Add new menu*/
-
-#step-1{
-    /* display: none; */
-}
-
-#step-2-a{
-    display: none;
-}
-
-#step-2-b{
-    display: none;
-}
-
-#step-2-c{
-    display: none;
-}
-
-#step-3{
-    display: none;
-}
-
-#step-4{
-    display: none;
-}
-
-#step-5{
-    display: none;
-}
-
 .add-new-menu-overlay{
     display:none;
     width: 100%;
     height: 100vh;
     position: fixed;
     background-color: rgba(34, 34, 34, .5);
-
     top: 0;
     z-index: 99;
 }
@@ -1158,4 +1148,230 @@ aside ul li:hover{
         margin:15px 0;
     }
 
+    .mobile-settings-row p{
+        font-size: 14px;
+        margin:0;
+        padding:0;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .mobile-settings-row select{
+        width:100%;
+    }
+
+    .mobile-settings-row textarea{
+        width:100%;
+        margin: 4px 0;
+        display: block;
+        vertical-align: middle;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    .mobile-settings-type-select{
+        text-align:center;
+    }
+
+    .mobile-settings-type-select button{
+        background-color: #fff;
+        outline:none;
+        box-shadow: none;
+        width:50%;
+        padding:6px 0;
+        border:1px solid #D3D3D3;
+    }
+
+    .mobile-settings-type-select button:first-child{
+        border-right:none;
+        border-radius:5px 0 0 5px;
+    }
+
+    .mobile-settings-type-select button:last-child{
+        border-left:none;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .activeType{
+        background-color:#007BFF !important;
+        border: 1px solid #007BFF !important;
+        color:white;
+    }
+
+    .mobile-settings-todolist{
+        width:100%;
+        background-color:#F0F0F0;
+        min-height:50px;
+        border-radius:4px;
+        border: 1px solid #ced4da;
+        padding:8px;
+    }
+
+    .todoItem{
+        display:block;
+        background-color:#fff;
+        padding:6px;
+        margin:4px 0;
+        border-radius:5px;
+    }
+
+    .addTodo{
+        display:flex;
+    }
+
+    .addTodo button{
+        background-color: #01CC01;
+        color: white;
+        height: 33.5px;
+        width: 39px;
+        margin: 5px;
+        padding: 4px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        outline: 0;
+        font-size:33px;
+    }
+
+    button span {
+        font-size: 33px;
+        margin-top: -12px !important;
+    }
+
+
+}
+
+/* *** DATEPICKER *** */
+.ui-datepicker {
+    width: 17em;
+    padding: .5em .5em 0;
+    display: none;
+    background-color:#222;
+    border-radius:4px;
+}
+.ui-datepicker a{
+    color:#fff;
+}
+/* * * CALENDAR HEADER * * */
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+    margin-bottom:.7em;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+    top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+    left: 2px;
+}
+.ui-datepicker .ui-datepicker-prev::after {
+    content:"❮";
+    margin: 0px 15px;
+}
+.ui-datepicker .ui-datepicker-next {
+    right: 2px;
+}
+.ui-datepicker .ui-datepicker-next::after {
+    content:"❯";
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+    color:white;
+}
+.ui-datepicker .ui-datepicker-title span{
+    font-size:1.2em;
+}
+.ui-datepicker .ui-datepicker-title select {
+    font-size: 1em;
+    margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: 45%;
+}
+.ui-datepicker table {
+    width: 100%;
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em;
+
+}
+/* * * TABLE HEAD * * */
+.ui-datepicker th {
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+}
+.ui-datepicker td {
+    border: 0;
+    padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+    display: block;
+    padding: .2em;
+    text-align: center;
+    text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+    background-image: none;
+    margin: .7em 0 0 0;
+    padding: 0 .2em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+    float: right;
+    margin: .5em .2em .4em;
+    cursor: pointer;
+    padding: .2em .6em .3em .6em;
+    width: auto;
+    overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    float: left;
+}
+.ui-datepicker .ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    left: .5em;
+    top: .3em;
 }
