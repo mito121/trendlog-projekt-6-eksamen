@@ -631,6 +631,8 @@ aside ul li:hover{
   height: 100vh;
   position: fixed;
   background-color: green;
+  top: 0;
+  z-index: 99;
 }
 
 .add-new-menu{
@@ -639,8 +641,7 @@ aside ul li:hover{
   padding-top: 50px;
   background-color: #fff;
   position: relative;
-  right: 0;
-  top: 0;
+  left: 30.5%;
 }
 
 
@@ -771,7 +772,7 @@ aside ul li:hover{
     .module-tabs a{
         margin: 4px 10px 0px 0px;
     }
-    
+
     .mobile-resource-top-menu{
         display:block;
     }
@@ -965,8 +966,8 @@ aside ul li:hover{
     }
 
     /* Mobile history */
-    
-    
+
+
     #mobile-history-table{
         display:block;
     }
