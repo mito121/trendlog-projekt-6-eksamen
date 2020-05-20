@@ -620,6 +620,29 @@ aside ul li:hover{
     }
 }
 
+/* Add new menu*/
+
+.add-new-menu-overlay{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: green;
+}
+
+.add-new-menu{
+  width: 70%;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: #fff;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+
+
+
+/* Mobilshit */
 @media only screen and (max-width: 768px) {
     /* Header & Navigation */
     #desktop-nav{
