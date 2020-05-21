@@ -712,45 +712,58 @@
                             </section>
 
                             <section>
+                                <div class="mobile-settings-head-row">
+                                    <h3>Checklist</h3>
+                                    <span>Part 3 of 5</span>
+                                </div>
+
                                 <div class="mobile-settings-row">
-                                    <div class="mobile-settings-head-row">
-                                        <h3>Checklist</h3>
-                                        <span>Part 3 of 5</span>
+                                    <p>To do's</p>
+                                    <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="todoList">
+                                        <div class="todoItem" ng-repeat="x in todoList">{{x.todoText}}</div>
+                                        <form ng-submit="todoAdd()" class="addTodo">
+                                            <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
+                                            <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
+                                        </form>
                                     </div>
-
-                                    <div class="mobile-settings-row">
-                                        <p>To do's</p>
-                                        <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="todoList">
-                                            <div class="todoItem" ng-repeat="x in todoList">{{x.todoText}}</div>
-                                            <form ng-submit="todoAdd()" class="addTodo">
-                                                <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
-                                                <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
-                                            </form>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </section>
 
                             <section>
-                                <div class="mobile-settings-row">
-                                    <div class="mobile-settings-head-row">
-                                        <h3>Attachment</h3>
-                                        <span>Part 4 of 5</span>
-                                    </div>
-
-                                    <div class="mobile-settings-row">
-                                        <p>Attachments</p>
-                                        <div class="mobile-settings-todolist">
-
-                                            <label class="file-upload">
-                                                <input type="file" class="green-btn add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span>
-                                            </label>
-                                            
-                                        </div>
-                                    </div>
-
+                                <div class="mobile-settings-head-row">
+                                    <h3>Attachment</h3>
+                                    <span>Part 4 of 5</span>
                                 </div>
+
+                                <div class="mobile-settings-row">
+                                    <p>Attachments</p>
+                                    <div class="mobile-settings-todolist">
+                                        <div id="uploaded-attachments"></div>
+                                        <label class="file-upload-attach">
+                                            <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="mobile-settings-head-row">
+                                    <h3>Notify me</h3>
+                                    <span>Part 5 of 5</span>
+                                </div>
+
+                                <div class="mobile-settings-row">
+                                    <label for="settings-resource-notify">E-mail addresses (seprate e-mails by comma)</label>
+                                    <input type="text" id="settings-resource-notify" placeholder="Enter e-mail(s) to notify">
+                                </div>
+
+                                <div class="mobile-settings-row">
+                                    <label for="settings-resource-daysb4service">Days before service</label>
+                                    <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
+                                </div>
+                                
+                                <button id="apply-settings">Apply changes</button>
                             </section>
                         </div>
                     </div>

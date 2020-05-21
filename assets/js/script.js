@@ -11,7 +11,7 @@ $('#filter-menu-btn').click(function () {
       $('.filter-menu-overlay').css("display", "block");
       $('.filter-menu').css("left", "0");
       let open = true;
-   }else{
+   } else {
       $('.filter-menu-overlay').css("display", "none");
       let open = false;
    }
@@ -55,9 +55,28 @@ $(document).ready(function () {
       }
    });
 
+
+   // Add attachment
+   var attachmentList = "";
+   $('.file-upload-attach').children("input").bind('change', function () {
+      var fileName = '';
+      fileName = $(this).val().split("\\").slice(-1)[0];
+      
+      if(fileName.length > 0){
+               attachmentList += "<div class='todoItem'>" + fileName + "</div>";
+      
+      // Output attachment list to html
+      $('#uploaded-attachments').html(attachmentList);
+      }
+
+
+   });
+
+
+
 });
 
 // prevent event bubbling
 function doNothing(e) {
-    e.stopPropagation();
+   e.stopPropagation();
 }
