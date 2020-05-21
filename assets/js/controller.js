@@ -96,6 +96,14 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '10', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024'}
    ];
 
+   // Mobile resource settings service units
+   $scope.resourceServiceUnits = [
+      {id: 1, name: 'Days'},
+      {id: 2, name: 'Weeks'},
+      {id: 3, name: 'Months'},
+      {id: 4, name: 'Years'}
+   ];
+
    // Preselect 'Sort by'
    $scope.sortEntries = $scope.resourceData[0];
    // Preselect 'Group'
@@ -103,12 +111,50 @@ app.controller("mainCtrl", function ($scope, $http) {
    // Preselect 'Entry layout'
    $scope.layoutEntries = $scope.serviceLayoutOptions[0];
 
+   // Preselect resource settings service unit
+   $scope.mobileServiceUnit = $scope.resourceServiceUnits[0];
+
+
+   // Resource settings service
+   // Calculate next service
+   $scope.nextServiceCalc = function () {
+      let lastService = new Date($scope.mobileServiceLastService);
+      let serviceInterval = $scope.mobileServiceInterval;
+      let serviceIntervalUnit = $scope.mobileServiceUnit;
+
+      if ($scope.mobileServiceInterval !== undefined && $scope.mobileServiceUnit !== undefined) {
+         // If unit is days
+         if (serviceIntervalUnit.id == 1) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.mobileNextService = nextService;
+         }
+         // If unit is weeks
+         if (serviceIntervalUnit.id == 2) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.mobileNextService = nextService;
+         }
+         // If unit is months
+         if (serviceIntervalUnit.id == 3) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.mobileNextService = nextService;
+         }
+         // If unit is years
+         if (serviceIntervalUnit.id == 4) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
+            $scope.mobileNextService = nextService;
+         }
+      }else{
+         $scope.mobileNextService = '';
+      }
+
+   };
+
 
    // Resource settings checklist
    $scope.todoList = [];
-   
+
    let id = 1;
-   
+
    $scope.todoAdd = function () {
       $scope.todoList.push({id: id, todoText: $scope.todoInput});
       $scope.todoInput = "";
