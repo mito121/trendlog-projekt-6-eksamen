@@ -36,6 +36,9 @@
         <!-- Angularjs route -->
         <script src="assets/js/route.js"></script>
 
+        <!-- Angular UI sortable -->
+        <script src="assets/js/angular-sortable.js" type="text/javascript"></script>
+
         <!-- Angularjs Pagination -->
         <script src="assets/js/dirPagination.js" type="text/javascript"></script>
 
@@ -300,7 +303,7 @@
                                                 <option>Washer</option>
                                             </select>
                                             <div class="green-btn">
-                                              <img src="" alt="">
+                                                <img src="" alt="">
                                             </div>
                                         </div>
                                         <label for="step-1-description" class="add-new-text">Description:</label>
@@ -638,38 +641,77 @@
                                     </div>
                                 </div>
 
-                                <div class="mobile-settings-row">
-                                    <!-- Preventive -->
-                                    <div ng-show="type === 1">
-                                        <div class="mobile-settings-row">
-                                            <label for="settings-resource-ls">Last service</label>
-                                            <input type="text" id="settings-resource-ls" ng-model="mobileServiceLastService" ng-change="nextServiceCalc()">
-                                        </div>
+                                <!-- Preventive -->
+                                <div ng-show="type === 1">
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-ls">Last service</label>
+                                        <input type="text" id="settings-resource-ls" ng-model="mobileServiceLastService" ng-change="nextServiceCalc()">
+                                    </div>
 
-                                        <div class="mobile-settings-row flex flex-b">
-                                            <div>
-                                                <label for="settings-resource-interval">Service interval</label>
-                                                <input type="number" id="settings-resource-interval" ng-change="nextServiceCalc()" ng-model="mobileServiceInterval">
-                                            </div>
-                                            <div class="w50">
-                                                <label for="settings-resource-interval-unit">Unit</label>
-                                                <select id="settings-resource-interval-unit" ng-change="nextServiceCalc()" ng-model="mobileServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
-                                                </select>
-                                            </div>
+                                    <div class="mobile-settings-row flex flex-b">
+                                        <div>
+                                            <label for="settings-resource-interval">Service interval</label>
+                                            <input type="number" id="settings-resource-interval" ng-change="nextServiceCalc()" ng-model="mobileServiceInterval">
                                         </div>
-
-                                        <div class="mobile-settings-row">
-                                            <label for="settings-resource-ns">Next service</label>
-                                            <input type="text" disabled id="settings-resource-ns" value="{{mobileNextService | date:'MM/dd/yyyy'}}">
+                                        <div class="w50">
+                                            <label for="settings-resource-interval-unit">Unit</label>
+                                            <select id="settings-resource-interval-unit" ng-change="nextServiceCalc()" ng-model="mobileServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
+                                            </select>
                                         </div>
                                     </div>
 
-                                    <!-- Predictive -->
-                                    <div ng-show="type === 2">
-                                        tab 2
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-ns">Next service</label>
+                                        <input type="text" disabled id="settings-resource-ns" value="{{mobileNextService | date:'MM/dd/yyyy'}}">
                                     </div>
                                 </div>
 
+                                <!-- Predictive -->
+                                <div ng-show="type === 2">
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-source">Source</label>
+                                        <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
+                                    </div>
+
+                                    <div class="mobile-settings-row flex flex-b">
+                                        <div>
+                                            <label for="settings-resource-start-value">Start value</label>
+                                            <input type="text" disabled id="settings-resource-start-value">
+                                        </div>
+
+                                        <div>
+                                            <label for="settings-resource-internal-value">Internal value</label>
+                                            <input type="text" id="settings-resource-internal-value">
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-time-range">Time range</label>
+                                        <select id="settings-resource-time-range">
+                                            <option>1 Week</option>
+                                            <option>1 Month</option>
+                                            <option>1 Year</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-max-internal">Max internal days</label>
+                                        <input type="text" id="settings-resource-max-internal">
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-pred-ns">Next service calculated to be</label>
+                                        <input type="text" id="settings-resource-pred-ns" disabled>
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <label for="settings-resource-valcalc">Value calculated to be</label>
+                                        <input type="text" id="settings-resource-valcalc" disabled>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
                                 <div class="mobile-settings-row">
                                     <div class="mobile-settings-head-row">
                                         <h3>Checklist</h3>
@@ -678,14 +720,36 @@
 
                                     <div class="mobile-settings-row">
                                         <p>To do's</p>
-                                        <div class="mobile-settings-todolist">
-                                            <div class="todoItem" ng-repeat="x in todoList">{{x.id}} {{x.todoText}}</div>
+                                        <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="todoList">
+                                            <div class="todoItem" ng-repeat="x in todoList">{{x.todoText}}</div>
                                             <form ng-submit="todoAdd()" class="addTodo">
                                                 <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
                                                 <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
                                             </form>
                                         </div>
                                     </div>
+
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="mobile-settings-row">
+                                    <div class="mobile-settings-head-row">
+                                        <h3>Attachment</h3>
+                                        <span>Part 4 of 5</span>
+                                    </div>
+
+                                    <div class="mobile-settings-row">
+                                        <p>Attachments</p>
+                                        <div class="mobile-settings-todolist">
+
+                                            <label class="file-upload">
+                                                <input type="file" class="green-btn add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span>
+                                            </label>
+                                            
+                                        </div>
+                                    </div>
+
                                 </div>
                             </section>
                         </div>
@@ -696,11 +760,5 @@
         </main>
         <!-- footer -->
         <footer></footer>
-
-        <script>
-            $(function () {
-               $("#settings-resource-ls").datepicker();
-            });
-        </script>
     </body>
 </html>
