@@ -353,6 +353,18 @@ input[type=number] {
 .file-upload:hover{
     cursor:pointer;
 }
+.file-upload-attach input[type=file]{
+    display:none;
+}
+.file-upload-attach span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.file-upload-attach:hover{
+    cursor:pointer;
+}
+
 select{
     margin:4px 0;
     width: auto;
@@ -1370,17 +1382,28 @@ aside ul li:hover{
     .add-attach{
         border:1px solid transparent;
         width:auto;
-        font-size:1.1em;
-        padding-right:9px;
-    }
-
-    .add-attach svg{
-        margin-top: -2px !important;
+        font-size:.8em;
+        border-radius:4px;
+        padding:4px 9px 4px 4px;
+        margin-top: 3px;
+        background-color:#01CC01;
+        display: inline-flex;
+        color:white;
     }
 
     button span {
         font-size: 33px;
         margin-top: -12px !important;
+    }
+
+    #apply-settings{
+        background-color:#007BFF;
+        display:block;
+        margin:25px auto;
+        color:white;
+        border:1px solid #007BFF;
+        border-radius:4px;
+        padding:8px 12px;
     }
 
 

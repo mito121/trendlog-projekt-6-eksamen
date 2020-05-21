@@ -10,7 +10,7 @@ $('#filter-menu-btn').click(function () {
    if (open == false) {
       $('.filter-menu-overlay').css("display", "block");
       let open = true;
-   }else{
+   } else {
       $('.filter-menu-overlay').css("display", "none");
       let open = false;
    }
@@ -80,6 +80,25 @@ $(document).ready(function () {
          $(this).parent().children("span:nth-child(3)").html('No file selected');
       }
    });
+
+
+   // Add attachment
+   var attachmentList = "";
+   $('.file-upload-attach').children("input").bind('change', function () {
+      var fileName = '';
+      fileName = $(this).val().split("\\").slice(-1)[0];
+
+      if(fileName.length > 0){
+               attachmentList += "<div class='todoItem'>" + fileName + "</div>";
+
+      // Output attachment list to html
+      $('#uploaded-attachments').html(attachmentList);
+      }
+
+
+   });
+
+
 
 });
 

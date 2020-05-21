@@ -209,6 +209,7 @@ app.controller("mainCtrl", function ($scope, $http) {
    };
 
 
+
 //   $scope.sortableOptions = {
 //      update: function (e, ui) {
 //         var logEntry = tmpList.map(function (i) {
