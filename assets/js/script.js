@@ -9,7 +9,6 @@ let open = false;
 $('#filter-menu-btn').click(function () {
    if (open == false) {
       $('.filter-menu-overlay').css("display", "block");
-      $('.filter-menu').css("left", "0");
       let open = true;
    }else{
       $('.filter-menu-overlay').css("display", "none");
@@ -30,6 +29,33 @@ $('#closeFilterMenu').click(function (e) {
    $('.filter-menu-overlay').css("display", "none");
    let open = false;
 });
+
+// Open mobile add new menu
+let alsoOpen = false;
+$('#add-new-menu-btn').click(function () {
+   if (alsoOpen == false) {
+      $('.add-new-menu-overlay').css("display", "block");
+      let alsoOpen = true;
+   }else{
+      $('.add-new-menu-overlay').css("display", "none");
+      let alsoOpen = false;
+   }
+});
+
+// Close mobile add new menu on overlay click
+$('.add-new-menu-overlay').click(function (e) {
+   e.stopPropagation();
+   $('.add-new-menu-overlay').css("display", "none");
+   let alsoOpen = false;
+});
+
+// Close mobile add new menu on X click
+$('.add-new-close-btn').click(function (e) {
+   e.stopPropagation();
+   $('.add-new-menu-overlay').css("display", "none");
+   let alsoOpen = false;
+});
+
 
 
 

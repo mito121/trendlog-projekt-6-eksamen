@@ -694,8 +694,18 @@ aside ul li:hover{
     }
 }
 
+/* Add new menu slide animation */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .add-new-menu-overlay{
-    display:none;
+    display: none;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -705,12 +715,25 @@ aside ul li:hover{
 }
 
 .add-new-menu{
-    width: 70%;
+    width: 100%;
     height: 100vh;
     padding-top: 50px;
     background-color: #fff;
-    position: relative;
-    left: 30.5%;
+}
+
+.wrapper{
+  position: relative;
+  left: 30.5%;
+  width: 70%;
+  animation: 250ms ease-in-out slideInFromRight;
+}
+
+.add-new-close-btn{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 17px;
+  top: 63px;
 }
 
 .heading-container{
@@ -1343,18 +1366,18 @@ aside ul li:hover{
         outline: 0;
         font-size:33px;
     }
-    
+
     .add-attach{
         border:1px solid transparent;
         width:auto;
         font-size:1.1em;
         padding-right:9px;
     }
-    
+
     .add-attach svg{
         margin-top: -2px !important;
     }
-    
+
     button span {
         font-size: 33px;
         margin-top: -12px !important;

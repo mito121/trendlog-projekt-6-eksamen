@@ -196,7 +196,7 @@
                                     <div class="green-btn"><img src="assets/icons/filter-icon.svg" alt="Filter search"/></div>
                                 </div>
 
-                                <div class="flex align">
+                                <div class="flex align" id="add-new-menu-btn">
                                     <span>Add new</span>
                                     <div class="green-btn green-btn-hacks"><img src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div>
                                 </div>
@@ -283,6 +283,8 @@
                         <!-- Add new menu -->
                         <!-- details -->
                         <div class="add-new-menu-overlay" ng-init="step = 1">
+                          <div onclick="doNothing(event)" class="wrapper">
+                            <img class="add-new-close-btn" src="assets/icons/close-icon.svg" alt="Close">
                             <div ng-show="step === 1" id="step-1" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
@@ -397,6 +399,43 @@
                                             <button ng-click="step = '2b'">Preventive</button>
                                             <button class="on" ng-click="step = '2c'">Predictive</button>
                                         </div>
+                                        <label for="">Source</label>
+                                        <div class="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMkigLigePåDetHerIgenLolMMMMMMMMMMM">
+                                          <input type="text" disabled id="step-2c-src">
+                                          <div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div>
+                                        </div>
+
+<!-- <div class="mobile-settings-row flex flex-b">
+    <div>
+        <label for="settings-resource-start-value">Start value</label>
+        <input type="text" disabled id="settings-resource-start-value">
+    </div>
+
+    <div>
+        <label for="settings-resource-internal-value">Internal value</label>
+        <input type="text" id="settings-resource-internal-value">
+    </div>
+</div>
+
+<div class="mobile-settings-row">
+    <label for="settings-resource-time-range">Time range</label>
+    <select id="settings-resource-time-range">
+        <option>1 Week</option>
+        <option>1 Month</option>
+        <option>1 Year</option>
+    </select>
+</div>
+
+<div class="mobile-settings-row">
+    <label for="settings-resource-max-internal">Max internal days</label>
+    <input type="text" id="settings-resource-max-internal">
+</div>
+
+<div class="mobile-settings-row">
+    <label for="settings-resource-pred-ns">Next service calculated to be</label>
+    <input type="text" id="settings-resource-pred-ns" disabled>
+</div> -->
+
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
                                             <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
@@ -465,6 +504,7 @@
                                     </div>
                                 </div>
                             </div>
+                          </div>
                         </div>
 
                         <!-- == Resource lists == -->
@@ -774,7 +814,7 @@
                                             <label class="file-upload">
                                                 <input type="file" class="green-btn add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span>
                                             </label>
-                                            
+
                                         </div>
                                     </div>
 
