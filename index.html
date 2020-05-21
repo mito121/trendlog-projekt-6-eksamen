@@ -300,7 +300,7 @@
                                                 <option>Washer</option>
                                             </select>
                                             <div class="green-btn">
-                                              <img src="" alt="">
+                                                <img src="" alt="">
                                             </div>
                                         </div>
                                         <label for="step-1-description" class="add-new-text">Description:</label>
@@ -325,6 +325,11 @@
                                         <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
+                                        <p>Type:</p>
+                                        <div class="add-new-service-select">
+                                            <button ng-click="step = '2b'">Preventive</button>
+                                            <button ng-click="step = '2c'">Predictive</button>
+                                        </div>
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
@@ -345,7 +350,26 @@
                                         <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
-
+                                        <p>Type:</p>
+                                        <div class="add-new-service-select">
+                                            <button class="on" ng-click="step = '2b'">Preventive</button>
+                                            <button ng-click="step = '2c'">Predictive</button>
+                                        </div>
+                                        <label for="step-2b-ls w50">Last service:</label>
+                                        <input type="text" id="step-2b-ls" ng-model="addNew2bLastService" ng-change="addNewNextServiceCalc()">
+                                        <div class="flex flex-b">
+                                          <div class="ole">
+                                            <label for="step-2b-si">Service interval:</label>
+                                            <input type="number" id="step-2b-si" ng-change="addNewNextServiceCalc()" ng-model="addNewServiceInterval">
+                                          </div>
+                                          <div class="henning">
+                                            <label for="step-2b-iu">Unit:</label>
+                                            <select id="step-2b-iu" ng-change="addNewNextServiceCalc()" ng-model="addNewServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <label for="step-2b-ns">Next service:</label>
+                                        <input type="text" disabled id="step-2b-ns" value="{{addNewNextService | date:'MM/dd/yyyy'}}">
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
                                             <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
@@ -361,11 +385,15 @@
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Serice</h3>
+                                        <h3>Service</h3>
                                         <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
-
+                                        <p>Type:</p>
+                                        <div class="add-new-service-select">
+                                            <button ng-click="step = '2b'">Preventive</button>
+                                            <button class="on" ng-click="step = '2c'">Predictive</button>
+                                        </div>
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
                                             <a href="#" class="add-new-button" ng-click="step = 1">Back</a>

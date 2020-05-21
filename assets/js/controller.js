@@ -147,7 +147,45 @@ app.controller("mainCtrl", function ($scope, $http) {
          $scope.mobileNextService = '';
       }
 
-   };
+    };
+
+      // Add new calculate next service
+
+      $(function () {
+        $("#step-2b-ls").datepicker();
+      });
+
+      $scope.addNewNextServiceCalc = function () {
+         let lastService = new Date($scope.addNew2bLastService);
+         let serviceInterval = $scope.addNewServiceInterval;
+         let serviceIntervalUnit = $scope.addNewServiceUnit;
+
+         if ($scope.addNewServiceInterval !== undefined && $scope.addNewServiceUnit !== undefined) {
+            // If unit is days
+            if (serviceIntervalUnit.id == 1) {
+               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+               $scope.addNewNextService = nextService;
+            }
+            // If unit is weeks
+            if (serviceIntervalUnit.id == 2) {
+               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+               $scope.addNewNextService = nextService;
+            }
+            // If unit is months
+            if (serviceIntervalUnit.id == 3) {
+               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+               $scope.addNewNextService = nextService;
+            }
+            // If unit is years
+            if (serviceIntervalUnit.id == 4) {
+               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
+               $scope.addNewNextService = nextService;
+            }
+         }else{
+            $scope.addNewNextService = '';
+         }
+
+       };
 
 
    // Resource settings checklist
