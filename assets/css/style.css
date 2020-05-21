@@ -314,21 +314,21 @@ input[type=submit]{
     float:right;
 }
 textarea{
-        width:100%;
-        margin: 4px 0;
-        display: block;
-        vertical-align: middle;
-        padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.42857143;
-        color: #555;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        font-family: 'Titillium Web', sans-serif;
-    }
+    width:100%;
+    margin: 4px 0;
+    display: block;
+    vertical-align: middle;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    font-family: 'Titillium Web', sans-serif;
+}
 /* hide arrows from input type=number */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -546,6 +546,7 @@ aside ul li:hover{
 .module-tabs a{
     font-weight:400;
     font-size:15px;
+    border:1px solid transparent;
     margin: 4px 10px 0px -8px;
     padding:10px 15px;
     padding-bottom:6px;
@@ -555,8 +556,8 @@ aside ul li:hover{
 .activeTab{
     color:black;
     background-color:white;
-    border:1px solid #eee;
-    border-bottom:0;
+    border:1px solid #eee !important;
+    border-bottom:0 !important;
 }
 
 /* Resource filter menu */
@@ -694,7 +695,7 @@ aside ul li:hover{
 }
 
 .add-new-menu-overlay{
-    /*display:none;*/
+    display:none;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -820,7 +821,7 @@ aside ul li:hover{
 }
 
 #step-1-group{
-  width: 82%;
+    width: 82%;
 }
 
 #step-2b-iu{
@@ -828,17 +829,17 @@ aside ul li:hover{
 }
 
 .add-new-menu-overlay .green-btn{
-  height: 34px;
-  width: 34px;
-  margin-left: 0px;
+    height: 34px;
+    width: 34px;
+    margin-left: 0px;
 }
 
 .add-new-menu-overlay input{
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .select-w-btn{
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* Mobilshit */
@@ -1279,6 +1280,33 @@ aside ul li:hover{
         color:white;
     }
 
+    .settings-source-input{
+        display:flex;
+    }
+
+    .settings-source-input input{
+        width:85%;
+        border-radius:4px 0px 0px 4px;
+    }
+
+    .settings-source-input div{
+        width:15%;
+        height:33.5px;
+        margin:4px 0;
+        background-color:#fff;
+        border-radius:0px 4px 4px 0px;
+        border-top:1px solid #ced4da;
+        border-right:1px solid #ced4da;
+        border-bottom:1px solid #ced4da;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .settings-source-input div img{
+        height:21px;
+    }
+
     .mobile-settings-todolist{
         width:100%;
         background-color:#F0F0F0;
@@ -1315,11 +1343,23 @@ aside ul li:hover{
         outline: 0;
         font-size:33px;
     }
-
+    
+    .add-attach{
+        border:1px solid transparent;
+        width:auto;
+        font-size:1.1em;
+        padding-right:9px;
+    }
+    
+    .add-attach svg{
+        margin-top: -2px !important;
+    }
+    
     button span {
         font-size: 33px;
         margin-top: -12px !important;
     }
+
 
 
 }

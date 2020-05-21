@@ -117,6 +117,10 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    // Resource settings service
    // Calculate next service
+   $(function () {
+      $("#settings-resource-ls").datepicker();
+   });
+
    $scope.nextServiceCalc = function () {
       let lastService = new Date($scope.mobileServiceLastService);
       let serviceInterval = $scope.mobileServiceInterval;
@@ -143,7 +147,7 @@ app.controller("mainCtrl", function ($scope, $http) {
             var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
             $scope.mobileNextService = nextService;
          }
-      }else{
+      } else {
          $scope.mobileNextService = '';
       }
 
@@ -191,22 +195,34 @@ app.controller("mainCtrl", function ($scope, $http) {
    // Resource settings checklist
    $scope.todoList = [];
 
-   let id = 1;
+   let todoIndex = 0;
 
    $scope.todoAdd = function () {
-      $scope.todoList.push({id: id, todoText: $scope.todoInput});
+      $scope.todoList.push({i: todoIndex, todoText: $scope.todoInput});
       $scope.todoInput = "";
       document.getElementById("todoInput").focus();
-      id++;
+      todoIndex++;
    };
 
-   $scope.remove = function () {
-      var oldList = $scope.todoList;
-      $scope.todoList = [];
-      angular.forEach(oldList, function (x) {
-         if (!x.done)
-            $scope.todoList.push(x);
-      });
+   $scope.removeTodo = function (i) {
+      $scope.todoList = $scope.todoList.splice(i, 1);
    };
+
+
+//   $scope.sortableOptions = {
+//      update: function (e, ui) {
+//         var logEntry = tmpList.map(function (i) {
+//            return i.value;
+//         }).join(', ');
+//         $scope.sortingLog.push('Update: ' + logEntry);
+//      },
+//      stop: function (e, ui) {
+//         // this callback has the changed model
+//         var logEntry = tmpList.map(function (i) {
+//            return i.value;
+//         }).join(', ');
+//         $scope.sortingLog.push('Stop: ' + logEntry);
+//      }
+//   };
 
 });

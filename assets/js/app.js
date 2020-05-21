@@ -1,5 +1,5 @@
 //Angular application
-var app = angular.module("trendlog_app", ['ngRoute', 'angularUtils.directives.dirPagination']);
+var app = angular.module("trendlog_app", ['ngRoute', 'angularUtils.directives.dirPagination', 'ui.sortable']);
 
 //app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 //    $routeProvider
