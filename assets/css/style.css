@@ -129,7 +129,7 @@ h4{
     background-color:#01CC01;
     color:white;
     height:30px;
-    width:33px;
+    width:30px;
     margin:0 0 0 13px;
     padding:4px;
     border-radius:4px;
@@ -673,7 +673,7 @@ aside ul li:hover{
 }
 
 .add-new-menu-overlay{
-    display:none;
+    /*display:none;*/
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -716,11 +716,12 @@ aside ul li:hover{
 }
 
 .add-new-main h3{
-    font-size: 30px;
+    font-size: 25px;
     margin: 0;
     padding: 0;
+    padding-top: 2px;
     color: #222;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .add-new-main p{
@@ -750,6 +751,24 @@ aside ul li:hover{
 
 .add-new-button{
     padding: 10px;
+}
+
+#step-1-group{
+  width: 82%;
+}
+
+.add-new-menu-overlay .green-btn{
+  height: 34px;
+  width: 34px;
+  margin-left: 0px;
+}
+
+.add-new-menu-overlay input{
+  margin-bottom: 15px;
+}
+
+.select-w-btn{
+  margin-bottom: 10px;
 }
 
 /* Mobilshit */

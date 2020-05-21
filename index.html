@@ -288,18 +288,19 @@
                                     <div class="add-new-content">
                                         <label for="step-1-name" class="add-new-text">Name:</label>
                                         <input id="step-1-name" placeholder="Text here..." type="text">
-                                        <label for="step-1-group" class="add-new-text">Name:</label>
-                                        <div class="flex">
+                                        <label for="step-1-group" class="add-new-text">Group:</label>
+                                        <div class="flex flex-b select-w-btn">
                                             <select id="step-1-group">
                                                 <option>Machine</option>
                                                 <option>Cars</option>
                                                 <option>Washer</option>
                                             </select>
-                                            <img src="" alt="">
+                                            <div class="green-btn">
+                                              <img src="" alt="">
+                                            </div>
                                         </div>
-                                        <label for="step-1-name" class="add-new-text">Name:</label>
-                                        <input id="step-1-name" placeholder="Text here..." type="text">
-
+                                        <label for="step-1-description" class="add-new-text">Description:</label>
+                                        <textarea id="step-1-description" placeholder="Text here..."></textarea>
 
                                         <div class="add-new-buttons flex flex-b">
                                             <a href="#" class="add-new-button">Cancel</a>
@@ -310,13 +311,13 @@
                                 </div>
                             </div>
                             <!-- Service none selected -->
-                            <div ng-show="step == '2a'" id="step-2-a" class="add-new-menu">
+                            <div ng-show="step == '2a'" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
+                                        <h3>Service</h3>
                                         <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
@@ -330,14 +331,14 @@
                                 </div>
                             </div>
                             <!-- Service preventive -->
-                            <div ng-show="step === '2b'" id="step-2-b" class="add-new-menu">
+                            <div ng-show="step === '2b'" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <h3>Service</h3>
+                                        <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
@@ -350,14 +351,14 @@
                                 </div>
                             </div>
                             <!-- Service predictive -->
-                            <div ng-show="step === '2c'" id="step-2-c" class="add-new-menu">
+                            <div ng-show="step === '2c'" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <h3>Serice</h3>
+                                        <p>Step 2 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
@@ -370,60 +371,60 @@
                                 </div>
                             </div>
                             <!-- Checklist -->
-                            <div ng-show="step === 3" id="step-3" class="add-new-menu">
+                            <div ng-show="step === 3" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <h3>Checklist</h3>
+                                        <p>Step 3 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = '2a'">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 4">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Attachments -->
-                            <div ng-show="step === 4" id="step-4" class="add-new-menu">
+                            <div ng-show="step === 4" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <h3>Attachments</h3>
+                                        <p>Step 4 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
                                         <div class=" add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
-                                            <a href="#" class="add-new-button">Next</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 3">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 5">Next</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Notify -->
-                            <div ng-show="step === 5" id="step-5" class="add-new-menu">
+                            <div ng-show="step === 5" class="add-new-menu">
                                 <div class="heading-container flex">
                                     <h2>New resource</h2>
                                 </div>
                                 <div class="add-new-main">
                                     <div class="flex-b">
-                                        <h3>Details</h3>
-                                        <p>Step 1 of 5</p>
+                                        <h3>Notify me</h3>
+                                        <p>Step 5 of 5</p>
                                     </div>
                                     <div class="add-new-content">
 
                                         <div class="add-new-buttons flex flex-a">
                                             <a href="#" class="add-new-button">Cancel</a>
-                                            <a href="#" class="add-new-button">Back</a>
+                                            <a href="#" class="add-new-button" ng-click="step = 4">Back</a>
                                             <a href="#" class="add-new-button">Next</a>
                                         </div>
                                     </div>
