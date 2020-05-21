@@ -26,6 +26,10 @@
             integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
         crossorigin="anonymous"></script>
 
+        <!-- Moment.js -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
         <!-- Angularjs -->
         <script src="assets/js/angular.js"></script>
 
@@ -166,7 +170,7 @@
                 </aside>
 
                 <div class="module">
-                    <div class="module-tabs" ng-init="tab = 1">
+                    <div class="module-tabs" ng-init="tab = 3">
                         <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
                         <a href ng-show="tab > 1" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
                         <a href ng-show="tab > 1" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
@@ -594,7 +598,7 @@
                         <div id="mobile-settings-container">
                             <section>
                                 <div class="mobile-settings-head-row">
-                                    <h1>Details</h1>
+                                    <h3>Details</h3>
                                     <span>Part 1 of 5</span>
                                 </div>
 
@@ -623,7 +627,7 @@
 
                             <section>
                                 <div class="mobile-settings-head-row">
-                                    <h1>Service</h1>
+                                    <h3>Service</h3>
                                     <span>Part 2 of 5</span>
                                 </div>
 
@@ -639,28 +643,24 @@
                                     <div ng-show="type === 1">
                                         <div class="mobile-settings-row">
                                             <label for="settings-resource-ls">Last service</label>
-                                            <input type="text" id="settings-resource-ls">
+                                            <input type="text" id="settings-resource-ls" ng-model="mobileServiceLastService" ng-change="nextServiceCalc()">
                                         </div>
 
                                         <div class="mobile-settings-row flex flex-b">
                                             <div>
                                                 <label for="settings-resource-interval">Service interval</label>
-                                                <input type="number" id="settings-resource-interval">
+                                                <input type="number" id="settings-resource-interval" ng-change="nextServiceCalc()" ng-model="mobileServiceInterval">
                                             </div>
                                             <div class="w50">
                                                 <label for="settings-resource-interval-unit">Unit</label>
-                                                <select id="settings-resource-interval-unit">
-                                                    <option>Days</option>
-                                                    <option>Weeks</option>
-                                                    <option>Months</option>
-                                                    <option>Years</option>
+                                                <select id="settings-resource-interval-unit" ng-change="nextServiceCalc()" ng-model="mobileServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="mobile-settings-row">
                                             <label for="settings-resource-ns">Next service</label>
-                                            <input type="text" disabled id="settings-resource-ns">
+                                            <input type="text" disabled id="settings-resource-ns" value="{{mobileNextService | date:'MM/dd/yyyy'}}">
                                         </div>
                                     </div>
 
@@ -672,7 +672,7 @@
 
                                 <div class="mobile-settings-row">
                                     <div class="mobile-settings-head-row">
-                                        <h1>Checklist</h1>
+                                        <h3>Checklist</h3>
                                         <span>Part 3 of 5</span>
                                     </div>
 
