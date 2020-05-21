@@ -73,6 +73,11 @@ h3{
 h4{
     font-size:20px;
 }
+
+button{
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .w33{
     width:33.333%;
 }
@@ -754,6 +759,13 @@ aside ul li:hover{
 }
 
 .add-new-main p{
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+.add-new-main .flex-b p{
     font-size: 18px;
     margin: 0;
     padding: 0;
@@ -782,8 +794,50 @@ aside ul li:hover{
     padding: 10px;
 }
 
+.add-new-service-select{
+    text-align:center;
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
+.add-new-service-select button{
+    background-color: #fff;
+    outline:none;
+    box-shadow: none;
+    width:50%;
+    padding:6px 0;
+    border:1px solid #d3d3d3;
+}
+
+.add-new-service-select button:first-child{
+    border-radius:5px 0 0 5px;
+}
+
+.add-new-service-select button:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+.ole{
+  width: 47%;
+}
+
+.henning{
+  margin-bottom: 9px;
+  width: 47%;
+}
+
+.on{
+  background-color: #007bff !important;
+  color: #fff;
+}
+
 #step-1-group{
     width: 82%;
+}
+
+#step-2b-iu{
+  width: 100%;
 }
 
 .add-new-menu-overlay .green-btn{
