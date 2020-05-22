@@ -914,7 +914,6 @@ aside ul li:hover{
 .cog-box{
   margin: 4px 0 15px 0;
   border: solid 1px #d3d3d3;
-  border right: none;
   height: 33.5px;
   width: 15%;
   border-radius: 0 .25rem .25rem 0;
