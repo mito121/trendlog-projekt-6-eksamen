@@ -460,7 +460,7 @@
                                                     <label for="settings-resource-max-internal">Max internal days</label>
                                                     <input type="text" id="settings-resource-max-internal">
                                                 </div>
-                                                
+
                                                 <div class="mobile-settings-row">
                                                     <label for="settings-resource-pred-ns">Next service calculated to be</label>
                                                     <input type="text" id="settings-resource-pred-ns" disabled>
@@ -607,7 +607,7 @@
                                         <div class="horizontal-seperator"></div>
                                     </div>
                                     <div class="bottom-links">
-                                        <div class="logo-text-box">
+                                        <div class="logo-text-box delete-resource">
                                             <img src="assets/icons/delete-icon.svg" alt="Delete icon">
                                             <div class="bottom-link"><a>Delete</a></div>
                                         </div>
@@ -903,5 +903,30 @@
     </main>
     <!-- footer -->
     <footer></footer>
+
+    <!-- POPUP MODAL HEJSERI -->
+    <button id="deleteBtn">Delete</button>
+
+    <!-- selve modal -->
+    <div id="deleteModal" class="modal">
+
+      <!-- Modal indhold -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h2modal">Delete resource</h2>
+        </div>
+        <div class="modal-body">
+          <p class="pmodal">Deleting this resource is irreversible.</p>
+          <p class="pmodal">Are you sure?</p>
+        </div>
+        <div class="modal-footer">
+          <span class="close">Cancel</span>
+          <div id="streg"></div>
+          <p id="redp">Delete</p>
+        </div>
+      </div>
+
+    </div>
+
 </body>
 </html>
