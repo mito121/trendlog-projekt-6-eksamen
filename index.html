@@ -623,7 +623,7 @@
                         <!-- == Mobile calendar view == -->
                         <div id="mobile-calendar-view" ng-cloak ng-show="mobileView === 2">
                             <div class="mobile-calendar-head">
-                                <img src="assets/icons/close-icon.svg" alt="Close calendar">
+                                <img src="assets/icons/altcalender-icon.svg" alt="Show alternative calendar">
                                 <img ng-click="mobileView = 1" src="assets/icons/close-icon.svg" alt="Close calendar">
                             </div>
 
@@ -852,7 +852,7 @@
                                     <div class="todoItem" ng-repeat="x in todoList">{{x.todoText}}</div>
                                     <form ng-submit="todoAdd()" class="addTodo">
                                         <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
-                                        <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
+                                        <button type="submit" class="green-btn">Add</button>
                                     </form>
                                 </div>
                             </div>
@@ -865,7 +865,7 @@
                             </div>
 
                             <div class="mobile-settings-row">
-                                <p>Attachments</p>
+                                <p>Items</p>
                                 <div class="mobile-settings-todolist">
                                     <div id="uploaded-attachments"></div>
                                     <label class="file-upload-attach">
