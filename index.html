@@ -573,12 +573,12 @@
                                         <div class="horizontal-seperator"></div>
                                     </div>
                                     <div class="bottom-links">
-                                        <div class="logo-text-box">
+                                        <div class="logo-text-box" onclick="triggerDeleteModal()">
                                             <img src="assets/icons/delete-icon.svg" alt="Delete icon">
                                             <div class="bottom-link"><a>Delete</a></div>
                                         </div>
                                         <div class="vertical-seperator"></div>
-                                        <div class="logo-text-box">
+                                        <div class="logo-text-box" onclick="triggerCopyModal()">
                                             <div class="bottom-link"><a>Copy</a></div>
                                             <img src="assets/icons/copy-icon.svg" alt="Copy icon">
                                         </div>
@@ -589,7 +589,7 @@
                         <!-- == Mobile calendar view == -->
                         <div id="mobile-calendar-view" ng-cloak ng-show="mobileView === 2">
                             <div class="mobile-calendar-head">
-                                <img src="assets/icons/close-icon.svg" alt="Close calendar">
+                                <img src="assets/icons/altcalender-icon.svg" alt="Show alternative calendar">
                                 <img ng-click="mobileView = 1" src="assets/icons/close-icon.svg" alt="Close calendar">
                             </div>
 
@@ -606,7 +606,6 @@
 
                             <table class="mobile-calendar-table">
                                 <tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr>
-
                                 <tr><td>1</td><td>2</td><td class="calendar-expired">3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
                                 <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
                                 <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
@@ -819,7 +818,7 @@
                                     <div class="todoItem" ng-repeat="x in todoList">{{x.todoText}}</div>
                                     <form ng-submit="todoAdd()" class="addTodo">
                                         <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
-                                        <button type="submit" class="green-btn green-btn-hacks"><span>+</span></button>
+                                        <button type="submit" class="green-btn">Add</button>
                                     </form>
                                 </div>
                             </div>
@@ -832,7 +831,7 @@
                             </div>
 
                             <div class="mobile-settings-row">
-                                <p>Attachments</p>
+                                <p>Items</p>
                                 <div class="mobile-settings-todolist">
                                     <div id="uploaded-attachments"></div>
                                     <label class="file-upload-attach">
@@ -869,5 +868,47 @@
     </main>
     <!-- footer -->
     <footer></footer>
+
+    <!-- POPUP MODAL HEJSERI -->
+    <!-- selve modal -->
+    <div id="deleteModal" class="modal">
+
+      <!-- Modal indhold -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h2modal">Delete resource</h2>
+        </div>
+        <div class="modal-body">
+          <p class="pmodal">Deleting this resource is irreversible.</p>
+          <p class="pmodal">Are you sure?</p>
+        </div>
+        <div class="modal-footer">
+          <span class="close" onclick="closeModals()">Cancel</span>
+          <div id="streg"></div>
+          <p id="redp">Delete</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- selve modal -->
+    <div id="copyModal" class="modal">
+
+      <!-- Modal indhold -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h2modal">Copy resource</h2>
+        </div>
+        <div class="modal-body">
+          <label for="copy-resource" class="add-new-text">New resource name:</label>
+          <input type="text" value="Copy of Rødbederenser">
+
+        </div>
+        <div class="modal-footer">
+          <span class="close" onclick="closeModals()">Cancel</span>
+          <div id="streg"></div>
+          <p id="bluep">Create</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
