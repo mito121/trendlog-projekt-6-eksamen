@@ -42,8 +42,44 @@ app.controller("mainCtrl", function ($scope, $http) {
          }, 250);
       }, 450);
       clearTimeout();
-
    };
+
+
+   // Open mobile filter menu
+   let open = false;
+   $('#filter-menu-btn').click(function () {
+      if (open == false) {
+         $('.filter-menu-overlay').css("display", "block");
+         let open = true;
+      } else {
+         $('.filter-menu-overlay').css("display", "none");
+         let open = false;
+      }
+   });
+
+   // Close mobile filter menu on overlay click
+   $('.filter-menu-overlay').click(function (e) {
+      e.stopPropagation();
+      $('.filter-menu-overlay').css("display", "none");
+      let open = false;
+   });
+
+   // Close mobile filter menu on X click
+   $('#closeFilterMenu').click(function (e) {
+      e.stopPropagation();
+      $('.filter-menu-overlay').css("display", "none");
+      let open = false;
+   });
+
+
+   // Toggle mobile calendar view
+   $scope.calendarView = function () {
+      $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $scope.mobileView = 2;
+      $('.filter-menu-overlay').css("display", "none");
+      let open = false;
+   };
+
 
    // Go to history tab
    $scope.historyTab = function () {
@@ -153,45 +189,45 @@ app.controller("mainCtrl", function ($scope, $http) {
          $scope.mobileNextService = '';
       }
 
-    };
+   };
 
-      // Add new calculate next service
+   // Add new calculate next service
 
-      $(function () {
-        $("#step-2b-ls").datepicker();
-      });
+   $(function () {
+      $("#step-2b-ls").datepicker();
+   });
 
-      $scope.addNewNextServiceCalc = function () {
-         let lastService = new Date($scope.addNew2bLastService);
-         let serviceInterval = $scope.addNewServiceInterval;
-         let serviceIntervalUnit = $scope.addNewServiceUnit;
+   $scope.addNewNextServiceCalc = function () {
+      let lastService = new Date($scope.addNew2bLastService);
+      let serviceInterval = $scope.addNewServiceInterval;
+      let serviceIntervalUnit = $scope.addNewServiceUnit;
 
-         if ($scope.addNewServiceInterval !== undefined && $scope.addNewServiceUnit !== undefined) {
-            // If unit is days
-            if (serviceIntervalUnit.id == 1) {
-               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
-               $scope.addNewNextService = nextService;
-            }
-            // If unit is weeks
-            if (serviceIntervalUnit.id == 2) {
-               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
-               $scope.addNewNextService = nextService;
-            }
-            // If unit is months
-            if (serviceIntervalUnit.id == 3) {
-               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
-               $scope.addNewNextService = nextService;
-            }
-            // If unit is years
-            if (serviceIntervalUnit.id == 4) {
-               var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
-               $scope.addNewNextService = nextService;
-            }
-         }else{
-            $scope.addNewNextService = '';
+      if ($scope.addNewServiceInterval !== undefined && $scope.addNewServiceUnit !== undefined) {
+         // If unit is days
+         if (serviceIntervalUnit.id == 1) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.addNewNextService = nextService;
          }
+         // If unit is weeks
+         if (serviceIntervalUnit.id == 2) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.addNewNextService = nextService;
+         }
+         // If unit is months
+         if (serviceIntervalUnit.id == 3) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.addNewNextService = nextService;
+         }
+         // If unit is years
+         if (serviceIntervalUnit.id == 4) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
+            $scope.addNewNextService = nextService;
+         }
+      } else {
+         $scope.addNewNextService = '';
+      }
 
-       };
+   };
 
 
    // Resource settings checklist
