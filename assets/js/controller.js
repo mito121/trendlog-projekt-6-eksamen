@@ -49,11 +49,13 @@ app.controller("mainCtrl", function ($scope, $http) {
    $scope.historyTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $scope.tab = 2;
+      window.scrollTo(0, 0);
    };
    // Go to settings tab
    $scope.settingsTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $scope.tab = 3;
+      window.scrollTo(0, 0);
    };
 
 
