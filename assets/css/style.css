@@ -1523,8 +1523,9 @@ aside ul li:hover{
         border-radius:5px;
     }
 
-    .addTodo{
-        display:flex;
+    .addTodo button{
+        font-size:14px !important;
+        margin-left:0 !important;
     }
 
     .addTodo button{
