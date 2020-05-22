@@ -173,7 +173,7 @@
                 </aside>
 
                 <div class="module">
-                    <div class="module-tabs" ng-init="tab = 3">
+                    <div class="module-tabs" ng-init="tab = 1">
                         <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
                         <a href ng-show="tab > 1" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
                         <a href ng-show="tab > 1" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
@@ -363,11 +363,11 @@
                                         <label for="step-2b-ls w50">Last service:</label>
                                         <input type="text" id="step-2b-ls" ng-model="addNew2bLastService" ng-change="addNewNextServiceCalc()">
                                         <div class="flex flex-b">
-                                          <div class="ole">
+                                          <div class="add-new-lr">
                                             <label for="step-2b-si">Service interval:</label>
                                             <input type="number" id="step-2b-si" ng-change="addNewNextServiceCalc()" ng-model="addNewServiceInterval">
                                           </div>
-                                          <div class="henning">
+                                          <div class="add-new-lr henning">
                                             <label for="step-2b-iu">Unit:</label>
                                             <select id="step-2b-iu" ng-change="addNewNextServiceCalc()" ng-model="addNewServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                             </select>
@@ -399,33 +399,29 @@
                                             <button ng-click="step = '2b'">Preventive</button>
                                             <button class="on" ng-click="step = '2c'">Predictive</button>
                                         </div>
-                                        <label for="">Source</label>
-                                        <div class="MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMkigLigePåDetHerIgenLolMMMMMMMMMMM">
+                                        <label for="step-2c-src">Source:</label>
+                                        <div class="flex flex-b">
                                           <input type="text" disabled id="step-2c-src">
-                                          <div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div>
+                                          <div class="cog-box flex"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div>
+                                        </div>
+                                        <div class="flex flex-b">
+                                            <div class="add-new-lr">
+                                                <label for="step-2c-sv">Start value:</label>
+                                                <input type="text" disabled id="step-2c-sv">
+                                            </div>
+                                            <div class="add-new-lr">
+                                                <label for="step-2c-iv">Internal value:</label>
+                                                <input type="text" id="step-2c-iv">
+                                            </div>
                                         </div>
 
-<!-- <div class="mobile-settings-row flex flex-b">
-    <div>
-        <label for="settings-resource-start-value">Start value</label>
-        <input type="text" disabled id="settings-resource-start-value">
-    </div>
-
-    <div>
-        <label for="settings-resource-internal-value">Internal value</label>
-        <input type="text" id="settings-resource-internal-value">
-    </div>
-</div>
-
-<div class="mobile-settings-row">
-    <label for="settings-resource-time-range">Time range</label>
-    <select id="settings-resource-time-range">
-        <option>1 Week</option>
-        <option>1 Month</option>
-        <option>1 Year</option>
-    </select>
-</div>
-
+                                        <label for="step-2c-tr">Time range</label>
+                                        <select id="step-2c-tr">
+                                            <option>1 Week</option>
+                                            <option>1 Month</option>
+                                            <option>1 Year</option>
+                                        </select>
+<!--
 <div class="mobile-settings-row">
     <label for="settings-resource-max-internal">Max internal days</label>
     <input type="text" id="settings-resource-max-internal">

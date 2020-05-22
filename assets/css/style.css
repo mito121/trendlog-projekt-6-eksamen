@@ -841,13 +841,12 @@ aside ul li:hover{
     border-radius: 0 5px 5px 0;
 }
 
-.ole{
+.add-new-lr{
   width: 47%;
 }
 
 .henning{
   margin-bottom: 9px;
-  width: 47%;
 }
 
 .on{
@@ -856,11 +855,37 @@ aside ul li:hover{
 }
 
 #step-1-group{
-    width: 82%;
+  width: 82%;
 }
 
 #step-2b-iu{
   width: 100%;
+}
+
+#step-2c-src{
+  border-radius: .25rem 0 0 .25rem;
+  width: 85%;
+}
+
+#step-2c-tr{
+  margin: 4px 0 15px 0;
+  width: 100%;
+}
+
+.cog-box{
+  margin: 4px 0 15px 0;
+  border: solid 1px #d3d3d3;
+  border right: none;
+  height: 33.5px;
+  width: 15%;
+  border-radius: 0 .25rem .25rem 0;
+  justify-content: center;
+  border-left: none;
+}
+
+.cog-box img{
+ height: 20px;
+ width: 20px;
 }
 
 .add-new-menu-overlay .green-btn{
