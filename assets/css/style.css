@@ -147,7 +147,7 @@ button{
 }
 .green-btn span{
     font-size:33px;
-    margin-top: -7px;
+    margin-top: -17px;
 }
 .green-btn-hacks img{
     height: 21px !important;
@@ -1391,10 +1391,7 @@ aside ul li:hover{
         color:white;
     }
 
-    button span {
-        font-size: 33px;
-        margin-top: -12px !important;
-    }
+
 
     #apply-settings{
         background-color:#007BFF;
