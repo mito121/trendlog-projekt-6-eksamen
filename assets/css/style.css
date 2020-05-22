@@ -1786,6 +1786,11 @@ aside ul li:hover{
   font-size: 17px;
   font-weight: 700;
 }
+#bluep {
+  color: #007bff;
+  font-size: 17px;
+  font-weight: 700;
+}
 
 @media screen and (orientation:portrait) {
 
