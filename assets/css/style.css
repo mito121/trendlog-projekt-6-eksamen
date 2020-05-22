@@ -75,7 +75,7 @@ h4{
 }
 
 button{
-  font-family: 'Titillium Web', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .w33{
@@ -652,7 +652,7 @@ aside ul li:hover{
 }
 
 .filter-menu{
-    padding:105px 0 0 15px;
+    padding:50px 0;
     width:70%;
     height:100vh;
     background-color:#fff;
@@ -662,19 +662,58 @@ aside ul li:hover{
 
 #closeFilterMenu{
     position:absolute;
-    top:60px;
-    right:-16px;
+    top: 62px;
+    right: 24px;
     font-weight:bold;
     font-size:1.3em;
 }
 
+#closeFilterMenu img{
+    width: 15px;
+    height: 15px;
+}
+
 #filter-table{
     border-collapse: collapse;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.filter-menu-header{
+    background-color:#222;
+    color:white;
+    height:40px;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.filter-menu-header h2{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
 }
 
 #filter-table tr td{
     box-sizing: border-box;
-    padding:8px 4px;
+    padding:8px 4px 4px 0;
+}
+
+#filter-table tr:first-child td:nth-child(2){
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+#filter-table tr:first-child td:nth-child(2) img{
+    height:26px;
+    width:26px;
+}
+
+#filter-table tr td:nth-child(2){
+    width:100%;
 }
 
 #filter-table tr:first-child td select{
@@ -734,18 +773,18 @@ aside ul li:hover{
 }
 
 .wrapper{
-  position: relative;
-  left: 30.5%;
-  width: 70%;
-  animation: 250ms ease-in-out slideInFromRight;
+    position: relative;
+    left: 30.5%;
+    width: 70%;
+    animation: 250ms ease-in-out slideInFromRight;
 }
 
 .add-new-close-btn{
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  left: 17px;
-  top: 63px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 17px;
+    top: 63px;
 }
 
 .heading-container{
@@ -782,10 +821,10 @@ aside ul li:hover{
 }
 
 .add-new-main p{
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-  color: #222;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: #222;
 }
 
 .add-new-main .flex-b p{
@@ -850,8 +889,8 @@ aside ul li:hover{
 }
 
 .on{
-  background-color: #007bff !important;
-  color: #fff;
+    background-color: #007bff !important;
+    color: #fff;
 }
 
 #step-1-group{
@@ -859,7 +898,7 @@ aside ul li:hover{
 }
 
 #step-2b-iu{
-  width: 100%;
+    width: 100%;
 }
 
 #step-2c-src{
@@ -1416,11 +1455,6 @@ aside ul li:hover{
         color:white;
     }
 
-    button span {
-        font-size: 33px;
-        margin-top: -12px !important;
-    }
-
     #apply-settings{
         background-color:#007BFF;
         display:block;
@@ -1429,6 +1463,8 @@ aside ul li:hover{
         border:1px solid #007BFF;
         border-radius:4px;
         padding:8px 12px;
+        font-weight: 600;
+        font-size: 15px;
     }
 
 
