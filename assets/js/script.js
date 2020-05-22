@@ -84,26 +84,50 @@ function doNothing(e) {
 }
 
 
-//hej modal
+//"DELETE" modal
 // Get the modal
-var modal = document.getElementById("deleteModal");
+var deleteModal = document.getElementById("deleteModal");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var deleteSpan = document.getElementsByClassName("close")[0];
 
 // klik på knap, åben modal
 function triggerDeleteModal() {
-   modal.style.display = "block";
+   deleteModal.style.display = "block";
 }
 
 // klik på <span> (cancel), lukker modal
 span.onclick = function () {
-   modal.style.display = "none";
+   deleteModal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
    if (event.target == modal) {
-      modal.style.display = "none";
+      deleteModal.style.display = "none";
+   }
+}
+
+//"COPY" modal
+// Get the modal
+var copyMmodal = document.getElementById("copyModal");
+
+// Get the <span> element that closes the modal
+var copySpan = document.getElementsByClassName("close")[0];
+
+// klik på knap, åben modal
+function triggerCopyModal() {
+   copyModal.style.display = "block";
+}
+
+// klik på <span> (cancel), lukker modal
+span.onclick = function () {
+   copyModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+   if (event.target == modal) {
+      copyModal.style.display = "none";
    }
 }

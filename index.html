@@ -612,7 +612,7 @@
                                             <div class="bottom-link"><a>Delete</a></div>
                                         </div>
                                         <div class="vertical-seperator"></div>
-                                        <div class="logo-text-box">
+                                        <div class="logo-text-box" onclick="triggerCopyModal()">
                                             <div class="bottom-link"><a>Copy</a></div>
                                             <img src="assets/icons/copy-icon.svg" alt="Copy icon">
                                         </div>
@@ -904,8 +904,6 @@
     <footer></footer>
 
     <!-- POPUP MODAL HEJSERI -->
-    <button id="deleteBtn">Delete</button>
-
     <!-- selve modal -->
     <div id="deleteModal" class="modal">
 
@@ -924,8 +922,26 @@
           <p id="redp">Delete</p>
         </div>
       </div>
-
     </div>
 
+    <!-- selve modal -->
+    <div id="copyModal" class="modal">
+
+      <!-- Modal indhold -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h2modal">Copy resource</h2>
+        </div>
+        <div class="modal-body">
+          <p class="pmodal">New resource name</p>
+          <p class="pmodal">input felt her</p>
+        </div>
+        <div class="modal-footer">
+          <span class="close">Cancel</span>
+          <div id="streg"></div>
+          <p id="redp">Delete</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
