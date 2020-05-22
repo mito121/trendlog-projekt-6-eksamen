@@ -1357,7 +1357,35 @@ aside ul li:hover{
         content: "•";
         color: red;
         position: absolute;
-        top: 30px;
+        top: 31px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .calendar-soon{
+        position:relative;
+    }
+
+    .calendar-soon::after{
+        content: "•";
+        color: yellow;
+        position: absolute;
+        top: 31px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .calendar-service{
+        position:relative;
+    }
+
+    .calendar-service::after{
+        content: "•";
+        color: lightblue;
+        position: absolute;
+        top: 31px;
         bottom: 0;
         left: 0;
         right: 0;
