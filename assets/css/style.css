@@ -638,6 +638,11 @@ aside ul li:hover{
 
 /**------------------------------------------------------------ Mobile --------------------------------------------------------------------**/
 
+.info-hover-mobile{
+  width: 15px;
+  height: 15px;
+}
+
 /* Mobile filter menu */
 /* Filter menu */
 .filter-menu-overlay{
