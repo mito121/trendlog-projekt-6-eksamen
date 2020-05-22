@@ -663,7 +663,7 @@ aside ul li:hover{
 #closeFilterMenu{
     position:absolute;
     top: 62px;
-    right: 24px;
+    right: 21px;
     font-weight:bold;
     font-size:1.3em;
 }
@@ -1240,6 +1240,107 @@ aside ul li:hover{
     .bottom-links img{
         height: 20px;
     }
+
+    /* Mobile calendar view */
+    .tab-1{
+        position:relative;
+    }
+
+    #mobile-calendar-view{
+        height: 100vh;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        position: fixed;
+        background-color: #222;
+        border-top: 1px solid #707070;
+        z-index:20;
+    }
+
+    .mobile-calendar-head{
+        padding:8px 15px;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    .mobile-calendar-head img{
+        height:24px;
+        width:24px;
+    }
+
+    .mobile-calendar-header{
+        padding:0px 15px;
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        border-top:1px solid #707070;
+        color:#fff;
+    }
+
+    .mobile-calendar-header div{
+        text-align:center;
+    }
+
+    .mobile-calendar-header h1, .mobile-calendar-header h2{
+        margin:8px 0;
+        padding:6px 0;
+        font-weight:400;
+    }
+
+    .mobile-calendar-header h1{
+        font-size:2.5em;
+    }
+
+    .mobile-calendar-header h2{
+        font-size:1.5em;
+    }
+
+    .prevMonth, .nextMonth{
+        font-size:3em;
+    }
+
+    .mobile-calendar-table{
+        width:100%;
+        text-align:center;
+        border-collapse: collapse;
+    }
+
+    .mobile-calendar-table tr:first-child{
+        border-top:1px solid #707070;
+        border-bottom:1px solid #707070;
+        color:#707070;
+        font-size:1em;
+    }
+
+    .mobile-calendar-table tr{
+        color:white;
+        font-size:1.2em;
+
+        margin:0 15px;
+    }
+
+    .mobile-calendar-table tr td{
+        padding:16px;
+        border-bottom:2px solid #707070;
+    }
+
+    .calendar-expired{
+        position:relative;
+    }
+
+    .calendar-expired::after{
+        content: "•";
+        color: red;
+        position: absolute;
+        top: 30px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+
 
     /* Mobile history */
     #mobile-history-container{

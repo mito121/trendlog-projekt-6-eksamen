@@ -4,31 +4,7 @@ function loaded() {
 }
 
 
-// Open mobile filter menu
-let open = false;
-$('#filter-menu-btn').click(function () {
-   if (open == false) {
-      $('.filter-menu-overlay').css("display", "block");
-      let open = true;
-   } else {
-      $('.filter-menu-overlay').css("display", "none");
-      let open = false;
-   }
-});
 
-// Close mobile filter menu on overlay click
-$('.filter-menu-overlay').click(function (e) {
-   e.stopPropagation();
-   $('.filter-menu-overlay').css("display", "none");
-   let open = false;
-});
-
-// Close mobile filter menu on X click
-$('#closeFilterMenu').click(function (e) {
-   e.stopPropagation();
-   $('.filter-menu-overlay').css("display", "none");
-   let open = false;
-});
 
 // Open mobile add new menu
 let alsoOpen = false;
