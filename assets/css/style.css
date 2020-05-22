@@ -1355,7 +1355,7 @@ aside ul li:hover{
 
     .calendar-expired::after{
         content: "•";
-        color: red;
+        color: #D9534F;
         position: absolute;
         top: 31px;
         bottom: 0;
@@ -1369,7 +1369,7 @@ aside ul li:hover{
 
     .calendar-soon::after{
         content: "•";
-        color: yellow;
+        color: #5CB85C;
         position: absolute;
         top: 31px;
         bottom: 0;
@@ -1383,7 +1383,7 @@ aside ul li:hover{
 
     .calendar-service::after{
         content: "•";
-        color: lightblue;
+        color: #337AB7;
         position: absolute;
         top: 31px;
         bottom: 0;
@@ -1470,7 +1470,7 @@ aside ul li:hover{
     .mobile-settings-row p{
         font-size: 14px;
         margin:0;
-        padding:0;
+        padding:4px 0;
         -webkit-font-smoothing: antialiased;
     }
 
