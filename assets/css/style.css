@@ -1819,6 +1819,18 @@ aside ul li:hover{
   font-size: 17px;
   font-weight: 700;
 }
+#bluedone{
+  padding-right: 30px;
+  text-align: right;
+  color: #007bff;
+  font-size: 17px;
+  font-weight: 700;
+}
+#qrkodeimg {
+  margin: 30px;
+  width: 150px;
+  height: auto;
+}
 
 @media screen and (orientation:portrait) {
 

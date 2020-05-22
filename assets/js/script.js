@@ -88,6 +88,8 @@ function doNothing(e) {
 var deleteModal = document.getElementById("deleteModal");
 //"COPY" modal
 var copyModal = document.getElementById("copyModal");
+//"QR" modal
+var qrkodeModal = document.getElementById("qrkodeModal");
 
 // klik på knap, åben modal
 function triggerDeleteModal() {
@@ -96,16 +98,21 @@ function triggerDeleteModal() {
 function triggerCopyModal() {
   copyModal.style.display = "block";
 }
+function triggerQrkodeModal() {
+  qrkodeModal.style.display = "block";
+}
 
 //luk modal
 function closeModals() {
   deleteModal.style.display = "none";
   copyModal.style.display = "none";
+  qrkodeModal.style.display = "none";
 }
 // Når man klikker uden for modalet - luk!
 window.onclick = function(event) {
-  if (event.target == deleteModal || event.target == copyModal) {
+  if (event.target == deleteModal || event.target == copyModal || event.target == qrkodeModal) {
     deleteModal.style.display = "none";
     copyModal.style.display = "none";
+    qrkodeModal.style.display = "none";
   }
 }
