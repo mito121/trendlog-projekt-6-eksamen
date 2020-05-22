@@ -1697,6 +1697,8 @@ aside ul li:hover{
     top: .3em;
 }
 
+
+/* DELETE MODAL */
 .pmodal {
   margin: 10px 0;
 }
@@ -1710,7 +1712,6 @@ aside ul li:hover{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 150px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -1723,6 +1724,7 @@ aside ul li:hover{
 /* Modal Content */
 .modal-content {
   position: relative;
+  top:30vh;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
@@ -1737,7 +1739,7 @@ aside ul li:hover{
 /* faldned animationish */
 @keyframes animatetop {
   from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
+  to {top:30vh; opacity:1}
 }
 
 
