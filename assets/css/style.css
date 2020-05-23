@@ -593,6 +593,7 @@ aside ul li:hover{
 .searchBar label{
     display:table-cell;
     width:1px;
+    font-size:16px;
 }
 
 .searchBar input{
