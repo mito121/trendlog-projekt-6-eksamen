@@ -569,7 +569,7 @@
                                         <div class="horizontal-seperator"></div>
                                         <div class="center-link"><a>Create repair log</a></div>
                                         <div class="horizontal-seperator"></div>
-                                        <div class="center-link"><a>Show QR code</a></div>
+                                        <div class="center-link" onclick="triggerQrkodeModal()"><a>Show QR code</a></div>
                                         <div class="horizontal-seperator"></div>
                                     </div>
                                     <div class="bottom-links">
@@ -870,7 +870,7 @@
     <footer></footer>
 
     <!-- POPUP MODAL HEJSERI -->
-    <!-- selve modal -->
+    <!-- Delete resource modal -->
     <div id="deleteModal" class="modal">
 
       <!-- Modal indhold -->
@@ -890,7 +890,7 @@
       </div>
     </div>
 
-    <!-- selve modal -->
+    <!-- Copy resource modal -->
     <div id="copyModal" class="modal">
 
       <!-- Modal indhold -->
@@ -907,6 +907,24 @@
           <span class="close" onclick="closeModals()">Cancel</span>
           <div id="streg"></div>
           <p id="bluep">Create</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show QR modal -->
+    <div id="qrkodeModal" class="modal">
+
+      <!-- Modal indhold -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h2modal">QR code</h2>
+        </div>
+        <div class="modal-body">
+          <img id="qrkodeimg" src="assets/images/qr.png" alt="QR kode">
+          <p>Press and hold to save or copy image</p>
+        </div>
+        <div class="qr-modal-footer">
+          <span class="close" onclick="closeModals()"><p id="bluedone">Done</p></span>
         </div>
       </div>
     </div>
