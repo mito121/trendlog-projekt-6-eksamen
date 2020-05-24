@@ -82,6 +82,12 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
    // Go to history tab
+   $scope.serviceTab = function () {
+      $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $scope.tab = 1;
+      window.scrollTo(0, 0);
+   };
+   // Go to history tab
    $scope.historyTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $scope.tab = 2;
