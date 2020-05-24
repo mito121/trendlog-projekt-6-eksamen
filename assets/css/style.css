@@ -640,8 +640,8 @@ aside ul li:hover{
 /**------------------------------------------------------------ Mobile --------------------------------------------------------------------**/
 
 .info-hover-mobile{
-  width: 15px;
-  height: 15px;
+    width: 15px;
+    height: 15px;
 }
 
 /* Mobile filter menu */
@@ -887,11 +887,11 @@ aside ul li:hover{
 }
 
 .add-new-lr{
-  width: 47%;
+    width: 47%;
 }
 
 .henning{
-  margin-bottom: 9px;
+    margin-bottom: 9px;
 }
 
 .on{
@@ -900,7 +900,7 @@ aside ul li:hover{
 }
 
 #step-1-group{
-  width: 82%;
+    width: 82%;
 }
 
 #step-2b-iu{
@@ -908,28 +908,28 @@ aside ul li:hover{
 }
 
 #step-2c-src{
-  border-radius: .25rem 0 0 .25rem;
-  width: 85%;
+    border-radius: .25rem 0 0 .25rem;
+    width: 85%;
 }
 
 #step-2c-tr{
-  margin: 4px 0 15px 0;
-  width: 100%;
+    margin: 4px 0 15px 0;
+    width: 100%;
 }
 
 .cog-box{
-  margin: 4px 0 15px 0;
-  border: solid 1px #d3d3d3;
-  height: 33.5px;
-  width: 15%;
-  border-radius: 0 .25rem .25rem 0;
-  justify-content: center;
-  border-left: none;
+    margin: 4px 0 15px 0;
+    border: solid 1px #d3d3d3;
+    height: 33.5px;
+    width: 15%;
+    border-radius: 0 .25rem .25rem 0;
+    justify-content: center;
+    border-left: none;
 }
 
 .cog-box img{
- height: 20px;
- width: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 .add-new-menu-overlay .green-btn{
@@ -1277,7 +1277,8 @@ aside ul li:hover{
     }
 
     #mobile-calendar-view{
-        height: 100vh;
+        min-height: 100vh;
+        overflow:auto;
         width: 100%;
         top: 90px;
         left: 0;
@@ -1351,8 +1352,29 @@ aside ul li:hover{
     }
 
     .mobile-calendar-table tr td{
-        padding:16px;
+        padding:19px 16px;
         border-bottom:2px solid #707070;
+    }
+
+    .calendar-current-date{
+        position:relative;
+    }
+
+    .calendar-current-date::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 14px;
+        border-radius: 5px;
+        right: 0;
+        height: 26px;
+        width: 26px;
+        background-color: #D9534F;
+        z-index: -1;
+    }
+
+    .calendar-next-month{
+        color: #707070!important;
     }
 
     .calendar-expired{
@@ -1363,7 +1385,7 @@ aside ul li:hover{
         content: "•";
         color: #D9534F;
         position: absolute;
-        top: 31px;
+        top: 37px;
         bottom: 0;
         left: 0;
         right: 0;
@@ -1377,7 +1399,7 @@ aside ul li:hover{
         content: "•";
         color: #5CB85C;
         position: absolute;
-        top: 31px;
+        top: 37px;
         bottom: 0;
         left: 0;
         right: 0;
@@ -1391,10 +1413,53 @@ aside ul li:hover{
         content: "•";
         color: #337AB7;
         position: absolute;
-        top: 31px;
+        top: 37px;
         bottom: 0;
         left: 0;
         right: 0;
+    }
+
+    .mobile-calendar-events{
+        width:100%;
+        height:100%;
+        padding:12px 20px;
+        min-height:400px;
+        overflow:auto;
+    }
+
+    .mobile-calendar-event-row{
+        width:100%;
+        border-bottom:1px solid #707070;
+        display:flex;
+        padding: 6px;
+        color:white;
+        font-size:1.2em;
+    }
+
+    .mobile-calendar-event-row div:first-child{
+        min-width: 17%;
+        width:17%;
+        border-right: 2px solid #2AC319;
+        display:flex;
+        align-items:center;
+    }
+
+    .mobile-calendar-event-row div:last-child{
+        min-width:83%;
+        width:83%;
+        margin:0 12px;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .mobile-calendar-event-row p{
+        margin:0;
+    }
+
+    .mobile-calendar-event-row p:last-child{
+        font-size:.9em;
+        color:#8F8F8F;
+        white-space: nowrap;
     }
 
 
@@ -1550,11 +1615,19 @@ aside ul li:hover{
     }
 
     .todoItem{
-        display:block;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
         background-color:#fff;
         padding:6px;
         margin:4px 0;
         border-radius:5px;
+    }
+
+    .todoItem img{
+        height:18px;
+        margin-top: 3px;
+        margin-left: 5px;
     }
 
     .addTodo button{
@@ -1735,117 +1808,117 @@ aside ul li:hover{
 
 /* DELETE MODAL */
 .pmodal {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .h2modal {
-  margin: 10px 0;
-  font-size: 20px;
+    margin: 10px 0;
+    font-size: 20px;
 }
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  position: relative;
-  top:30vh;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border-radius: 18px;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s
+    position: relative;
+    top:30vh;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border-radius: 18px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
 /* faldned animationish */
 @keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:30vh; opacity:1}
+    from {top:-300px; opacity:0}
+    to {top:30vh; opacity:1}
 }
 
 
 .modal-header {
-  text-align: center;
-  padding: 2px 16px;
-  background-color: #222222;
-  color: white;
-  border-radius:15px 15px 0px 0px ;
+    text-align: center;
+    padding: 2px 16px;
+    background-color: #222222;
+    color: white;
+    border-radius:15px 15px 0px 0px ;
 }
 
 .modal-body {
-  text-align: center;
-  margin: 2px 16px;
+    text-align: center;
+    margin: 2px 16px;
 }
 
 .modal-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 2px 16px;
-  color: #000000;
-  border-radius: 0px 0px 15px 15px;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2px 16px;
+    color: #000000;
+    border-radius: 0px 0px 15px 15px;
+    align-items: center;
 }
 
 /*POPUP MODAL HEJSERI*/
 /* cancelknap */
 .close {
-  color: #6C757D;
-  font-size: 17px;
-  font-weight: 700;
+    color: #6C757D;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 #streg {
-  height: 30px;
-  width: 1px;
-  border-left: 2px solid #d3d3d3;
+    height: 30px;
+    width: 1px;
+    border-left: 2px solid #d3d3d3;
 }
 
 #redp {
-  color: #DC3545;
-  font-size: 17px;
-  font-weight: 700;
+    color: #DC3545;
+    font-size: 17px;
+    font-weight: 700;
 }
 #bluep {
-  color: #007bff;
-  font-size: 17px;
-  font-weight: 700;
+    color: #007bff;
+    font-size: 17px;
+    font-weight: 700;
 }
 #bluedone{
-  padding-right: 30px;
-  text-align: right;
-  color: #007bff;
-  font-size: 17px;
-  font-weight: 700;
+    padding-right: 30px;
+    text-align: right;
+    color: #007bff;
+    font-size: 17px;
+    font-weight: 700;
 }
 #qrkodeimg {
-  margin: 30px;
-  width: 150px;
-  height: auto;
+    margin: 30px;
+    width: 150px;
+    height: auto;
 }
 
 @media screen and (orientation:portrait) {
 
 }
 @media screen and (orientation:landscape) {
-  .modal {
-      padding-top: 100px;
-  }
-  .modal-content {
-      width: 50%;
-  }
+    .modal {
+        padding-top: 100px;
+    }
+    .modal-content {
+        width: 50%;
+    }
 }

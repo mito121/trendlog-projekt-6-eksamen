@@ -65,7 +65,7 @@ $(document).ready(function() {
     fileName = $(this).val().split("\\").slice(-1)[0];
 
     if (fileName.length > 0) {
-      attachmentList += "<div class='todoItem'>" + fileName + "</div>";
+      attachmentList += "<div class='todoItem'><div>" + fileName + "</div> <div><img src='assets/icons/delete-icon-grey.svg' alt='Delete checkbox'></div></div>";
 
       // Output attachment list to html
       $('#uploaded-attachments').html(attachmentList);
