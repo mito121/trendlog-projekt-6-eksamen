@@ -230,7 +230,7 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
    // Resource settings service
-   
+
    // Calculate next service
    $(function () {
       $("#settings-resource-ls").datepicker();
@@ -348,9 +348,9 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
    // Resource settings checklist
-   
+
    // Mobile 
-   
+
    $scope.addnewTodoList = [];
 
    let addnewTodoIndex = 0;
@@ -361,9 +361,9 @@ app.controller("mainCtrl", function ($scope, $http) {
       document.getElementById("addnewTodoInput").focus();
       addnewTodoIndex++;
    };
-   
+
    // Desktop 
-   
+
    $scope.desktopAddnewTodoList = [];
 
    let dekstopAddnewTodoIndex = 0;
@@ -376,5 +376,20 @@ app.controller("mainCtrl", function ($scope, $http) {
    };
 
 
+   //Reload page when 1366px screen width is passed (for resetting global variables)
+   var ww = $(window).width();
+   var limit = 1366;
+
+   function refresh() {
+      ww = $(window).width();
+      var w = ww < limit ? (location.reload(true)) : (ww > limit ? (location.reload(true)) : ww = limit);
+   }
+
+   $(window).resize(function () {
+      var resW = $(window).width();
+      if ((ww > limit && resW < limit) || (ww < limit && resW > limit)) {
+         refresh();
+      }
+   });
 
 });
