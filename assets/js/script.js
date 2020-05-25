@@ -3,50 +3,6 @@ function loaded() {
    document.body.classList.remove("preload");
 }
 
-
-
-
-// Open mobile add new menu
-let alsoOpen = false;
-$('#add-new-menu-btn').click(function () {
-   if (alsoOpen == false) {
-      $('.add-new-menu-overlay').css("display", "block");
-      $('html body').css("overflow", "hidden");
-      let alsoOpen = true;
-   } else {
-      $('.add-new-menu-overlay').css("display", "none");
-      $('html body').css("overflow", "auto");
-      let alsoOpen = false;
-   }
-});
-
-// Close mobile add new menu on overlay click
-$('.add-new-menu-overlay').click(function (e) {
-   e.stopPropagation();
-   $('.add-new-menu-overlay').css("display", "none");
-   $('html body').css("overflow", "auto");
-   let alsoOpen = false;
-});
-
-// Close mobile add new menu on X click
-$('.add-new-close-btn').click(function (e) {
-   e.stopPropagation();
-   $('.add-new-menu-overlay').css("display", "none");
-   $('html body').css("overflow", "auto");
-   let alsoOpen = false;
-});
-
-// Close mobile add new menu on X click
-$('.add-new-cancel').click(function (e) {
-   e.stopPropagation();
-   $('.add-new-menu-overlay').css("display", "none");
-   $('html body').css("overflow", "auto");
-   let alsoOpen = false;
-});
-
-
-
-
 $(document).ready(function () {
    // Mobile nav toggle
    const menuIcon = document.querySelector(".burger-menu");
@@ -96,6 +52,21 @@ $(document).ready(function () {
 
          // Output attachment list to html
          $('#addnew-uploaded-attachments').html(addnewAttachmentList);
+      }
+   });
+
+
+   // Add attachment (Desktop)
+   var desktopAttachmentList = "";
+   $('.desktop-file-upload-attach').children("input").bind('change', function () {
+      var fileName = '';
+      fileName = $(this).val().split("\\").slice(-1)[0];
+
+      if (fileName.length > 0) {
+         desktopAttachmentList += "<div class='todoItem'><div>" + fileName + "</div> <div><img src='assets/icons/delete-icon-grey.svg' alt='Delete checkbox'></div></div>";
+
+         // Output attachment list to html
+         $('#desktop-uploaded-attachments').html(desktopAttachmentList);
       }
    });
 

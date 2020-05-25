@@ -44,7 +44,7 @@ app.controller("mainCtrl", function ($scope, $http) {
       clearTimeout();
    };
 
-
+   // ============ Filter menu (mobile) ============ //
    // Open mobile filter menu
    let open = false;
    $('#filter-menu-btn').click(function () {
@@ -75,6 +75,53 @@ app.controller("mainCtrl", function ($scope, $http) {
       let open = false;
    });
 
+
+   // ============= Add new resource menu (mobile) ===================== //
+   // Open mobile add new menu
+   let alsoOpen = false;
+   $('#add-new-menu-btn').click(function () {
+      if (alsoOpen == false) {
+         $('.add-new-menu-overlay').css("display", "block");
+         $('html body').css("overflow", "hidden");
+         let alsoOpen = true;
+      } else {
+         $('.add-new-menu-overlay').css("display", "none");
+         $('html body').css("overflow", "auto");
+         let alsoOpen = false;
+      }
+   });
+
+// Close mobile add new menu on overlay click
+   $('.add-new-menu-overlay').click(function (e) {
+      e.stopPropagation();
+      $('.add-new-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
+      let alsoOpen = false;
+   });
+
+// Close mobile add new menu on X click
+   $('.add-new-close-btn').click(function (e) {
+      e.stopPropagation();
+      $('.add-new-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
+      let alsoOpen = false;
+   });
+
+// Close mobile add new menu on cancel
+   $scope.cancelNewResource = function () {
+      $('.add-new-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
+      let alsoOpen = false;
+      $scope.step = 1;
+   };
+
+// Close mobile add new menu on finish
+   $scope.createNewResource = function () {
+      $('.add-new-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
+      let alsoOpen = false;
+      $scope.step = 1;
+   };
 
    // Toggle mobile calendar view
    $scope.calendarView = function () {
@@ -135,16 +182,19 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    // Service items
    $scope.resources = [
-      {id: '1', enabled: 'true', name: 'Rødbederenser', group: 'Machine', type: 'Preventive', nextService: '20-04-4020', lastService: '17-05-2020'},
-      {id: '2', enabled: 'true', name: 'Rødbederusker', group: 'Machine', type: 'Predictive', nextService: '15-12-2020', lastService: '23-12-2018'},
-      {id: '3', enabled: 'true', name: 'Rødbedevasker', group: 'Machine', type: 'Preventive', nextService: '15-12-2020', lastService: '23-12-2018'},
-      {id: '4', enabled: 'true', name: 'Rødbedeskrubber', group: 'Machine', type: 'Preventive', nextService: '15-12-2020', lastService: '23-12-2018'},
-      {id: '5', enabled: 'true', name: 'Rødbedefejer', group: 'Machine', type: 'Predictive', nextService: '15-12-2020', lastService: '23-12-2018'},
-      {id: '6', enabled: 'false', name: 'Rødbederasler', group: 'Machine', type: 'Preventive', nextService: '21-01-2022', lastService: '16-03-2020'},
-      {id: '7', enabled: 'true', name: 'Rødbededusker', group: 'Machine', type: 'Preventive', nextService: '18-04-2021', lastService: '04-04-2024'},
-      {id: '8', enabled: 'true', name: 'Rødbederuller', group: 'Machine', type: 'Predictive', nextService: '24-06-2021', lastService: '02-04-2024'},
-      {id: '9', enabled: 'true', name: 'Rødbedehakker', group: 'Machine', type: 'Predictive', nextService: '31-09-2021', lastService: '08-07-2024'},
-      {id: '10', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024'}
+      {id: '1', enabled: 'true', name: 'Rødbederenser', group: 'Washer', type: 'Preventive', nextService: '25-05-2020', lastService: '17-05-2020', percent: '112'},
+      {id: '2', enabled: 'true', name: 'Rødbederiver', group: 'Machine', type: 'Predictive', nextService: '25-05-2020', lastService: '23-12-2018', percent: '112'},
+      {id: '3', enabled: 'true', name: 'Rødbedeudhuler', group: 'Machine', type: 'Predictive', nextService: '17-06-2020', lastService: '23-12-2018', percent: '100'},
+      {id: '4', enabled: 'true', name: 'Rødbedegraver', group: 'Machine', type: 'Predictive', nextService: '17-06-2020', lastService: '23-12-2018', percent: '100'},
+      {id: '5', enabled: 'false', name: 'Rødbedevasker', group: 'Washer', type: 'Preventive', nextService: '15-12-2020', lastService: '23-12-2018', percent: '83'},
+      {id: '6', enabled: 'true', name: 'Rødbedeskrubber', group: 'Washer', type: 'Preventive', nextService: '15-12-2020', lastService: '23-12-2018', percent: '71'},
+      {id: '7', enabled: 'true', name: 'Rødbedefejer', group: 'Machine', type: 'Predictive', nextService: '15-12-2020', lastService: '23-12-2018', percent: '64'},
+      {id: '8', enabled: 'false', name: 'Rødbederasler', group: 'Machine', type: 'Preventive', nextService: '21-01-2022', lastService: '16-03-2020', percent: '58'},
+      {id: '9', enabled: 'true', name: 'Rødbedehænger', group: 'Machine', type: 'Preventive', nextService: '18-04-2021', lastService: '04-04-2024', percent: '44'},
+      {id: '10', enabled: 'true', name: 'Rødbederuller', group: 'Machine', type: 'Predictive', nextService: '24-06-2021', lastService: '02-04-2024', percent: '33'},
+      {id: '11', enabled: 'false', name: 'Rødbedehakker', group: 'Machine', type: 'Predictive', nextService: '31-09-2021', lastService: '08-07-2024', percent: '21'},
+      {id: '12', enabled: 'false', name: 'Rødbedelytter', group: 'Machine', type: 'Predictive', nextService: '12-11-2021', lastService: '08-07-2004', percent: '13'},
+      {id: '13', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024', percent: '6'}
    ];
 
    // Mobile resource settings service units
@@ -166,12 +216,27 @@ app.controller("mainCtrl", function ($scope, $http) {
    $scope.mobileServiceUnit = $scope.resourceServiceUnits[0];
 
 
+   // Desktop select resource
+   $scope.selected = 0;
+   $scope.selectRes = function (id) {
+      let item = $('#desktop-resource-' + id);
+      item.addClass("selected-resource");
+      $('.desktop-resource').not(item).removeClass("selected-resource");
+      $scope.selected = 1;
+   };
+
+
+
+
+
    // Resource settings service
+   
    // Calculate next service
    $(function () {
       $("#settings-resource-ls").datepicker();
    });
 
+   //// Mobile
    $scope.nextServiceCalc = function () {
       let lastService = new Date($scope.mobileServiceLastService);
       let serviceInterval = $scope.mobileServiceInterval;
@@ -200,6 +265,45 @@ app.controller("mainCtrl", function ($scope, $http) {
          }
       } else {
          $scope.mobileNextService = '';
+      }
+
+   };
+
+   //// Desktop
+
+   // Calculate next service
+   $(function () {
+      $("#desktop-settings-resource-ls").datepicker();
+   });
+
+   $scope.desktopNextServiceCalc = function () {
+      let lastService = new Date($scope.desktopServiceLastService);
+      let serviceInterval = $scope.desktopServiceInterval;
+      let serviceIntervalUnit = $scope.desktopServiceUnit;
+
+      if ($scope.desktopServiceInterval !== undefined && $scope.desktopServiceUnit !== undefined) {
+         // If unit is days
+         if (serviceIntervalUnit.id == 1) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.desktopNextService = nextService;
+         }
+         // If unit is weeks
+         if (serviceIntervalUnit.id == 2) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.desktopNextService = nextService;
+         }
+         // If unit is months
+         if (serviceIntervalUnit.id == 3) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.desktopNextService = nextService;
+         }
+         // If unit is years
+         if (serviceIntervalUnit.id == 4) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
+            $scope.desktopNextService = nextService;
+         }
+      } else {
+         $scope.desktopNextService = '';
       }
 
    };
@@ -244,6 +348,9 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
    // Resource settings checklist
+   
+   // Mobile 
+   
    $scope.addnewTodoList = [];
 
    let addnewTodoIndex = 0;
@@ -254,23 +361,20 @@ app.controller("mainCtrl", function ($scope, $http) {
       document.getElementById("addnewTodoInput").focus();
       addnewTodoIndex++;
    };
+   
+   // Desktop 
+   
+   $scope.desktopAddnewTodoList = [];
+
+   let dekstopAddnewTodoIndex = 0;
+
+   $scope.desktopTodoAdd = function () {
+      $scope.desktopAddnewTodoList.push({i: dekstopAddnewTodoIndex, todoText: $scope.desktopAddnewTodoInput});
+      $scope.desktopAddnewTodoInput = "";
+      document.getElementById("desktopAddnewTodoInput").focus();
+      dekstopAddnewTodoIndex++;
+   };
 
 
-
-//   $scope.sortableOptions = {
-//      update: function (e, ui) {
-//         var logEntry = tmpList.map(function (i) {
-//            return i.value;
-//         }).join(', ');
-//         $scope.sortingLog.push('Update: ' + logEntry);
-//      },
-//      stop: function (e, ui) {
-//         // this callback has the changed model
-//         var logEntry = tmpList.map(function (i) {
-//            return i.value;
-//         }).join(', ');
-//         $scope.sortingLog.push('Stop: ' + logEntry);
-//      }
-//   };
 
 });

@@ -175,8 +175,8 @@
                 <div class="module">
                     <div class="module-tabs" ng-init="tab = 1">
                         <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
-                        <a href ng-show="tab > 1" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
-                        <a href ng-show="tab > 1" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
+                        <a href ng-show="tab > 1 || selected > 0" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
+                        <a href ng-show="tab > 1 || selected > 0" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
                     </div>
 
                     <!-- Tab 1 (Resources) -->
@@ -193,7 +193,7 @@
                             <div class="row flex flex-b">
                                 <div class="flex align" id="filter-menu-btn">
                                     <span>Filter</span>
-                                    <div class="green-btn"><img src="assets/icons/filter-icon.svg" alt="Filter search"/></div>
+                                    <div class="green-btn ml-19"><img src="assets/icons/filter-icon.svg" alt="Filter search"/></div>
                                 </div>
 
                                 <div class="flex align" id="add-new-menu-btn">
@@ -221,7 +221,7 @@
                                             <label for="selectEntries">Entries</label>
                                         </td>
                                         <td>
-                                            <select id="selectEntries">
+                                            <select id="selectEntries" ng-model="selectEntries" ng-init="selectEntries = '10'">
                                                 <option value="10">10</option>
                                                 <option value="20">20</option>
                                                 <option value="50">50</option>
@@ -316,38 +316,13 @@
                                             <textarea id="step-1-description" placeholder="Text here..."></textarea>
 
                                             <div class="add-new-buttons flex flex-b">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button">Back</a>
                                                 <a href="#" class="add-new-button" ng-click="step = '2a'">Next</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Service none selected -->
-                                <!--<div ng-show="step == '2a'" class="add-new-menu">
-                                    <div class="heading-container flex">
-                                        <h2>New resource</h2>
-                                    </div>
-                                    <div class="add-new-main">
-                                        <div class="flex-b">
-                                            <h3>Service</h3>
-                                            <p>Step 2 of 5</p>
-                                        </div>
-                                        <div class="add-new-content">
-                                            <p>Type:</p>
-                                            <div class="add-new-service-select">
-                                                <button ng-click="step = '2b'">Preventive</button>
-                                                <button ng-click="step = '2c'">Predictive</button>
-                                            </div>
-
-                                            <div class="add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button">Cancel</a>
-                                                <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
-                                                <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
                                 <!-- Service preventive -->
                                 <div ng-show="step === '2a'" class="add-new-menu">
                                     <div class="heading-container flex">
@@ -380,7 +355,7 @@
                                             <label for="step-2b-ns">Next service</label>
                                             <input type="text" disabled id="step-2b-ns" value="{{addNewNextService | date:'MM/dd/yyyy'}}">
                                             <div class="add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
                                             </div>
@@ -431,7 +406,7 @@
                                             <label for="step-2c-vc">Value calculated to be</label>
                                             <input type="text" id="step-2c-vc" disabled>
                                             <div class="add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 1">Back</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 3">Next</a>
                                             </div>
@@ -449,9 +424,6 @@
                                             <p>Step 3 of 5</p>
                                         </div>
                                         <div class="add-new-content">
-                                            <!-- ============================================================================================ -->
-                                            <!-- ============================================================================================ -->
-                                            <!-- ============================================================================================ -->
                                             <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="addnewTodoList">
                                                 <div class="todoItem" ng-repeat="x in addnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                                 <form ng-submit="todoAdd()" class="addTodo">
@@ -459,11 +431,8 @@
                                                     <button type="submit" class="green-btn">Add</button>
                                                 </form>
                                             </div>
-                                            <!-- ============================================================================================ -->
-                                            <!-- ============================================================================================ -->
-                                            <!-- ============================================================================================ -->
                                             <div class="add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = '2a'">Back</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 4">Next</a>
                                             </div>
@@ -489,7 +458,7 @@
                                                 </label>
                                             </div>
                                             <div class=" add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 3">Back</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 5">Next</a>
                                             </div>
@@ -512,9 +481,9 @@
                                             <label for="step-5-dbf">Days before service</label>
                                             <input type="text" id="step-5dbf" placeholder="Text here...">
                                             <div class="add-new-buttons flex flex-a">
-                                                <a href="#" class="add-new-button add-new-cancel">Cancel</a>
+                                                <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 4">Back</a>
-                                                <a href="#" class="add-new-button">Create</a>
+                                                <a href="#" class="add-new-button" ng-click="createNewResource()">Create</a>
                                             </div>
                                         </div>
                                     </div>
@@ -526,7 +495,74 @@
 
                         <!-- Desktop resource list -->
                         <div id="desktop-resource-container">
-                            <table class="desktopResources">
+
+                            <div class="desktop-resources-top-wrapper">
+                                <div class="flex flex-b mb">
+                                    <div class="flex">
+                                        <label for="desktop-resource-search">Search</label>
+                                        <input type="text" placeholder="Search for resource" ng-model="desktopSearch" class="desktop-resources-input" id="desktop-resource-search">
+                                    </div>
+
+                                    <div class="flex">Add new <div class="green-btn-desktop"><img src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div></div>
+                                </div>
+
+                                <div class="flex flex-b">
+                                    <div class="flex flex-b w250">
+                                        <div class="flex">
+                                            <label for="resourceEntries">Show</label>
+                                            <select class="ml-13 mr" id="resourceEntries" ng-model="entries" ng-init="entries = '10'">
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>50</option>
+                                                <option>100</option>
+                                            </select>
+                                            <span>entries</span>
+                                        </div>
+                                        
+                                        <img class="calender-btn" ng-click="desktopView = 2" src="assets/icons/calender-icon.svg" alt="Show calendar">
+                                    </div>
+
+
+                                    <div class="flex">
+                                        <div class="flex">
+                                            <label for="desktop-type">Type</label>
+                                            <select class="desktop-resources-input" id="desktop-type">
+                                                <option>All</option>
+                                                <option>Preventive</option>
+                                                <option>Predictive</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="flex">
+                                            <label for="desktop-group">Group</label>
+                                            <select class="desktop-resources-input" id="desktop-group">
+                                                <option>All</option>
+                                                <option>Machine</option>
+                                                <option>Car</option>
+                                                <option>Washer</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="flex">
+                                            <label for="desktop-data">Data</label>
+                                            <select class="desktop-resources-input mr-0" id="desktop-data">
+                                                <option>All</option>
+                                                <option>ID</option>
+                                                <option>Name</option>
+                                                <option>Type</option>
+                                                <option>Group</option>
+                                                <option>Enabled</option>
+                                                <option>Next service</option>
+                                                <option>Last service</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table class="desktop-resources">
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
@@ -535,27 +571,63 @@
                                     <th>Enabled</th>
                                     <th>Last service</th>
                                     <th>Next service</th>
+                                    <th></th>
+                                </tr>
+
+                                <tr dir-paginate="r in resources | filter: desktopSearch | itemsPerPage: entries" pagination-id="desktop" ng-click="selectRes(r.id)" class="desktop-resource" id="desktop-resource-{{r.id}}">
+                                    <td>{{r.id}}</td>
+                                    <td>{{r.name}}</td>
+                                    <td>{{r.type}}</td>
+                                    <td>{{r.group}}</td>
+                                    <td><div ng-show="r.enabled === 'true'" class="enabled"></div><div ng-show="r.enabled === 'false'" class="disabled"></div></td>
+                                    <td>{{r.lastService}}</td>
+                                    <td>
+                                        <div class="loading">
+                                            <div class="loading-text strong" ng-show="r.percent < 100">In {{r.id*3}} days({{r.nextService}})</div>
+                                            <div class="loading-text strong" ng-show="r.percent == 100">Service in progress ({{r.id}}/{{r.id*3}})</div>
+                                            <div class="loading-text strong" ng-show="r.percent > 100">{{r.percent/2}} days ago ({{r.nextService}})</div>
+                                            <div ng-show="r.percent > 100" class="loading-bar loading-expired" style="width:100%"></div>
+                                            <div ng-show="r.percent == 100" class="loading-bar loading-today" style="width:{{r.percent}}%"></div>
+                                            <div ng-show="r.percent < 100 && r.percent > 75" class="loading-bar loading-soon" style="width:{{r.percent}}%"></div>
+                                            <div ng-show="r.percent < 75" class="loading-bar loading-service" style="width:{{r.percent}}%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="open-desktop-resource-menu"></div>
+                                    </td>
                                 </tr>
                             </table>
+
+                            <div class="flex flex-b">
+                                <div></div>
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="false" pagination-id="desktop" on-page-change="paginatePageChange(newPageNumber)" ></dir-pagination-controls>
+                            </div>
+
+
                         </div>
 
                         <!-- Mobile resource list -->
                         <div id="mobile-resource-container" ng-init="mobileView = 1">
                             <!-- == Mobile card view == -->
                             <div id="mobile-card-view" ng-show="mobileView === 1">
-                                <div class="mobile-resource" ng-repeat="r in resources | filter: search" id="mobile-resource{{r.id}}">
+                                <div class="mobile-resource" dir-paginate="r in resources | filter: search | itemsPerPage: selectEntries" pagination-id="mobile" id="mobile-resource{{r.id}}">
                                     <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource-content mobile-resource-header">
                                         <span>ID: <span class="strong">{{r.id}}</span></span>
                                         <span class="strong">{{r.name}}</span>
-                                        <span><div class="enabled"></div></span>
+                                        <span><div ng-show="r.enabled === 'true'" class="enabled"></div><div ng-show="r.enabled === 'false'" class="disabled"></div></span>
                                     </div>
 
                                     <div ng-click="expandResourceDropDown(r.id)" class="mobile-resource-content mobile-resource-body">
                                         <div class="mobile-next-service">
                                             <span>Next service:</span>
                                             <div class="loading">
-                                                <div class="loading-text strong">{{r.nextService}}</div>
-                                                <div class="loading-bar"></div>
+                                                <div class="loading-text strong" ng-show="r.percent < 100">In {{r.id*3}} days({{r.nextService}})</div>
+                                                <div class="loading-text strong" ng-show="r.percent == 100">Service in progress ({{r.id}}/{{r.id*3}})</div>
+                                                <div class="loading-text strong" ng-show="r.percent > 100">{{r.percent/2}} days ago ({{r.nextService}})</div>
+                                                <div ng-show="r.percent > 100" class="loading-bar loading-expired" style="width:100%"></div>
+                                                <div ng-show="r.percent == 100" class="loading-bar loading-today" style="width:{{r.percent}}%"></div>
+                                                <div ng-show="r.percent < 100 && r.percent > 75" class="loading-bar loading-soon" style="width:{{r.percent}}%"></div>
+                                                <div ng-show="r.percent < 75" class="loading-bar loading-service" style="width:{{r.percent}}%"></div>
                                             </div>
                                         </div>
 
@@ -602,6 +674,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="false" pagination-id="mobile"></dir-pagination-controls>
                             </div>
 
 
@@ -778,7 +852,7 @@
                                     <div class="row flex flex-b">
                                         <div class="flex align">
                                             <label for="historyEntries">Entries </label>
-                                            <select id="historyEntries">
+                                            <select id="historyEntries ml-12">
                                                 <option>10</option>
                                                 <option>20</option>
                                                 <option>50</option>
@@ -835,10 +909,83 @@
                             </div>
                         </div>
 
+                        <div id="desktop-history">
+                            <div class="desktop-history-header">
+                                <h1>Rødbederenser</h1>
+
+                                <div class="flex mb">
+                                    <label for="desktop-history-search">Search</label>
+                                    <input type="text" placeholder="Search history" class="desktop-resources-input" id="desktop-history-search">
+                                </div>
+
+                                <div class="flex flex-b">
+                                    <div class="flex">
+                                        <label for="desktop-history-entries">Show</label>
+                                        <select class="ml-13" id="desktop-history-entries">
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>50</option>
+                                            <option>100</option>
+                                        </select>
+                                        <span>entries</span>
+                                    </div>
+
+                                    <div class="flex">
+                                        <label for="desktop-history-type">Type</label>
+                                        <select class="desktop-resources-input" id="desktop-history-type">
+                                            <option>All</option>
+                                            <option>Service</option>
+                                            <option>Repair</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Value</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>06-09-2020</td>
+                                    <td>Service</td>
+                                    <td class="open-desktop-resource-menu"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>07-08-2020</td>
+                                    <td>Service</td>
+                                    <td class="open-desktop-resource-menu"></td>
+                                </tr>
+                                <tr class="repair">
+                                    <td>3</td>
+                                    <td>12-07-2020</td>
+                                    <td>Repair</td>
+                                    <td class="open-desktop-resource-menu"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>14-06-2020</td>
+                                    <td>Service</td>
+                                    <td class="open-desktop-resource-menu"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>01-05-2020</td>
+                                    <td>Service</td>
+                                    <td class="open-desktop-resource-menu"></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <!-- Tab 3 (Settings) -->
                     <div class="tab-3" ng-show="tab === 3">
+
+                        <!-- ========== Mobile ========== -->
                         <div class="tablet-wrapper">
                             <!-- Mobile -->
                             <div id="mobile-settings-container">
@@ -1008,6 +1155,175 @@
                                     <button id="apply-settings" ng-click="serviceTab()">Apply changes</button>
                                 </section>
                             </div>
+                        </div>
+
+                        <!-- =================== Desktop ================== -->
+                        <div id="desktop-settings">
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Details</h3>
+                                    <span>Part 1 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-name">Resource name</label>
+                                    <input type="text" placeholder="Resource name" value="Rødbederenser" id="settings-resource-name"/>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-group">Group</label>
+                                    <div class="flex">
+                                        <select id="settings-resource-group">
+                                            <option>Machine</option>
+                                            <option>Cars</option>
+                                            <option>Washer</option>
+                                        </select>
+                                        <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-desc">Description</label>
+                                    <textarea id="settings-resource-desc" placeholder="Enter resource description"></textarea>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Service</h3>
+                                    <span>Part 2 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <p>Type</p>
+                                    <div class="desktop-settings-type-select" ng-init="type = 1">
+                                        <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
+                                    </div>
+                                </div>
+
+                                <!-- Preventive -->
+                                <div ng-show="type === 1">
+                                    <div class="desktop-settings-row">
+                                        <label for="desktop-settings-resource-ls">Last service</label>
+                                        <input type="text" id="desktop-settings-resource-ls" ng-model="desktopServiceLastService" ng-change="desktopNextServiceCalc()">
+                                    </div>
+
+                                    <div class="desktop-settings-row flex flex-b">
+                                        <div>
+                                            <label for="desktop-settings-resource-interval">Service interval</label>
+                                            <input type="number" id="desktop-settings-resource-interval" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceInterval">
+                                        </div>
+                                        <div class="w50">
+                                            <label for="desktop-settings-resource-interval-unit">Unit</label>
+                                            <select id="desktop-settings-resource-interval-unit" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="desktop-settings-resource-ns">Next service</label>
+                                        <input type="text" disabled id="desktop-settings-resource-ns" value="{{desktopNextService | date:'MM/dd/yyyy'}}">
+                                    </div>
+                                </div>
+
+                                <!-- Predictive -->
+                                <div ng-show="type === 2">
+                                    <div class="desktop-settings-row">
+                                        <label for="settings-resource-source">Source</label>
+                                        <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
+                                    </div>
+
+                                    <div class="desktop-settings-row flex flex-b">
+                                        <div>
+                                            <label for="settings-resource-start-value">Start value</label>
+                                            <input type="text" disabled id="settings-resource-start-value">
+                                        </div>
+
+                                        <div>
+                                            <label for="settings-resource-internal-value">Internal value</label>
+                                            <input type="text" id="settings-resource-internal-value">
+                                        </div>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="settings-resource-time-range">Time range</label>
+                                        <select id="settings-resource-time-range">
+                                            <option>1 Week</option>
+                                            <option>1 Month</option>
+                                            <option>1 Year</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="settings-resource-max-internal">Max interval days</label>
+                                        <input type="text" id="settings-resource-max-internal">
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="settings-resource-pred-ns">Next service calculated to be</label>
+                                        <input type="text" id="settings-resource-pred-ns" disabled>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="settings-resource-valcalc">Value calculated to be</label>
+                                        <input type="text" id="settings-resource-valcalc" disabled>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Checklist</h3>
+                                    <span>Part 3 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <p>To do's</p>
+                                    <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="desktopAddnewTodoList">
+                                        <div class="todoItem" ng-repeat="x in desktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
+                                        <form ng-submit="desktopTodoAdd()" class="addTodo">
+                                            <input type="text" ng-model="desktopAddnewTodoInput" id="desktopAddnewTodoInput" placeholder="Add New">
+                                            <button type="submit" class="green-btn">Add</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Attachments</h3>
+                                    <span>Part 4 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <p>Items</p>
+                                    <div class="desktop-settings-todolist">
+                                        <div id="desktop-uploaded-attachments"></div>
+                                        <label class="desktop-file-upload-attach">
+                                            <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Notify me</h3>
+                                    <span>Part 5 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-notify">E-mail addresses (seprate e-mails by comma)</label>
+                                    <input type="text" id="settings-resource-notify" placeholder="Enter e-mail(s) to notify">
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-daysb4service">Days before service</label>
+                                    <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
+                                </div>
+
+                                <button class="apply-settings" ng-click="serviceTab()">Apply changes</button>
+                            </section>
                         </div>
 
                     </div>
