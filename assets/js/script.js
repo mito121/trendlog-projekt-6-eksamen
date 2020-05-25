@@ -36,6 +36,14 @@ $('.add-new-close-btn').click(function (e) {
    let alsoOpen = false;
 });
 
+// Close mobile add new menu on X click
+$('.add-new-cancel').click(function (e) {
+   e.stopPropagation();
+   $('.add-new-menu-overlay').css("display", "none");
+   $('html body').css("overflow", "auto");
+   let alsoOpen = false;
+});
+
 
 
 
@@ -62,7 +70,7 @@ $(document).ready(function () {
    });
 
 
-   // Add attachment
+   // Add attachment (settings)
    var attachmentList = "";
    $('.file-upload-attach').children("input").bind('change', function () {
       var fileName = '';
@@ -74,8 +82,21 @@ $(document).ready(function () {
          // Output attachment list to html
          $('#uploaded-attachments').html(attachmentList);
       }
+   });
 
 
+   // Add attachment (add new)
+   var addnewAttachmentList = "";
+   $('.addnew-file-upload-attach').children("input").bind('change', function () {
+      var fileName = '';
+      fileName = $(this).val().split("\\").slice(-1)[0];
+
+      if (fileName.length > 0) {
+         addnewAttachmentList += "<div class='todoItem'><div>" + fileName + "</div> <div><img src='assets/icons/delete-icon-grey.svg' alt='Delete checkbox'></div></div>";
+
+         // Output attachment list to html
+         $('#addnew-uploaded-attachments').html(addnewAttachmentList);
+      }
    });
 
 

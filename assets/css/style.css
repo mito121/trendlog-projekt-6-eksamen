@@ -880,6 +880,14 @@ aside ul li:hover{
     border:1px solid #d3d3d3;
 }
 
+.add-new-service-select button:first-of-type{
+    border-right:none;
+}
+
+.add-new-service-select button:last-of-type{
+    border-left:none;
+}
+
 .add-new-service-select button:first-child{
     border-radius:5px 0 0 5px;
 }

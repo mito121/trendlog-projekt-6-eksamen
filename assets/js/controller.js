@@ -241,19 +241,15 @@ app.controller("mainCtrl", function ($scope, $http) {
 
 
    // Resource settings checklist
-   $scope.todoList = [];
+   $scope.addnewTodoList = [];
 
-   let todoIndex = 0;
+   let addnewTodoIndex = 0;
 
    $scope.todoAdd = function () {
-      $scope.todoList.push({i: todoIndex, todoText: $scope.todoInput});
-      $scope.todoInput = "";
-      document.getElementById("todoInput").focus();
-      todoIndex++;
-   };
-
-   $scope.removeTodo = function (i) {
-      $scope.todoList = $scope.todoList.splice(i, 1);
+      $scope.addnewTodoList.push({i: addnewTodoIndex, todoText: $scope.addnewTodoInput});
+      $scope.addnewTodoInput = "";
+      document.getElementById("addnewTodoInput").focus();
+      addnewTodoIndex++;
    };
 
 
