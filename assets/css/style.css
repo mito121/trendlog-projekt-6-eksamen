@@ -932,7 +932,7 @@ aside ul li:hover{
     width: 20px;
 }
 
-.add-new-menu-overlay .green-btn{
+.add-new-menu-overlay .select-w-button .green-btn{
     height: 34px;
     width: 34px;
     margin-left: 0px;
@@ -944,6 +944,43 @@ aside ul li:hover{
 
 .select-w-btn{
     margin-bottom: 10px;
+}
+
+.checklist-item{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:#fff;
+    padding:6px;
+    margin:4px 0;
+    border-radius:5px;
+}
+
+.checklist-item img{
+    height:18px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.add-checklist button{
+    font-size:14px !important;
+    margin-left:0 !important;
+}
+
+.add-checklist button{
+    background-color: #01CC01;
+    color: white;
+    height: 33.5px;
+    width: 39px;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    font-size:33px;
 }
 
 /* Mobilshit */
@@ -1286,6 +1323,7 @@ aside ul li:hover{
         background-color: #222;
         border-top: 1px solid #707070;
         z-index:20;
+        display: none;
     }
 
     .mobile-calendar-head{
