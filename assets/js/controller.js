@@ -253,23 +253,6 @@ app.controller("mainCtrl", function ($scope, $http) {
    };
 
 
-   // New resource checklist
-   $scope.checklistList = [];
-
-   let checklistIndex = 0;
-
-   $scope.checklistAdd = function () {
-      $scope.checklistList.push({i: checklistIndex, checklistText: $scope.checklistInput});
-      $scope.checklistInput = "";
-      document.getElementById("checklistInput").focus();
-      checklistIndex++;
-   };
-
-   $scope.removeChecklist = function (i) {
-      $scope.checklistList = $scope.checklistList.splice(i, 1);
-   };
-
-
 
 //   $scope.sortableOptions = {
 //      update: function (e, ui) {
