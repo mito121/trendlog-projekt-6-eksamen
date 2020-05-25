@@ -744,7 +744,7 @@ aside ul li:hover{
 /* Filter menu slide animation */
 @keyframes slideInFromLeft {
     from {
-        transform: translateX(-100vw);
+        transform: translateX(-300px);
     }
     to {
         transform: translateX(0);
@@ -984,21 +984,7 @@ aside ul li:hover{
 }
 
 /* Mobilshit */
-/*@media only screen and (max-width: 768px) {*/
-@media only screen and (max-width: 1366px) {
-    .tablet-wrapper{
-        width:540px;
-        margin:0 auto;
-    }
-
-    #tablet-card-view{
-        display:block;
-    }
-
-    .tablet-card-containers{
-        width:33% !important;
-    }
-
+@media only screen and (max-width: 768px) {
     /* Header & Navigation */
     #desktop-nav{
         display:none;
@@ -1132,7 +1118,6 @@ aside ul li:hover{
         display:none;
     }
 
-    /*************** TABLET *****************/
     #mobile-resource-container{
         display:block;
         background-color:#222;
@@ -1181,11 +1166,6 @@ aside ul li:hover{
         padding-bottom:18px;
     }
 
-    .expand-resource {
-        border-top:1px solid #d3d3d3;
-    }
-
-
     .mobile-resource-content:nth-child(3){
         padding-top:8px;
     }
@@ -1228,7 +1208,6 @@ aside ul li:hover{
         background-color:#01CC01;
         border-radius:5px 0px 0px 5px;
     }
-    /************* TABLET ***********/
 
     .mobile-resource-dropdown{
         display: block;
@@ -1335,7 +1314,7 @@ aside ul li:hover{
     }
 
     #mobile-calendar-view{
-        height: 100vh;
+        min-height: 100vh;
         overflow:auto;
         width: 100%;
         top: 90px;
@@ -1464,20 +1443,6 @@ aside ul li:hover{
         right: 0;
     }
 
-    .calendar-today{
-        position:relative;
-    }
-
-    .calendar-today::after{
-        content: "•";
-        color: #F0AD4E;
-        position: absolute;
-        top: 37px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
     .calendar-service{
         position:relative;
     }
@@ -1494,8 +1459,9 @@ aside ul li:hover{
 
     .mobile-calendar-events{
         width:100%;
+        height:100%;
         padding:12px 20px;
-        min-height:300px;
+        min-height:400px;
         overflow:auto;
     }
 
@@ -1532,117 +1498,6 @@ aside ul li:hover{
         font-size:.9em;
         color:#8F8F8F;
         white-space: nowrap;
-    }
-
-
-    /* Mobile calendar list */
-    #mobile-calendar-list{
-        height: 100vh;
-        overflow:auto;
-        width: 100%;
-        top: 90px;
-        left: 0;
-        position: fixed;
-        background-color: #222;
-        border-top: 1px solid #707070;
-        z-index:20;
-    }
-
-    .calendar-list-header{
-        width:100%;
-        font-family: "Segoe UI", sans-serif;
-        background-color:#EEEEEE;
-        text-align:center;
-        text-transform:uppercase;
-        font-weight:600;
-        color:#AEAEAE;
-        padding:3px 0;
-    }
-
-    .calendar-list-item{
-        display:flex;
-        align-items: center;
-        background-color:#FFF;
-        padding:8px 20px;
-        position:relative;
-    }
-
-    .calendar-list-item::before{
-        content: "❯";
-        color: #2AC319;
-        position: absolute;
-        right: 20px;
-        top: 40%;
-        font-size: 1.5em;
-    }
-
-    .calendar-list-item::after{
-        content:"";
-        width:85%;
-        position:absolute;
-        bottom:0;
-        margin:0 auto;
-        border-bottom:2px solid #EEEEEE;
-    }
-
-    .calendar-list-group .calendar-list-item:last-of-type::after{
-        display:none;
-    }
-
-    /* Calendar list div: last of type */
-    .calendar-list-item div:first-child{
-        /*width:20%;*/
-        width:65px;
-        height:65px;
-        border-radius:9px;
-        color:white;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        text-transform:uppercase;
-        background-color:#337AB7;
-    }
-
-    .calendar-list-item div:first-child p{
-        margin:-3px;
-    }
-
-    .calendar-list-item div:first-child p:first-child{
-        font-size:1.5em;
-    }
-
-    .calendar-list-item div:first-child p:last-child{
-        font-size:1em;
-    }
-
-    /* Calendar list div: last of type */
-    .calendar-list-item div:last-of-type{
-        width:75%;
-        margin-left: 10px;
-    }
-
-    .calendar-list-item div:last-of-type p{
-        margin:0;
-    }
-
-    .calendar-list-item div:last-of-type p:first-child{
-        font-size:22px;
-        font-weight:600;
-    }
-
-    .calendar-list-item div:last-of-type p:last-child{
-        font-size:14px;
-    }
-
-
-    .cal-list-today{
-        background-color:#F0AD4E !important;
-
-    }
-
-    .cal-list-soon{
-        background-color:#5CB85C !important;
     }
 
 
@@ -1858,112 +1713,7 @@ aside ul li:hover{
         font-size: 15px;
     }
 
-} /* tablet media query */
 
-/* mobile only */
-@media only screen and (max-width: 768px) {
-    .tablet-wrapper{
-        width:100%;
-        margin:0;
-    }
-
-    #tablet-card-view{
-        display:none;
-    }
-
-    #mobile-card-view{
-        display:block;
-    }
-    #mobile-resource-container{
-        display:block;
-        background-color:#222;
-        margin:12px auto 0 auto;
-        padding-top: 4px;
-    }
-
-    .mobile-resource{
-        background-color:white;
-        padding:6px;
-        margin-bottom: 4px;
-    }
-
-    .mobile-resource-header span:nth-child(2){
-        font-size:16px;
-        font-weight:900;
-    }
-
-    .enabled{
-        height:16px;
-        width:16px;
-        background:#01CC01;
-        border-radius:50%;
-    }
-
-    .mobile-resource p, .mobile-resource span{
-        font-size:14px;
-    }
-
-    .mobile-resource-content{
-        display:flex;
-        align-items:center;
-        justify-content: space-between;
-        padding:4px 8px;
-        margin:0 6px;
-    }
-
-    .mobile-resource-content:first-child{
-        border-bottom:1px solid black;
-        padding-bottom:6px;
-    }
-
-    .mobile-resource-content:nth-child(2){
-        border-bottom:1px solid #d3d3d3;
-        padding-top:12px;
-        padding-bottom:18px;
-    }
-
-    .mobile-resource-content:nth-child(3){
-        padding-top:8px;
-    }
-
-    .mobile-next-service{
-        width:70%;
-    }
-
-    .mobile-last-service p{
-        padding:0;
-        margin:0;
-    }
-
-    .mobile-last-service p:last-of-type{
-        margin-top:4px;
-    }
-
-    .loading{
-        width:100%;
-        border:1px solid #d3d3d3;
-        border-radius:5px;
-        display:flex;
-        justify-content: center;
-        position:relative;
-        z-index:1;
-    }
-
-    .loading-text{
-        padding:2px 0;
-        z-index:2;
-    }
-
-    .loading-bar{
-        width:40%;
-        height:99%;
-        z-index:1;
-        position:absolute;
-        top:0;
-        left:0;
-        background-color:#01CC01;
-        border-radius:5px 0px 0px 5px;
-    }
 
 }
 
