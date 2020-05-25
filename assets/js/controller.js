@@ -50,9 +50,11 @@ app.controller("mainCtrl", function ($scope, $http) {
    $('#filter-menu-btn').click(function () {
       if (open == false) {
          $('.filter-menu-overlay').css("display", "block");
+         $('html body').css("overflow", "hidden");
          let open = true;
       } else {
          $('.filter-menu-overlay').css("display", "none");
+         $('html body').css("overflow", "auto");
          let open = false;
       }
    });
@@ -61,6 +63,7 @@ app.controller("mainCtrl", function ($scope, $http) {
    $('.filter-menu-overlay').click(function (e) {
       e.stopPropagation();
       $('.filter-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
       let open = false;
    });
 
@@ -68,6 +71,7 @@ app.controller("mainCtrl", function ($scope, $http) {
    $('#closeFilterMenu').click(function (e) {
       e.stopPropagation();
       $('.filter-menu-overlay').css("display", "none");
+      $('html body').css("overflow", "auto");
       let open = false;
    });
 

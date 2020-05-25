@@ -324,7 +324,7 @@
                                     </div>
                                 </div>
                                 <!-- Service none selected -->
-                                <div ng-show="step == '2a'" class="add-new-menu">
+                                <!--<div ng-show="step == '2a'" class="add-new-menu">
                                     <div class="heading-container flex">
                                         <h2>New resource</h2>
                                     </div>
@@ -347,9 +347,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- Service preventive -->
-                                <div ng-show="step === '2b'" class="add-new-menu">
+                                <div ng-show="step === '2a'" class="add-new-menu">
                                     <div class="heading-container flex">
                                         <h2>New resource</h2>
                                     </div>
@@ -361,8 +361,8 @@
                                         <div class="add-new-content">
                                             <p>Type</p>
                                             <div class="add-new-service-select">
-                                                <button class="on" ng-click="step = '2b'">Preventive</button>
-                                                <button ng-click="step = '2c'">Predictive</button>
+                                                <button ng-class="{on:step === '2a'}" ng-click="step = '2a'">Preventive</button>
+                                                <button ng-class="{on:step === '2b'}" ng-click="step = '2b'">Predictive</button>
                                             </div>
                                             <label for="step-2b-ls">Last service</label>
                                             <input type="text" id="step-2b-ls" ng-model="addNew2bLastService" ng-change="addNewNextServiceCalc()">
@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
                                 <!-- Service predictive -->
-                                <div ng-show="step === '2c'" class="add-new-menu">
+                                <div ng-show="step === '2b'" class="add-new-menu">
                                     <div class="heading-container flex">
                                         <h2>New resource</h2>
                                     </div>
@@ -400,8 +400,8 @@
                                         <div class="add-new-content">
                                             <p>Type</p>
                                             <div class="add-new-service-select">
-                                                <button ng-click="step = '2b'">Preventive</button>
-                                                <button class="on" ng-click="step = '2c'">Predictive</button>
+                                                <button ng-class="{on:step === '2a'}" ng-click="step = '2a'">Preventive</button>
+                                                <button ng-class="{on:step === '2b'}" ng-click="step = '2b'">Predictive</button>
                                             </div>
                                             <label for="step-2c-src">Source</label>
                                             <div class="flex flex-b">

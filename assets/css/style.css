@@ -844,6 +844,8 @@ aside ul li:hover{
     padding-top: 10px;
     width: 100%;
     border-top: 1px solid #222;
+    overflow: auto;
+    height: 77vh;
 }
 
 .add-new-buttons a:nth-child(1){
