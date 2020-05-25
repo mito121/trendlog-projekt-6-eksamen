@@ -88,18 +88,21 @@ app.controller("mainCtrl", function ($scope, $http) {
    // Go to history tab
    $scope.serviceTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $('html body').css("overflow", "auto");
       $scope.tab = 1;
       window.scrollTo(0, 0);
    };
    // Go to history tab
    $scope.historyTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $('html body').css("overflow", "auto");
       $scope.tab = 2;
       window.scrollTo(0, 0);
    };
    // Go to settings tab
    $scope.settingsTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
+      $('html body').css("overflow", "auto");
       $scope.tab = 3;
       window.scrollTo(0, 0);
    };
