@@ -3270,6 +3270,7 @@ button:hover{
     background-color: white;
     width: 100%;
     height: 100vh;
+    overflow: auto;
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -3277,7 +3278,7 @@ button:hover{
 }
 
 .service-content{
-    
+
 }
 
 .service-header{
@@ -3285,7 +3286,7 @@ button:hover{
     height: 50px;
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 .service-header img{
@@ -3306,7 +3307,7 @@ button:hover{
 .serviceblock{
     display: block;
     margin-bottom: 20px;
-    
+
 }
 
 .service-header-button{
@@ -3320,14 +3321,126 @@ button:hover{
 }
 
 .service-body{
-    padding: 20px;
+    padding: 15px;
 }
 
 .service-footer{
-    
+    position:absolute;
+    display:flex;
+    align-items:center;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:50px;
+    background-color: #D3D3D3;
+    justify-content: flex-end;
+}
+
+.repair-log .service-footer{
+    position: initial;
+}
+
+.service-footer button{
+    /*background-color: #65A0D4;*/
+    background-color: #007BFF;
+    border-radius:5px;
+    border:none;
+    color:white;
+    margin: 0 5px;
+    padding: 5px 15px;
+    font-size: 1.2em;
 }
 
 .service-body hr{
     margin: 30px 0px;
     border-color: #222;
+}
+
+#repair-description{
+    background-color:#F0F0F0;
+}
+
+.repair-log-checklist{
+    background-color:#F0F0F0;
+    border:1px solid #D3D3D3;
+    border-radius:5px;
+    min-height:75px;
+    padding:2px 5px;
+}
+
+.repair-log-checklist p{
+    margin:4px 5px;
+    font-weight:600;
+}
+
+.repair-log-checklist input{
+    width:87%;
+    z-index:10;
+}
+
+.repair-list-item{
+    position:relative;
+    margin-bottom:30px;
+}
+
+.repair-list-file-upload{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 25px;
+    width: 40px;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    bottom: -20px;
+    left: 4px;
+    border-radius: 0 0 5px 5px;
+    z-index:9;
+}
+
+.repair-list-file-upload svg{
+    height:13px;
+}
+
+.repair-list-files{
+    height: 25px;
+    min-width: 75px;
+    position: absolute;
+    bottom: -23px;
+    left: 48px;
+    z-index:9;
+}
+
+.repair-list-file{
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 0 0 5px 5px;
+    color: #69B4FF;
+    padding: 2px 3px;
+    margin-left:3px;
+    display:inline;
+}
+
+.repair-checked{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:34px;
+    width:34px;
+    border-radius:5px;
+    border:1px solid #d3d3d3;
+    background-color:#01CC01;
+}
+
+.repair-unchecked{
+    height:34px;
+    width:34px;
+    border-radius:5px;
+    border:1px solid #d3d3d3;
+    background-color:#fff;
+}
+
+.repair-checked svg{
+    height:24px;
 }

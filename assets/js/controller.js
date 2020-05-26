@@ -229,12 +229,12 @@ app.controller("mainCtrl", function ($scope, $http) {
       $scope.selected = 1;
    };
 
-$(document).ready(function(){
-   //// Desktop open service checklist
-   $('.desktop-resource').dblclick(function () {
-      alert("Resource checklist triggered!");
+   $(document).ready(function () {
+      //// Desktop open service checklist
+      $('.desktop-resource').dblclick(function () {
+         alert("Resource checklist triggered!");
+      });
    });
-});
 
 
 
@@ -437,6 +437,21 @@ $(document).ready(function(){
       $scope.addnewDesktopAddnewTodoInput = "";
       document.getElementById("addnewDesktopAddnewTodoInput").focus();
       addnewDekstopAddnewTodoIndex++;
+   };
+   
+   
+   //// Show service report
+   $scope.showServiceReport = function(){
+      $scope.serviceReportView = 1;
+   };
+   //// Hide service report
+   $scope.hideServiceReport = function(){
+      $scope.serviceReportView = 0;
+   };
+   
+   //// Show service report
+   $scope.showRepairLog = function(){
+      $scope.serviceReportView = 2;
    };
 
 

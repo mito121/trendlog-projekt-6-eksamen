@@ -819,9 +819,9 @@
                                         </div>
                                         <div class="center-links">
                                             <div class="horizontal-seperator"></div>
-                                            <div class="center-link"><a>Show service report</a></div>
+                                            <div class="center-link" ng-click="showServiceReport()"><a>Show service report</a></div>
                                             <div class="horizontal-seperator"></div>
-                                            <div class="center-link"><a>Create repair log</a></div>
+                                            <div class="center-link" ng-click="showRepairLog()"><a>Create repair log</a></div>
                                             <div class="horizontal-seperator"></div>
                                             <div class="center-link" onclick="triggerQrkodeModal()"><a>Show QR code</a></div>
                                             <div class="horizontal-seperator"></div>
@@ -1849,6 +1849,171 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 'Checkliste / Servicerapport' -->
+            <div id="servicefull" class="servicerapport" ng-show="serviceReportView == 1">
+
+                <!-- Servicerapport indhold -->
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-header-button"><img alt="print" src="assets/icons/print-icon.svg"></div>
+                        <div class="service-header-button" ng-click="hideServiceReport()"><img alt="close" src="assets/icons/close-icon-dark.svg"></div>
+                    </div>
+
+                    <div class="service-body">
+                        <div class="servicerow"><img alt="Trendlog-logo" src="assets/images/trendlog-logo.png"></div>
+
+                        <div class="servicerow">
+                            <h2>Rødbederenser</h2>
+                        </div>
+
+                        <div class="servicerow flex-b">
+                            <div class="w33"><label for="name-of-technician"> Name of Technician</label></div>
+                            <div class="w60"><input id="name-of-technician" type="text" placeholder="Assign name..."></div>
+                        </div>
+
+                        <div class="servicerow flex-b">
+                            <div class="w33"><label for="service-date-done">Service Date Done</label></div>
+                            <div class="w60"><input id="service-date-done" type="text" placeholder="Assign date..."></div>
+                        </div>
+
+                        <hr>
+
+                        <div class="serviceblock">
+                            <label for="service-comments">Comments</label>
+                            <textarea id="service-comments" placeholder="Text here..."></textarea>
+                        </div>
+
+                    </div>
+                </div>  
+                <div class="service-footer">
+                    <button ng-click="hideServiceReport()">Done</button>
+                </div>
+            </div>
+
+            <!-- Repair log -->
+            <div class="servicerapport repair-log" ng-show="serviceReportView == 2">
+
+                <!-- Repair log indhold -->
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-header-button"><img alt="print" src="assets/icons/print-icon.svg"></div>
+                        <div class="service-header-button" ng-click="hideServiceReport()"><img alt="close" src="assets/icons/close-icon-dark.svg"></div>
+                    </div>
+
+                    <div class="service-body">
+                        <div class="servicerow"><img alt="Trendlog-logo" src="assets/images/trendlog-logo.png"></div>
+
+                        <div class="servicerow">
+                            <h2>Rødbederenser</h2>
+                        </div>
+
+                        <div class="servicerow flex-b">
+                            <div class="w33"><label for="name-of-repair-technician"> Name of Technician</label></div>
+                            <div class="w60"><input id="name-of-repair-technician" type="text" placeholder="Assign name..."></div>
+                        </div>
+
+                        <div class="servicerow flex-b">
+                            <div class="w33"><label for="repair-date-done">Service Date Done</label></div>
+                            <div class="w60"><input id="repair-date-done" type="text" placeholder="Assign date..."></div>
+                        </div>
+
+                        <hr>
+
+                        <div class="serviceblock">
+                            <label for="repair-description">Description</label>
+                            <textarea id="repair-description" disabled>This is an example text meant to vizualize a description of the repair.</textarea>
+                        </div>
+
+                        <div class="serviceblock">
+                            <label for="repair-description">Checklist</label>
+                            <div class="repair-log-checklist">
+
+                                <div class="repair-list-item">
+                                    <p>Skift olie</p>
+                                    <div class="flex flex-b"><input type="text" placeholder="Enter comment"> <div class="repair-checked"><svg viewBox="0 0 24 24"><path fill="#fff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg></div></div>
+
+                                    <div class="repair-list-file-upload">
+                                        <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="repair-list-files">
+                                        <div class="repair-list-file">
+                                            exampleImage.jpg
+                                        </div>
+                                        <div class="repair-list-file">
+                                            andreas.png
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="repair-list-item">
+                                    <p>Tjek data</p>
+                                    <div class="flex flex-b"><input type="text" placeholder="Enter comment"> <div class="repair-checked"><svg viewBox="0 0 24 24"><path fill="#fff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg></div></div>
+
+                                    <div class="repair-list-file-upload">
+                                        <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="repair-list-item">
+                                    <p>Undersøg fobindelse</p>
+                                    <div class="flex flex-b"><input type="text" placeholder="Enter comment"> <div class="repair-checked"><svg viewBox="0 0 24 24"><path fill="#fff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" /></svg></div></div>
+
+                                    <div class="repair-list-file-upload">
+                                        <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="repair-list-item">
+                                    <p>Opdatér styresystem</p>
+                                    <div class="flex flex-b"><input type="text" placeholder="Enter comment"> <div class="repair-unchecked"></div></div>
+
+                                    <div class="repair-list-file-upload">
+                                        <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="repair-list-files">
+                                        <div class="repair-list-file">
+                                            manual.pdf
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="repair-list-item">
+                                    <p>Skrald rødbeder</p>
+                                    <div class="flex flex-b"><input type="text" placeholder="Enter comment"> <div class="repair-unchecked"></div></div>
+
+                                    <div class="repair-list-file-upload">
+                                        <svg viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="repair-list-files">
+                                        <div class="repair-list-file">
+                                            rødbedeskralder.png
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>  
+                <div class="service-footer">
+                    <button ng-click="hideServiceReport()">Done</button>
+                </div>
+            </div>
         </main>
         <!-- footer -->
         <footer></footer>
@@ -1911,52 +2076,6 @@
                     <span class="close" onclick="closeModals()"><p id="bluedone">Done</p></span>
                 </div>
             </div>
-        </div>
-        <!-- 'Checkliste / Servicerapport' -->
-        <div id="servicefull" class="servicerapport">
-
-            <!-- Servicerapport indhold -->
-        <div class="service-content">
-            <div class="service-header">
-                       
-                <div class="service-header-button"><img alt="print" src="assets/icons/print-icon.svg"></div>
-                <div class="service-header-button"><img alt="close" src="assets/icons/close-icon-dark.svg"></div>
-            </div>
-                    
-                    <div class="service-body">
-                       
-                        <div class="servicerow"><img alt="Trendlog-logo" src="assets/images/trendlog-logo.png">
-                        </div>
-                        <div class="servicerow">
-                            <h2>Rødbederenser</h2>
-                        </div> 
-                        <div class="servicerow flex-b">
-                            <div class="w33"><label for="name-of-technician"> Name of Technician</label></div>
-                            <div class="w60"><input id="name-of-technician" type="text" placeholder="Assign name..."></div>
-                        </div>
-                         <div class="servicerow flex-b">
-                             <div class="w33"><label for="service-date-done">Service Date Done</label></div>
-                             <div class="w60"><input id="service-date-done" type="text" placeholder="Assign date..."></div>
-                        </div>
-                        
-                    <hr>
-                        
-                        <div class="serviceblock">
-                            <label for="service-description"> Description </label>
-                        <textarea id="service-description" placeholder="Text here..."></textarea>
-                        </div>
-                        
-                         <div class="serviceblock">
-                            <label for="service-checklist"> Checklist </label>
-                        <textarea id="service-checklist" placeholder="Text here..."></textarea>
-                    
-                        </div>
-                        
-                    </div>
-                    <div class="service-footer">
-                    
-                    </div>
-                </div>  
         </div>
     </body>
 </html>
