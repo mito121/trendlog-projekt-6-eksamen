@@ -84,11 +84,17 @@ button{
 .w40{
     width:40%;
 }
+.w47{
+    width:47% !important;
+}
 .w50{
     width:50%;
 }
 .w60{
     width:60%;
+}
+.w250{
+    width:248px;
 }
 .strong{
     font-weight:700;
@@ -122,25 +128,61 @@ button{
     position:relative;
 }
 .mr{
-    margin-right:8px;
+    margin-right:8px !important;
+}
+.mr-0{
+    margin-right:0 !important;
 }
 .mt{
-    margin-top:16px;
+    margin-top:16px !important;
+}
+.mb{
+    margin-bottom:10px !important;
+}
+.ml-12{
+    margin-left: 12px !important;
+    color:red;
+}
+.ml-13{
+    margin-left: 13px !important;
+}
+.ml-19{
+    margin-left:19px !important;
 }
 .mx-auto{
-    margin:0 auto;
+    margin:0 auto !important;
 }
 .green-btn{
     background-color:#01CC01;
     color:white;
-    height:30px;
-    width:30px;
-    margin:0 0 0 13px;
+    height: 34px;
+    width: 34px;
+    margin: 4px 0 4px 5px;
     padding:4px;
     border-radius:4px;
     display:flex;
     align-items:center;
     justify-content: center;
+}
+.green-btn-desktop:hover{
+    cursor:pointer;
+}
+.green-btn-desktop{
+    background-color:#01CC01;
+    color:white;
+    height:38px;
+    width:38px;
+    margin:0 0 0 5px;
+    padding:4px;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.green-btn-desktop img{
+    height: 26px;
+    margin-top: -2px;
+    margin-left: 1px;
 }
 .green-btn img{
     height:18px;
@@ -150,9 +192,67 @@ button{
     margin-top: -7px;
 }
 .green-btn-hacks img{
-    height: 21px !important;
-    margin-left: 2px !important;
-    margin-bottom: 2px !important;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popover info */
+.popover-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+.info-popover{
+    height:16px;
+    margin:0 4px;
+}
+.popover{
+    max-width:200px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #222;
+    z-index:9999;
+    display:none;
+}
+.popover::after{
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+    border-width: .5rem .5rem .5rem 0;
+    left: 43px;
+    top: -11px;
+    border-right-color: #222;
+    transform: rotate(90deg);
+}
+.popover-header{
+    padding: .5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    background-color: #222;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.popover-header img{
+    height:13px;
+}
+.popover-body{
+    padding: .5rem .75rem;
+    color: #212529;
+}
+.d-block{
+    display:block !important;
 }
 /* STYLEGUIDE */
 .styleGuideHeader{
@@ -294,6 +394,7 @@ textarea{
 }
 input[type=text], input[type=number], form input[type=email], form input[type=password], form textarea{
     display: block;
+    height:34px;
     width: 100%;
     margin: 4px 0;
     padding: .375rem .75rem;
@@ -366,7 +467,7 @@ input[type=number] {
 }
 
 select{
-    margin:4px 0;
+    margin: 4px 6px 4px 0px;
     width: auto;
     display:block;
     vertical-align: middle;
@@ -387,6 +488,21 @@ form input[type=submit]::after{
 form input[type=submit]:hover{
     cursor:pointer;
 }
+
+/* pagination style */
+.pagination {display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
+.pagination > li {display:inline}
+.pagination > li > a, .pagination > li > span {position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#466da2;text-decoration:none;background-color:#fff;border:1px solid #ddd}
+.pagination > li:first-child > a, .pagination > li:first-child > span {margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}
+.pagination > li:last-child > a, .pagination > li:last-child > span {border-top-right-radius:4px;border-bottom-right-radius:4px}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {color:#2a6496;background-color:#eee;border-color:#ddd}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {z-index:2;color:#fff;cursor:default;background-color:#466da2;border-color:#466da2}.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {color:#777;cursor:default;background-color:#fff;border-color:#ddd}
+.pagination-lg > li > a, .pagination-lg > li > span {padding:10px 16px;font-size:18px}
+.pagination-lg > li:first-child > a, .pagination-lg > li:first-child > span {border-top-left-radius:6px;border-bottom-left-radius:6px}
+.pagination-lg > li:last-child > a, .pagination-lg > li:last-child > span {border-top-right-radius:6px;border-bottom-right-radius:6px}
+.pagination-sm > li > a, .pagination-sm > li > span {padding:5px 10px;font-size:12px}
+.pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {border-top-left-radius:3px;border-bottom-left-radius:3px}
+.pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {border-top-right-radius:3px;border-bottom-right-radius:3px}
 
 /*** HEADER ***/
 header{
@@ -552,7 +668,7 @@ aside ul li:hover{
     display:block;
     margin:5px auto 0 24px;
     padding:17px 8px 4px 8px;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #ddd;
 }
 
 .module-tabs a{
@@ -581,6 +697,11 @@ aside ul li:hover{
 .mobile-resource-top-menu select{
     height:30px;
     margin-left: 6px;
+}
+
+.mobile-resource-top-menu select:first-of-type{
+    height:30px;
+    margin-left: 12px;
 }
 
 .searchBar{
@@ -623,6 +744,152 @@ aside ul li:hover{
 #desktop-resource-container, #desktop-resource-container table{
     width:100%;
 }
+
+#desktop-resource-container{
+    padding:8px 30px;
+}
+
+.desktop-resources{
+    border-collapse: collapse;
+    padding:8px 20px;
+}
+
+.desktop-resources svg{
+    margin:0 5px;
+}
+
+.desktop-resources tr th{
+    text-align:left;
+}
+
+.desktop-resources tr td:last-child{
+    text-align:center;
+    transform: rotate(90deg);
+}
+
+.desktop-resources tr th, .desktop-resources tr td{
+    padding:8px;
+}
+
+.desktop-resources tr{
+    border-top: 1px solid #ddd;
+}
+
+.desktop-resources tr:first-child{
+    background-color:#fff;
+    border-top: none;
+    border-bottom: 1px solid #000;
+}
+
+.desktop-resources tr:last-child{
+    border-bottom: 1px solid #000;
+}
+
+.desktop-resources tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.desktop-resources tr:hover{
+    background-color: #eee;
+}
+
+.desktop-resources tr:first-child:hover{
+    background-color: #fff;
+}
+
+.open-desktop-resource-menu::after{
+    content:"❯";
+    font-size:21px;
+}
+
+.open-desktop-resource-menu:hover{
+    cursor:pointer;
+}
+
+.enabled{
+    height:16px;
+    width:16px;
+    background:#01CC01;
+    border-radius:50%;
+}
+
+.disabled{
+    height:16px;
+    width:16px;
+    background:#666;
+    border-radius:50%;
+}
+
+.loading{
+    width:60%;
+    background-color:#fff;
+    border:1px solid #d3d3d3;
+    border-radius:5px;
+    display:flex;
+    justify-content: center;
+    position:relative;
+    z-index:1;
+}
+
+.loading-text{
+    padding:2px 0;
+    z-index:2;
+    color:#333;
+}
+
+.loading-bar{
+    height:99%;
+    z-index:1;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#01CC01;
+    border-radius:5px 0px 0px 5px;
+}
+
+.loading-service{
+    background-color: #65A0D4;
+}
+.loading-soon{
+    background-color: #77C477;
+}
+.loading-today{
+    background-color: #F2B560;
+    border-radius:5px !important;
+}
+.loading-expired{
+    background-color: #DC635F;
+    border-radius:5px !important;
+}
+
+/* Desktop resource top menu */
+.desktop-resources-top-wrapper{
+    width:100%;
+    display:block;
+    margin-bottom:6px;
+}
+
+.desktop-resources-top-wrapper select, .desktop-resources-top-wrapper input, .desktop-history-header input{
+    margin:0 21px 0 6px;
+}
+
+.calender-btn{
+    height:30px;
+    width:30px;
+}
+
+.calender-btn:hover{
+    cursor:pointer;
+}
+
+.desktop-resources-input{
+    width:200px !important;
+}
+
+.selected-resource{
+    background-color:#B0BED9 !important;
+}
+
 #mobile-resource-container{
     display:none;
 }
@@ -632,10 +899,667 @@ aside ul li:hover{
     display:none;
 }
 
+#desktop-history{
+    padding:8px 30px;
+}
+
+#desktop-history table{
+    width:100%;
+}
+
+.desktop-history-header{
+
+}
+
+.desktop-history-header h1{
+    font-size:2.8em;
+}
+
+
+#desktop-history table{
+    border-collapse: collapse;
+    padding:8px 20px;
+}
+
+#desktop-history table tr th{
+    text-align:left;
+}
+
+#desktop-history table tr th, #desktop-history table tr td{
+    padding:8px;
+}
+
+#desktop-history table tr{
+    border-top: 1px solid #ddd;
+}
+
+#desktop-history table tr:first-child{
+    background-color:#fff;
+    border-top: none;
+    border-bottom: 1px solid #000;
+}
+
+#desktop-history table tr:last-child{
+    border-bottom: 1px solid #000;
+}
+
+#desktop-history table tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+#desktop-history table tr:hover{
+    background-color: #eee;
+}
+
+#desktop-history table tr:first-child:hover{
+    background-color: #fff;
+}
+
+#desktop-history table tr td:last-child{
+    text-align:center;
+    transform: rotate(90deg);
+}
+
+.open-desktop-resource-menu::after{
+    content:"❯";
+    font-size:21px;
+}
+.repair{
+    background-color:rgb(213, 245, 227) !important;
+}
+
 /* Resource settings */
 #mobile-settings-container{
     display:none;
 }
+
+#desktop-settings{
+    max-width:650px;
+    margin:0 auto;
+}
+
+.desktop-settings-head-row{
+    display:flex;
+    align-items:baseline;
+    justify-content: space-between;
+    width:100%;
+    border-bottom:2px solid #222;
+}
+
+.desktop-settings-head-row h3{
+    font-size:25px;
+    color:#222;
+    font-weight:600;
+    margin-bottom:0;
+}
+
+.desktop-settings-head-row span{
+    color: #D3D3D3;
+}
+
+.desktop-settings-row{
+    margin:15px 0;
+}
+
+.desktop-settings-row p{
+    font-size: 14px;
+    margin:0;
+    padding:4px 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.desktop-settings-row select{
+    width:100%;
+}
+
+.desktop-settings-type-select{
+    text-align:center;
+}
+
+.desktop-settings-type-select button{
+    background-color: #fff;
+    outline:none;
+    box-shadow: none;
+    width:50%;
+    padding:6px 0;
+    border:1px solid #D3D3D3;
+}
+
+.desktop-settings-type-select button:first-child{
+    border-right:none;
+    border-radius:5px 0 0 5px;
+}
+
+.desktop-settings-type-select button:last-child{
+    border-left:none;
+    border-radius: 0 5px 5px 0;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+.activeType{
+    background-color:#007BFF !important;
+    border: 1px solid #007BFF !important;
+    color:white;
+}
+
+.settings-source-input{
+    display:flex;
+}
+
+.settings-source-input input{
+    width:85%;
+    border-radius:4px 0px 0px 4px;
+}
+
+.settings-source-input div{
+    width:15%;
+    height:33.5px;
+    margin:4px 0;
+    background-color:#fff;
+    border-radius:0px 4px 4px 0px;
+    border-top:1px solid #ced4da;
+    border-right:1px solid #ced4da;
+    border-bottom:1px solid #ced4da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-source-input div img{
+    height:21px;
+}
+
+.desktop-settings-todolist{
+    width:100%;
+    background-color:#F0F0F0;
+    min-height:50px;
+    border-radius:4px;
+    border: 1px solid #ced4da;
+    padding:8px;
+}
+
+.todoItem{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:#fff;
+    padding:6px;
+    margin:4px 0;
+    border-radius:5px;
+}
+
+.todoItem img{
+    height:18px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.addTodo button{
+    font-size:14px !important;
+    margin-left:0 !important;
+}
+
+.addTodo button{
+    background-color: #01CC01;
+    color: white;
+    height: 33.5px;
+    width: 39px;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    font-size:33px;
+}
+
+.add-attach{
+    border:1px solid transparent;
+    width:auto;
+    font-size:.8em;
+    border-radius:4px;
+    padding:4px 9px 4px 4px;
+    margin-top: 3px;
+    background-color:#01CC01;
+    display: inline-flex;
+    color:white;
+}
+
+.add-attach span{
+    font-size:14px;
+}
+
+.add-attach svg{
+    height:21px;
+}
+
+.apply-settings{
+    background-color:#007BFF;
+    display:block;
+    margin:25px auto;
+    color:white;
+    border:1px solid #007BFF;
+    border-radius:4px;
+    padding:8px 12px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.desktop-file-upload input[type=file]{
+    display:none;
+}
+.desktop-file-upload span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.desktop-file-upload:hover{
+    cursor:pointer;
+}
+.desktop-file-upload-attach input[type=file]{
+    display:none;
+}
+.desktop-file-upload-attach span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.desktop-file-upload-attach:hover{
+    cursor:pointer;
+}
+
+.addnew-desktop-file-upload input[type=file]{
+    display:none;
+}
+.addnew-desktop-file-upload span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.addnew-desktop-file-upload:hover{
+    cursor:pointer;
+}
+.addnew-desktop-file-upload-attach input[type=file]{
+    display:none;
+}
+.addnew-desktop-file-upload-attach span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.addnew-desktop-file-upload-attach:hover{
+    cursor:pointer;
+}
+
+
+/* ====================== DESKTOP CALENDAR ======================= */
+
+#desktop-calendar-view{
+    height: 100vh;
+    padding-top:75px;
+    overflow:auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #222;
+    border-top: 1px solid #707070;
+    z-index:20;
+}
+
+.desktop-calendar-wrapper{
+    max-width:1366px;
+    margin:0 auto;
+    user-select:none;
+}
+
+.desktop-calendar-head{
+    padding:8px 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.desktop-calendar-head img{
+    height:24px;
+    width:24px;
+}
+
+.desktop-calendar-head img:hover{
+    cursor:pointer;
+}
+
+.desktop-calendar-header{
+    padding:0px 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    border-top:1px solid #707070;
+    color:#fff;
+}
+
+.desktop-calendar-header div{
+    text-align:center;
+}
+
+.desktop-calendar-header h1, .desktop-calendar-header h2{
+    margin:8px 0;
+    padding:6px 0;
+    font-weight:400;
+}
+
+.desktop-calendar-header h1{
+    font-size:2.5em;
+}
+
+.desktop-calendar-header h2{
+    font-size:1.5em;
+}
+
+.prevMonth, .nextMonth{
+    font-size:3em;
+}
+
+.prevMonth:hover, .nextMonth:hover{
+    cursor:pointer;
+}
+
+.desktop-calendar-table{
+    width:100%;
+    text-align:center;
+    border-collapse: collapse;
+}
+
+.desktop-calendar-table tr:first-child{
+    border-top:1px solid #707070;
+    border-bottom:1px solid #707070;
+    color:#707070;
+    font-size:1em;
+}
+
+.desktop-calendar-table tr{
+    color:white;
+    font-size:1.2em;
+    margin:0 15px;
+}
+
+.desktop-calendar-table tr th{
+    padding: 14px 0;
+}
+
+.desktop-calendar-table tr td{
+    padding:24px 16px;
+    border-bottom:2px solid #707070;
+    position:relative;
+}
+
+.desktop-calendar-table tr td:hover{
+    cursor:pointer;
+}
+
+.calendar-current-date{
+    position:relative;
+}
+
+.calendar-current-date::before{
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 42.5%;
+    border-radius: 5px;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #D9534F !important;
+    z-index: -1;
+}
+
+.calendar-next-month{
+    color: #707070!important;
+}
+
+.calendar-expired{
+    position:relative;
+}
+
+.calendar-expired::after{
+    content: "";
+    background: #D9534F;
+    position: absolute;
+    top: 52.5px;
+    bottom: 0;
+    left: 93.5px;
+    right: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.calendar-soon{
+    position:relative;
+}
+
+.calendar-soon::after{
+    content: "";
+    background: #5CB85C;
+    position: absolute;
+    top: 52.5px;
+    bottom: 0;
+    left: 93.5px;
+    right: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.calendar-today{
+    position:relative;
+}
+
+.calendar-today::after{
+    content: "";
+    background: #F0AD4E;
+    position: absolute;
+    top: 52.5px;
+    bottom: 0;
+    left: 93.5px;
+    right: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.calendar-service{
+    position:relative;
+}
+
+.calendar-service::after{
+    content: "";
+    background: #337AB7;
+    position: absolute;
+    top: 52.5px;
+    bottom: 0;
+    left: 93.5px;
+    right: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.desktop-calendar-events{
+    width:100%;
+    padding:12px 20px;
+    min-height:300px;
+    overflow:auto;
+}
+
+.desktop-calendar-event-row{
+    width:100%;
+    border-bottom:1px solid #707070;
+    display:flex;
+    padding: 6px;
+    color:white;
+    font-size:1.2em;
+    transition:background-color 250ms ease-in-out;
+}
+
+.desktop-calendar-event-row:hover{
+    cursor:pointer;
+    background-color: rgba(255,255,255,.05);
+}
+
+.desktop-calendar-event-row div:first-child{
+    min-width: 17%;
+    width:17%;
+    border-right: 2px solid #2AC319;
+    display:flex;
+    align-items:center;
+}
+
+.desktop-calendar-event-row div:last-child{
+    min-width:83%;
+    width:83%;
+    margin:0 12px;
+    display:flex;
+    flex-direction:column;
+}
+
+.desktop-calendar-event-row p{
+    margin:0;
+}
+
+.desktop-calendar-event-row p:last-child{
+    font-size:.9em;
+    color:#8F8F8F;
+    white-space: nowrap;
+}
+
+/* =============== Desktop calendar list ==================== */
+
+#desktop-calendar-list{
+    height: 100vh;
+    padding-top:75px;
+    overflow:auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #222;
+    border-top: 1px solid #707070;
+    z-index:20;
+}
+
+.desktop-calendar-list-wrapper{
+    max-width: 1366px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.calendar-list-header{
+    width:100%;
+    font-family: "Segoe UI", sans-serif;
+    background-color:#EEEEEE;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:600;
+    color:#AEAEAE;
+    padding:3px 0;
+}
+
+.calendar-list-item{
+    display:flex;
+    align-items: center;
+    background-color:#FFF;
+    padding:8px 20px;
+    position:relative;
+    transition:background-color 250ms ease-in-out;
+}
+
+.calendar-list-item:hover{
+    cursor:pointer;
+}
+
+.calendar-list-item::before{
+    content: "❯";
+    color: #2AC319;
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    font-size: 1.5em;
+}
+
+.calendar-list-item::after{
+    content:"";
+    width:97%;
+    position:absolute;
+    bottom:0;
+    margin:0 auto;
+    border-bottom:2px solid #EEEEEE;
+}
+
+.calendar-list-group .calendar-list-item:last-of-type::after{
+    display:none;
+}
+
+.calendar-list-item div:first-child{
+    /*width:20%;*/
+    width:65px;
+    height:65px;
+    border-radius:9px;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-transform:uppercase;
+    background-color:#337AB7;
+}
+
+.calendar-list-item div:first-child p{
+    margin:-3px;
+}
+
+.calendar-list-item div:first-child p:first-child{
+    font-size:1.5em;
+}
+
+.calendar-list-item div:first-child p:last-child{
+    font-size:1em;
+}
+
+.calendar-list-item div:last-of-type{
+    width:75%;
+    margin-left: 10px;
+}
+
+.calendar-list-item div:last-of-type p{
+    margin:0;
+}
+
+.calendar-list-item div:last-of-type p:first-child{
+    font-size:22px;
+    font-weight:600;
+}
+
+.calendar-list-item div:last-of-type p:last-child{
+    font-size:14px;
+}
+
+
+.cal-list-today{
+    background-color:#F0AD4E !important;
+
+}
+
+.cal-list-soon{
+    background-color:#5CB85C !important;
+}
+
 
 /**------------------------------------------------------------ Mobile --------------------------------------------------------------------**/
 
@@ -880,6 +1804,14 @@ aside ul li:hover{
     border:1px solid #d3d3d3;
 }
 
+.add-new-service-select button:first-of-type{
+    border-right:none;
+}
+
+.add-new-service-select button:last-of-type{
+    border-left:none;
+}
+
 .add-new-service-select button:first-child{
     border-radius:5px 0 0 5px;
 }
@@ -951,6 +1883,103 @@ aside ul li:hover{
 /* Mobilshit */
 /*@media only screen and (max-width: 768px) {*/
 @media only screen and (max-width: 1366px) {
+    .green-btn{
+        height:30px;
+        width:30px;
+        margin:0 0 0 5px;
+    }
+
+    .add-new-icon{
+        height:21px !important;
+        margin-bottom: 1px;
+        margin-left: 2px;
+    }
+
+    .hidden{
+        visibility: hidden;
+        opacity:0;
+    }
+
+    #desktop-history{
+        display:none;
+    }
+    #desktop-settings{
+        display:none;
+    }
+
+    /* POPOVERS */
+    #popover-1::after, #popover-2::after{
+        position: absolute;
+        display: block;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
+        border-width: .5rem .5rem .5rem 0;
+        left: 34.2px;
+        top: -11px;
+        border-right-color: #222;
+        transform: rotate(90deg);
+    }
+
+    #popover-3{
+        width: 197%;
+        left: -118px;
+    }
+    #popover-3::after{
+        left: 149px;
+    }
+
+    #popover-4::after{
+        left: 48px;
+    }
+
+    #popover-5{
+        left: 28.1249px;
+        width: 200px ;
+    }
+
+    #popover-6{
+        width: 200px;
+        left: -96px;
+    }
+    #popover-6::after{
+        left: 183px;
+    }
+
+    #popover-7::after{
+        left: 73px;
+    }
+
+    #popover-8::after{
+        left: 110px;
+    }
+
+    #popover-9{
+        top: -140px;
+    }
+    #popover-9::after{
+        left: 136px;
+        top: 131px;
+        transform: rotate(-90deg);
+    }
+
+    #popover-10::after{
+        left: 48.12px;
+    }
+
+    #popover-11::after{
+        left: 41.5px;
+    }
+
+    #popover-12::after{
+        left: 96px;
+    }
+
+    #popover-13::after{
+        left: 122.12px;
+    }
+    /* /POPOVERS */
+
     .tablet-wrapper{
         width:540px;
         margin:0 auto;
@@ -1116,13 +2145,6 @@ aside ul li:hover{
         font-weight:900;
     }
 
-    .enabled{
-        height:16px;
-        width:16px;
-        background:#01CC01;
-        border-radius:50%;
-    }
-
     .mobile-resource p, .mobile-resource span{
         font-size:14px;
     }
@@ -1168,31 +2190,6 @@ aside ul li:hover{
         margin-top:4px;
     }
 
-    .loading{
-        width:100%;
-        border:1px solid #d3d3d3;
-        border-radius:5px;
-        display:flex;
-        justify-content: center;
-        position:relative;
-        z-index:1;
-    }
-
-    .loading-text{
-        padding:2px 0;
-        z-index:2;
-    }
-
-    .loading-bar{
-        width:40%;
-        height:99%;
-        z-index:1;
-        position:absolute;
-        top:0;
-        left:0;
-        background-color:#01CC01;
-        border-radius:5px 0px 0px 5px;
-    }
     /************* TABLET ***********/
 
     .mobile-resource-dropdown{
@@ -1292,6 +2289,54 @@ aside ul li:hover{
 
     .bottom-links img{
         height: 20px;
+    }
+
+    .mobile-resources-footer{
+        width:50%;
+        margin:0 auto;
+        text-align:center;
+    }
+
+    .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
+        margin-left: 0;
+        border-radius:5px;
+        background: transparent;
+        color: #01CC01;
+        font-size: 1.3em;
+        border-color: #01CC01;
+        margin: 0px 5px;
+        padding: 5px 15px;
+    }
+
+    .pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+        color: #777;
+        cursor: default;
+        background-color: transparent;
+        border-color: #01CC01;
+    }
+
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+        z-index: 2;
+        color: #222;
+        cursor: default;
+        background-color: #D3D3D3;
+        border-color: #D3D3D3;
+        border-radius:5px;
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #01CC01;
+        text-decoration: none;
+        background-color: transparent;
+        font-size: 1.2em !important;
+        border: 1px solid transparent;
+        margin: 0px 3px;
+        padding: 5px 14px;
     }
 
     /* Mobile calendar view */
@@ -1405,13 +2450,15 @@ aside ul li:hover{
     }
 
     .calendar-expired::after{
-        content: "•";
-        color: #D9534F;
+        content: "";
+        background: #D9534F;
         position: absolute;
-        top: 37px;
+        top: 45px;
         bottom: 0;
-        left: 0;
+        left: 23px;
         right: 0;
+        height: 6px;
+        width: 6px;
     }
 
     .calendar-soon{
@@ -1419,13 +2466,15 @@ aside ul li:hover{
     }
 
     .calendar-soon::after{
-        content: "•";
-        color: #5CB85C;
+        content: "";
+        background: #5CB85C;
         position: absolute;
-        top: 37px;
+        top: 45px;
         bottom: 0;
-        left: 0;
+        left: 23px;
         right: 0;
+        height: 6px;
+        width: 6px;
     }
 
     .calendar-today{
@@ -1433,13 +2482,15 @@ aside ul li:hover{
     }
 
     .calendar-today::after{
-        content: "•";
-        color: #F0AD4E;
+        content: "";
+        background: #F0AD4E;
         position: absolute;
-        top: 37px;
+        top: 45px;
         bottom: 0;
-        left: 0;
+        left: 23px;
         right: 0;
+        height: 6px;
+        width: 6px;
     }
 
     .calendar-service{
@@ -1447,13 +2498,15 @@ aside ul li:hover{
     }
 
     .calendar-service::after{
-        content: "•";
-        color: #337AB7;
+        content: "";
+        background: #337AB7;
         position: absolute;
-        top: 37px;
+        top: 45px;
         bottom: 0;
-        left: 0;
+        left: 23px;
         right: 0;
+        height: 6px;
+        width: 6px;
     }
 
     .mobile-calendar-events{
@@ -1553,7 +2606,6 @@ aside ul li:hover{
         display:none;
     }
 
-    /* Calendar list div: last of type */
     .calendar-list-item div:first-child{
         /*width:20%;*/
         width:65px;
@@ -1580,7 +2632,6 @@ aside ul li:hover{
         font-size:1em;
     }
 
-    /* Calendar list div: last of type */
     .calendar-list-item div:last-of-type{
         width:75%;
         margin-left: 10px;
@@ -1650,9 +2701,6 @@ aside ul li:hover{
         border-bottom:0;
     }
 
-    .repair{
-        background-color:#8BC88B;
-    }
 
 
     /* Mobile resource settings */
@@ -1916,6 +2964,7 @@ aside ul li:hover{
     .loading-text{
         padding:2px 0;
         z-index:2;
+        color:#333;
     }
 
     .loading-bar{
@@ -1925,7 +2974,6 @@ aside ul li:hover{
         position:absolute;
         top:0;
         left:0;
-        background-color:#01CC01;
         border-radius:5px 0px 0px 5px;
     }
 
@@ -2057,6 +3105,36 @@ aside ul li:hover{
     top: .3em;
 }
 
+/* desktop add new resource modal */
+
+.desktop-addnew-content {
+    position: relative;
+    top:0;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border-radius: 18px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animateAddnew;
+    animation-duration: 0.4s;
+}
+
+.desktop-addnew-wrapper{
+    max-width:650px;
+    margin:0 auto;
+}
+
+.desktop-addnew-wrapper section{
+    text-align: left;
+}
+
+@keyframes animateAddnew {
+    from {top:-100vh; opacity:0}
+    to {top:0; opacity:1}
+}
+
 
 /* DELETE MODAL */
 .pmodal {
@@ -2075,7 +3153,7 @@ aside ul li:hover{
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 100vh   ; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -2093,7 +3171,7 @@ aside ul li:hover{
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 /* faldned animationish */
@@ -2109,6 +3187,18 @@ aside ul li:hover{
     background-color: #222222;
     color: white;
     border-radius:15px 15px 0px 0px ;
+    position:relative;
+}
+
+.modal-header img{
+    position:absolute;
+    right: 30px;
+    top: 10px;
+    height:24px;
+}
+
+.modal-header img:hover{
+    cursor:pointer;
 }
 
 .modal-body {
@@ -2168,7 +3258,8 @@ aside ul li:hover{
 }
 @media screen and (orientation:landscape) {
     .modal {
-        padding-top: 100px;
+        padding-top: 75px;
+        padding-bottom: 35px;
     }
     .modal-content {
         width: 50%;
