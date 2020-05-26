@@ -827,17 +827,17 @@ aside ul li:hover{
 }
 
 .loading-service{
-    background-color: #337AB7;
+    background-color: #65A0D4;
 }
 .loading-soon{
-    background-color: #5CB85C;
+    background-color: #77C477;
 }
 .loading-today{
-    background-color: #F0AD4E;
+    background-color: #F2B560;
     border-radius:5px !important;
 }
 .loading-expired{
-    background-color: #D9534F;
+    background-color: #DC635F;
     border-radius:5px !important;
 }
 
