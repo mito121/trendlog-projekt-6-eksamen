@@ -209,12 +209,14 @@ button{
     margin:0 4px;
 }
 .popover{
+    max-width:200px;
     position: absolute;
     top: 25px;
     left: 0;
     border-radius: 5px;
     background-color: #fff;
     border: 1px solid #222;
+    z-index:9999;
     display:none;
 }
 .popover::after{
@@ -1860,12 +1862,96 @@ button:hover{
         margin:0 0 0 5px;
     }
 
+    .add-new-icon{
+        height:21px !important;
+        margin-bottom: 1px;
+        margin-left: 2px;
+    }
+
+    .hidden{
+        visibility: hidden;
+        opacity:0;
+    }
+
     #desktop-history{
         display:none;
     }
     #desktop-settings{
         display:none;
     }
+
+    /* POPOVERS */
+    #popover-1::after, #popover-2::after{
+        position: absolute;
+        display: block;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
+        border-width: .5rem .5rem .5rem 0;
+        left: 34.2px;
+        top: -11px;
+        border-right-color: #222;
+        transform: rotate(90deg);
+    }
+
+    #popover-3{
+        width: 197%;
+        left: -118px;
+    }
+    #popover-3::after{
+        left: 149px;
+    }
+
+    #popover-4::after{
+        left: 48px;
+    }
+
+    #popover-5{
+        left: 28.1249px;
+        width: 200px ;
+    }
+
+    #popover-6{
+        width: 200px;
+        left: -96px;
+    }
+    #popover-6::after{
+        left: 183px;
+    }
+
+    #popover-7::after{
+        left: 73px;
+    }
+
+    #popover-8::after{
+        left: 110px;
+    }
+
+    #popover-9{
+        top: -140px;
+    }
+    #popover-9::after{
+        left: 136px;
+        top: 131px;
+        transform: rotate(-90deg);
+    }
+    
+    #popover-10::after{
+        left: 48.12px;
+    }
+    
+    #popover-11::after{
+        left: 41.5px;
+    }
+    
+    #popover-12::after{
+        left: 96px;
+    }
+    
+    #popover-13::after{
+        left: 122.12px;
+    }
+    /* /POPOVERS */
 
     .tablet-wrapper{
         width:540px;

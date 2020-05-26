@@ -89,12 +89,62 @@ $(document).ready(function () {
 // Info popovers
 
 // Close popover
+// On 'X' click
 $('.closePopover').click(function () {
    $('.popover').removeClass("d-block");
 });
 
+
 $('#popover1').click(function () {
    $('#popover-1').toggleClass("d-block");
+});
+
+$('#popover2').click(function () {
+   $('#popover-2').toggleClass("d-block");
+});
+
+$('#popover3').click(function () {
+   $('#popover-3').toggleClass("d-block");
+});
+
+$('#popover4').click(function () {
+   $('#popover-4').toggleClass("d-block");
+});
+
+$('#popover5').click(function () {
+   $('#popover-5').toggleClass("d-block");
+});
+
+$('#popover6').click(function () {
+   $('#popover-6').toggleClass("d-block");
+});
+
+$('#popover7').click(function () {
+   $('#popover-7').toggleClass("d-block");
+});
+
+$('#popover8').click(function () {
+   $('#popover-8').toggleClass("d-block");
+});
+
+$('#popover9').click(function () {
+   $('#popover-9').toggleClass("d-block");
+});
+
+$('#popover10').click(function () {
+   $('#popover-10').toggleClass("d-block");
+});
+
+$('#popover11').click(function () {
+   $('#popover-11').toggleClass("d-block");
+});
+
+$('#popover12').click(function () {
+   $('#popover-12').toggleClass("d-block");
+});
+
+$('#popover13').click(function () {
+   $('#popover-13').toggleClass("d-block");
 });
 
 // prevent event bubbling
