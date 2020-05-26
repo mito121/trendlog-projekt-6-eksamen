@@ -175,8 +175,8 @@
                 <div class="module">
                     <div class="module-tabs" ng-init="tab = 1">
                         <a href ng-click="tab = 1" ng-class="{activeTab:tab === 1}">Resources</a>
-                        <a href ng-show="tab > 1 || selected > 0" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
-                        <a href ng-show="tab > 1 || selected > 0" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
+                        <a href ng-cloak ng-show="tab > 1 || selected > 0" ng-click="tab = 2" ng-class="{activeTab:tab === 2}">History</a>
+                        <a href ng-cloak ng-show="tab > 1 || selected > 0" ng-click="tab = 3" ng-class="{activeTab:tab === 3}">Settings</a>
                     </div>
 
                     <!-- Tab 1 (Resources) -->
@@ -248,6 +248,19 @@
                                         </td>
                                         <td>
                                             <select id="groupEntries" ng-model="groupEntries" ng-options="g as g.name for g in resourceGroups track by g.id">
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="typeEntries">Type</label>
+                                        </td>
+                                        <td>
+                                            <select id="typeEntries">
+                                                <option>All</option>
+                                                <option>Preventive</option>
+                                                <option>Predictive</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -503,7 +516,7 @@
                                         <input type="text" placeholder="Search for resource" ng-model="desktopSearch" class="desktop-resources-input" id="desktop-resource-search">
                                     </div>
 
-                                    <div class="flex">Add new <div class="green-btn-desktop"><img src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div></div>
+                                    <div class="flex">Add new <div class="green-btn-desktop"><img onclick="openDesktopAddNew()" src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div></div>
                                 </div>
 
                                 <div class="flex flex-b">
@@ -574,7 +587,7 @@
                                     <th></th>
                                 </tr>
 
-                                <tr dir-paginate="r in resources | filter: desktopSearch | itemsPerPage: entries" pagination-id="desktop" ng-click="selectRes(r.id)" class="desktop-resource" id="desktop-resource-{{r.id}}">
+                                <tr dir-paginate="r in resources | filter: desktopSearch | itemsPerPage: entries" pagination-id="desktop" ng-click="selectRes(r.id)" class="desktop-resource" id="desktop-resource-{{r.id}}" ng-cloak>
                                     <td>{{r.id}}</td>
                                     <td>{{r.name}}</td>
                                     <td>{{r.type}}</td>
@@ -607,7 +620,7 @@
                         </div>
 
                         <!-- Mobile resource list -->
-                        <div id="mobile-resource-container" ng-init="mobileView = 1">
+                        <div id="mobile-resource-container" ng-init="mobileView = 1" ng-cloak>
                             <!-- == Mobile card view == -->
                             <div id="mobile-card-view" ng-show="mobileView === 1">
                                 <div class="mobile-resource" dir-paginate="r in resources | filter: search | itemsPerPage: selectEntries" pagination-id="mobile" id="mobile-resource{{r.id}}">
@@ -726,7 +739,8 @@
                         </div>
 
                         <!-- ========== Mobile calendar list ============== -->
-                        <div id="mobile-calendar-list" ng-show="mobileView === 3">
+
+                        <div id="mobile-calendar-list" ng-show="mobileView === 3" ng-cloak>
                             <div class="mobile-calendar-head">
                                 <img ng-click="mobileView = 2" src="assets/icons/calender-icon-white.svg" alt="Show calendar">
                                 <img ng-click="mobileView = 1; serviceTab();" src="assets/icons/close-icon.svg" alt="Close calendar">
@@ -823,7 +837,7 @@
 
                                 <div class="calendar-list-item">
                                     <div>
-                                        <p>12:45</p>
+                                        <p>14:45</p>
                                         <p>AM</p>
                                     </div>
 
@@ -838,7 +852,6 @@
 
 
                         <!-- ================ Desktop calendar ================== -->
-
 
                         <!-- == Mobile calendar view == -->
                         <div id="desktop-calendar-view" ng-cloak ng-show="desktopView === 2">
@@ -887,10 +900,124 @@
                             </div>
                         </div>
 
+
+                        <!-- ========== Desktop calendar list ============== -->
+
+                        <div id="desktop-calendar-list" ng-show="desktopView === 3" ng-cloak>
+                            <div class="desktop-calendar-list-wrapper">
+                                <div class="desktop-calendar-head">
+                                    <img ng-click="desktopView = 2" src="assets/icons/calender-icon-white.svg" alt="Show calendar">
+                                    <img ng-click="desktopView = 1; serviceTab();" src="assets/icons/close-icon.svg" alt="Close calendar">
+                                </div>
+
+                                <div class="calendar-list-header">
+                                    Today
+                                </div>
+
+                                <div class="calendar-list-group">
+                                    <div class="calendar-list-item">
+                                        <div class="cal-list-today">
+                                            <p>06:30</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Rens rødbederenser</p>
+                                            <p>Skrub med sæbe og rød sodavand ...</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="calendar-list-item">
+                                        <div class="cal-list-today">
+                                            <p>12:45</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Defillibrér rødbedesav</p>
+                                            <p>Brug den grønne hammer med ...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="calendar-list-header">
+                                    Tomorrow
+                                </div>
+
+                                <div class="calendar-list-group">
+                                    <div class="calendar-list-item">
+                                        <div class="cal-list-soon">
+                                            <p>09:15</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Vrid rødbedesvamp</p>
+                                            <p>Forceful flicka da wrist</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="calendar-list-header">
+                                    Aug 9th
+                                </div>
+
+                                <div class="calendar-list-group">
+                                    <div class="calendar-list-item">
+                                        <div>
+                                            <p>07:45</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Afrust rødbedesaks</p>
+                                            <p>Brug kogende lim og vindruesaft ...</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="calendar-list-item">
+                                        <div>
+                                            <p>11:30</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Gør andre rødebedeting</p>
+                                            <p>Rødbede rødbede rødbede rødbede ...</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="calendar-list-item">
+                                        <div>
+                                            <p>13:45</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Gør andre rødebedeting</p>
+                                            <p>Rødbede rødbede rødbede rødbede ...</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="calendar-list-item">
+                                        <div>
+                                            <p>14:45</p>
+                                            <p>AM</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Gør andre rødebedeting</p>
+                                            <p>Rødbede rødbede rødbede rødbede ...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div> <!-- tab 1 end -->
 
                     <!-- Tab 2 (History) -->
-                    <div class="tab-2" ng-show="tab === 2">
+                    <div class="tab-2" ng-cloak ng-show="tab === 2">
                         <div class="tablet-wrapper">
                             <!-- Mobile -->
                             <div id="mobile-history-container">
@@ -1036,7 +1163,7 @@
                     </div>
 
                     <!-- Tab 3 (Settings) -->
-                    <div class="tab-3" ng-show="tab === 3">
+                    <div class="tab-3" ng-cloak ng-show="tab === 3">
 
                         <!-- ========== Mobile ========== -->
                         <div class="tablet-wrapper">
@@ -1443,6 +1570,188 @@
                 </div>
                 <div class="qr-modal-footer">
                     <span class="close" onclick="closeModals()"><p id="bluedone">Done</p></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="desktop-add-new" class="modal">
+            <div class="desktop-addnew-content">
+
+                <div class="modal-header">
+                    <h2 class="h2modal">Add new resource</h2>
+                </div>
+                <div class="desktop-addnew-wrapper">
+                    <div class="modal-body">
+                        <section>
+                            <div class="desktop-settings-head-row">
+                                <h3>Details</h3>
+                                <span>Part 1 of 5</span>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <label for="settings-resource-name">Resource name</label>
+                                <input type="text" placeholder="Resource name" id="settings-resource-name"/>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <label for="settings-resource-group">Group</label>
+                                <div class="flex">
+                                    <select id="settings-resource-group">
+                                        <option>Machine</option>
+                                        <option>Cars</option>
+                                        <option>Washer</option>
+                                    </select>
+                                    <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                </div>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <label for="settings-resource-desc">Description</label>
+                                <textarea id="settings-resource-desc" placeholder="Enter resource description"></textarea>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="desktop-settings-head-row">
+                                <h3>Service</h3>
+                                <span>Part 2 of 5</span>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <p>Type</p>
+                                <div class="desktop-settings-type-select" ng-init="type = 1">
+                                    <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
+                                </div>
+                            </div>
+
+                            <!-- Preventive -->
+                            <div ng-show="type === 1">
+                                <div class="desktop-settings-row">
+                                    <label for="desktop-settings-resource-ls">Last service</label>
+                                    <input type="text" id="desktop-settings-resource-ls" ng-model="desktopServiceLastService" ng-change="desktopNextServiceCalc()">
+                                </div>
+
+                                <div class="desktop-settings-row flex flex-b">
+                                    <div>
+                                        <label for="desktop-settings-resource-interval">Service interval</label>
+                                        <input type="number" id="desktop-settings-resource-interval" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceInterval">
+                                    </div>
+                                    <div class="w50">
+                                        <label for="desktop-settings-resource-interval-unit">Unit</label>
+                                        <select id="desktop-settings-resource-interval-unit" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="desktop-settings-resource-ns">Next service</label>
+                                    <input type="text" disabled id="desktop-settings-resource-ns" value="{{desktopNextService | date:'MM/dd/yyyy'}}">
+                                </div>
+                            </div>
+
+                            <!-- Predictive -->
+                            <div ng-show="type === 2">
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-source">Source</label>
+                                    <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
+                                </div>
+
+                                <div class="desktop-settings-row flex flex-b">
+                                    <div>
+                                        <label for="settings-resource-start-value">Start value</label>
+                                        <input type="text" disabled id="settings-resource-start-value">
+                                    </div>
+
+                                    <div>
+                                        <label for="settings-resource-internal-value">Internal value</label>
+                                        <input type="text" id="settings-resource-internal-value">
+                                    </div>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-time-range">Time range</label>
+                                    <select id="settings-resource-time-range">
+                                        <option>1 Week</option>
+                                        <option>1 Month</option>
+                                        <option>1 Year</option>
+                                    </select>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-max-internal">Max interval days</label>
+                                    <input type="text" id="settings-resource-max-internal">
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-pred-ns">Next service calculated to be</label>
+                                    <input type="text" id="settings-resource-pred-ns" disabled>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="settings-resource-valcalc">Value calculated to be</label>
+                                    <input type="text" id="settings-resource-valcalc" disabled>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="desktop-settings-head-row">
+                                <h3>Checklist</h3>
+                                <span>Part 3 of 5</span>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <p>To do's</p>
+                                <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="desktopAddnewTodoList">
+                                    <div class="todoItem" ng-repeat="x in desktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
+                                    <form ng-submit="desktopTodoAdd()" class="addTodo">
+                                        <input type="text" ng-model="desktopAddnewTodoInput" id="desktopAddnewTodoInput" placeholder="Add New">
+                                        <button type="submit" class="green-btn">Add</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="desktop-settings-head-row">
+                                <h3>Attachments</h3>
+                                <span>Part 4 of 5</span>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <p>Items</p>
+                                <div class="desktop-settings-todolist">
+                                    <div id="desktop-uploaded-attachments"></div>
+                                    <label class="desktop-file-upload-attach">
+                                        <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="desktop-settings-head-row">
+                                <h3>Notify me</h3>
+                                <span>Part 5 of 5</span>
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <label for="settings-resource-notify">E-mail addresses (seprate e-mails by comma)</label>
+                                <input type="text" id="settings-resource-notify" placeholder="Enter e-mail(s) to notify">
+                            </div>
+
+                            <div class="desktop-settings-row">
+                                <label for="settings-resource-daysb4service">Days before service</label>
+                                <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
+                            </div>
+
+
+                        </section>
+                    </div>
+                    <div class="qr-modal-footer">
+                        <button class="apply-settings" onclick="closeModals()">Create resource</button>
+                    </div>
                 </div>
             </div>
         </div>

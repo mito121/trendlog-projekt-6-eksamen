@@ -79,6 +79,18 @@ function doNothing(e) {
    e.stopPropagation();
 }
 
+/* **** Modals **** */
+
+// Desktop add new resource modal
+var addnewModal = document.getElementById("desktop-add-new");
+
+function openDesktopAddNew() {
+   addnewModal.style.display = "block";
+
+   // Disable scroll på baggrund når modal er åbnet
+   $('html body').css("overflow", "hidden");
+}
+
 
 //"DELETE" modal
 var deleteModal = document.getElementById("deleteModal");
@@ -112,18 +124,20 @@ function closeModals() {
    deleteModal.style.display = "none";
    copyModal.style.display = "none";
    qrkodeModal.style.display = "none";
+   addnewModal.style.display = "none";
 
    // Enable scroll på baggrund når igen modal lukkes
    $('html body').css("overflow", "auto");
 }
 // Når man klikker uden for modalet - luk!
 window.onclick = function (event) {
-   if (event.target == deleteModal || event.target == copyModal || event.target == qrkodeModal) {
+   if (event.target == deleteModal || event.target == copyModal || event.target == qrkodeModal || event.target == addnewModal) {
       deleteModal.style.display = "none";
       copyModal.style.display = "none";
       qrkodeModal.style.display = "none";
+      addnewModal.style.display = "none";
 
       // Enable scroll på baggrund når igen modal lukkes
       $('html body').css("overflow", "auto");
    }
-}
+};
