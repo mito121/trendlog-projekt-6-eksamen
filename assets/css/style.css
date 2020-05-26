@@ -192,9 +192,65 @@ button{
     margin-top: -7px;
 }
 .green-btn-hacks img{
-    height: 21px !important;
-    margin-left: 2px !important;
-    margin-bottom: 2px !important;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popover info */
+.popover-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+.info-popover{
+    height:16px;
+    margin:0 4px;
+}
+.popover{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #222;
+    display:none;
+}
+.popover::after{
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+    border-width: .5rem .5rem .5rem 0;
+    left: 43px;
+    top: -11px;
+    border-right-color: #222;
+    transform: rotate(90deg);
+}
+.popover-header{
+    padding: .5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    background-color: #222;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.popover-header img{
+    height:13px;
+}
+.popover-body{
+    padding: .5rem .75rem;
+    color: #212529;
+}
+.d-block{
+    display:block !important;
 }
 /* STYLEGUIDE */
 .styleGuideHeader{

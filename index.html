@@ -298,7 +298,7 @@
                         <!-- Add new menu -->
                         <!-- details -->
                         <div class="add-new-menu-overlay" ng-init="step = 1">
-                            <div onclick="doNothing(event)" class="wrapper">
+                            <div onclick="doNothing(event)" class="wrapper" onclick="closePopovers()">
                                 <img class="add-new-close-btn" src="assets/icons/close-icon.svg" alt="Close">
                                 <div ng-show="step === 1" id="step-1" class="add-new-menu">
                                     <div class="heading-container flex">
@@ -312,7 +312,20 @@
                                         <div class="add-new-content">
                                             <label for="step-1-name" class="add-new-text">Name</label>
                                             <input id="step-1-name" placeholder="Text here..." type="text">
-                                            <label for="step-1-group" class="add-new-text">Group</label>
+                                            
+                                            <!-- POPOVER WRAPPER -->
+                                            <div class="popover-wrapper">
+                                                <label for="step-1-group" class="add-new-text">Group</label>
+                                                <img class="info-popover" id="popover1" src="assets/icons/infothicc-icon.svg" alt="Info">
+                                                <div class="popover" id="popover-1">
+                                                    <div class="popover-header"><div>Popover header</div> <img class="closePopover" src="assets/icons/close-icon.svg" alt="Close"></div>
+                                                    <div class="popover-body">
+                                                        The purpose of this popover is to provide additional information about this specific input field.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- POPOVER END -->
+                                            
                                             <div class="flex flex-b select-w-btn">
                                                 <select id="step-1-group">
                                                     <option>Machine</option>
@@ -320,7 +333,7 @@
                                                     <option>Washer</option>
                                                 </select>
                                                 <div class="green-btn">
-                                                    <img src="" alt="">
+                                                    <img src="assets/icons/add-icon.svg" alt="Add">
                                                 </div>
                                             </div>
                                             <label for="step-1-description" class="add-new-text">Description</label>
@@ -1186,7 +1199,7 @@
                                                 <option>Cars</option>
                                                 <option>Washer</option>
                                             </select>
-                                            <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                            <div class="green-btn green-btn-hacks"><img src="assets/icons/add-icon.svg" alt="Add"></div>
                                         </div>
                                     </div>
 
@@ -1356,7 +1369,7 @@
                                             <option>Cars</option>
                                             <option>Washer</option>
                                         </select>
-                                        <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                        <div class="green-btn green-btn-hacks"><img src="assets/icons/add-icon.svg" alt="Add"></div>
                                     </div>
                                 </div>
 
@@ -1538,7 +1551,7 @@
                                             <option>Cars</option>
                                             <option>Washer</option>
                                         </select>
-                                        <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                        <div class="green-btn green-btn-hacks"><img src="assets/icons/add-icon.svg" alt="Add"></div>
                                     </div>
                                 </div>
 

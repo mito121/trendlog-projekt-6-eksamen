@@ -84,9 +84,17 @@ $(document).ready(function () {
          $('#addnew-desktop-uploaded-attachments').html(addnewDesktopAttachmentList);
       }
    });
+});
 
+// Info popovers
 
+// Close popover
+$('.closePopover').click(function () {
+   $('.popover').removeClass("d-block");
+});
 
+$('#popover1').click(function () {
+   $('#popover-1').toggleClass("d-block");
 });
 
 // prevent event bubbling
