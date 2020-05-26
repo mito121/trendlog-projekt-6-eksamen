@@ -84,6 +84,9 @@ button{
 .w40{
     width:40%;
 }
+.w47{
+    width:47% !important;
+}
 .w50{
     width:50%;
 }
@@ -154,7 +157,7 @@ button{
     color:white;
     height: 34px;
     width: 34px;
-    margin: 4px 0 0 5px;
+    margin: 4px 0 4px 5px;
     padding:4px;
     border-radius:4px;
     display:flex;
@@ -406,7 +409,7 @@ input[type=number] {
 }
 
 select{
-    margin: 4px 6px 0px 0px;
+    margin: 4px 6px 4px 0px;
     width: auto;
     display:block;
     vertical-align: middle;
@@ -1082,6 +1085,29 @@ button:hover{
     line-height: 1.5;
 }
 .desktop-file-upload-attach:hover{
+    cursor:pointer;
+}
+
+.addnew-desktop-file-upload input[type=file]{
+    display:none;
+}
+.addnew-desktop-file-upload span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.addnew-desktop-file-upload:hover{
+    cursor:pointer;
+}
+.addnew-desktop-file-upload-attach input[type=file]{
+    display:none;
+}
+.addnew-desktop-file-upload-attach span.btn{
+    padding: .2rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.addnew-desktop-file-upload-attach:hover{
     cursor:pointer;
 }
 
@@ -2944,6 +2970,18 @@ button:hover{
     background-color: #222222;
     color: white;
     border-radius:15px 15px 0px 0px ;
+    position:relative;
+}
+
+.modal-header img{
+    position:absolute;
+    right: 30px;
+    top: 10px;
+    height:24px;
+}
+
+.modal-header img:hover{
+    cursor:pointer;
 }
 
 .modal-body {

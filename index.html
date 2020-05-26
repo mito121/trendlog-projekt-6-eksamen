@@ -516,7 +516,7 @@
                                         <input type="text" placeholder="Search for resource" ng-model="desktopSearch" class="desktop-resources-input" id="desktop-resource-search">
                                     </div>
 
-                                    <div class="flex">Add new <div class="green-btn-desktop"><img onclick="openDesktopAddNew()" src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div></div>
+                                    <div class="flex">Add new <div onclick="openDesktopAddNew()" class="green-btn-desktop"><img src="assets/icons/addnew-icon.svg" alt="Add new resource"/></div></div>
                                 </div>
 
                                 <div class="flex flex-b">
@@ -1389,11 +1389,11 @@
                                     </div>
 
                                     <div class="desktop-settings-row flex flex-b">
-                                        <div>
+                                        <div class="w47">
                                             <label for="desktop-settings-resource-interval">Service interval</label>
                                             <input type="number" id="desktop-settings-resource-interval" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceInterval">
                                         </div>
-                                        <div class="w50">
+                                        <div class="w47">
                                             <label for="desktop-settings-resource-interval-unit">Unit</label>
                                             <select id="desktop-settings-resource-interval-unit" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                             </select>
@@ -1414,12 +1414,12 @@
                                     </div>
 
                                     <div class="desktop-settings-row flex flex-b">
-                                        <div>
+                                        <div class="w47">
                                             <label for="settings-resource-start-value">Start value</label>
                                             <input type="text" disabled id="settings-resource-start-value">
                                         </div>
 
-                                        <div>
+                                        <div class="w47">
                                             <label for="settings-resource-internal-value">Internal value</label>
                                             <input type="text" id="settings-resource-internal-value">
                                         </div>
@@ -1510,6 +1510,191 @@
 
                 </div>
             </div>
+
+            <!-- ==== Desktop Add new resource ==== -->
+            <div id="desktop-add-new" class="modal">
+                <div class="desktop-addnew-content">
+
+                    <div class="modal-header">
+                        <h2 class="h2modal">Add new resource</h2>
+                        <img onclick="closeModals()" src="assets/icons/close-icon.svg" alt="Close window">
+                    </div>
+                    <div class="desktop-addnew-wrapper">
+                        <div class="modal-body">
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Details</h3>
+                                    <span>Part 1 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="addnew-settings-resource-name">Resource name</label>
+                                    <input type="text" placeholder="Resource name" id="addnew-settings-resource-name"/>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="addnew-settings-resource-group">Group</label>
+                                    <div class="flex">
+                                        <select id="addnew-settings-resource-group">
+                                            <option>Machine</option>
+                                            <option>Cars</option>
+                                            <option>Washer</option>
+                                        </select>
+                                        <div class="green-btn green-btn-hacks"><span>+</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <label for="addnew-settings-resource-desc">Description</label>
+                                    <textarea id="addnew-settings-resource-desc" placeholder="Enter resource description"></textarea>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="desktop-settings-head-row">
+                                    <h3>Service</h3>
+                                    <span>Part 2 of 5</span>
+                                </div>
+
+                                <div class="desktop-settings-row">
+                                    <p>Type</p>
+                                    <div class="desktop-settings-type-select" ng-init="type = 1">
+                                        <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
+                                    </div>
+                                </div>
+
+                                <!-- Preventive -->
+                                <section>
+                                    <div ng-show="type === 1">
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-desktop-settings-resource-ls">Last service</label>
+                                            <input type="text" id="addnew-desktop-settings-resource-ls" ng-model="addnewDesktopServiceLastService" ng-change="addnewDesktopAddNewNextServiceCalc()">
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <div class="desktop-settings-row flex flex-b">
+                                                <div class="w47">
+                                                    <label for="addnew-desktop-settings-resource-interval">Service interval</label>
+                                                    <input type="number" id="addnew-desktop-settings-resource-interval" ng-change="addnewDesktopAddNewNextServiceCalc()" ng-model="addnewDesktopServiceInterval">
+                                                </div>
+                                                <div class="w47">
+                                                    <label for="addnew-desktop-settings-resource-interval-unit">Unit</label>
+                                                    <select id="addnew-desktop-settings-resource-interval-unit" ng-change="addnewDesktopAddNewNextServiceCalc()" ng-model="addnewDesktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-desktop-settings-resource-ns">Next service</label>
+                                            <input type="text" disabled id="addnew-desktop-settings-resource-ns" value="{{addnewDesktopNextService | date:'MM/dd/yyyy'}}">
+                                        </div>
+                                    </div>
+
+                                    <!-- Predictive -->
+
+                                    <div ng-show="type === 2">
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-settings-resource-source">Source</label>
+                                            <div class="settings-source-input"><input type="text" disabled id="addnew-settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
+                                        </div>
+
+                                        <div class="desktop-settings-row flex flex-b">
+                                            <div class="w47">
+                                                <label for="addnew-settings-resource-start-value">Start value</label>
+                                                <input type="text" disabled id="addnew-settings-resource-start-value">
+                                            </div>
+
+                                            <div class="w47">
+                                                <label for="addnew-settings-resource-internal-value">Internal value</label>
+                                                <input type="text" id="addnew-settings-resource-internal-value">
+                                            </div>
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-settings-resource-time-range">Time range</label>
+                                            <select id="addnew-settings-resource-time-range">
+                                                <option>1 Week</option>
+                                                <option>1 Month</option>
+                                                <option>1 Year</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-settings-resource-max-internal">Max interval days</label>
+                                            <input type="text" id="addnew-settings-resource-max-internal">
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-settings-resource-pred-ns">Next service calculated to be</label>
+                                            <input type="text" id="addnew-settings-resource-pred-ns" disabled>
+                                        </div>
+
+                                        <div class="desktop-settings-row">
+                                            <label for="addnew-settings-resource-valcalc">Value calculated to be</label>
+                                            <input type="text" id="addnew-settings-resource-valcalc" disabled>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="desktop-settings-head-row">
+                                        <h3>Checklist</h3>
+                                        <span>Part 3 of 5</span>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <p>To do's</p>
+                                        <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="addnewDesktopAddnewTodoList">
+                                            <div class="todoItem" ng-repeat="x in addnewDesktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
+                                            <form ng-submit="addnewDesktopTodoAdd()" class="addTodo">
+                                                <input type="text" ng-model="addnewDesktopAddnewTodoInput" id="addnewDesktopAddnewTodoInput" placeholder="Add New">
+                                                <button type="submit" class="green-btn">Add</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="desktop-settings-head-row">
+                                        <h3>Attachments</h3>
+                                        <span>Part 4 of 5</span>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <p>Items</p>
+                                        <div class="desktop-settings-todolist">
+                                            <div id="addnew-desktop-uploaded-attachments"></div>
+                                            <label class="addnew-desktop-file-upload-attach">
+                                                <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="desktop-settings-head-row">
+                                        <h3>Notify me</h3>
+                                        <span>Part 5 of 5</span>
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="addnew-settings-resource-notify">E-mail addresses (seprate e-mails by comma)</label>
+                                        <input type="text" id="addnew-settings-resource-notify" placeholder="Enter e-mail(s) to notify">
+                                    </div>
+
+                                    <div class="desktop-settings-row">
+                                        <label for="addnew-settings-resource-daysb4service">Days before service</label>
+                                        <input type="text" id="addnew-settings-resource-daysb4service" placeholder="Days before notification">
+                                    </div>
+                                </section>
+                        </div>
+                        <div class="qr-modal-footer">
+                            <button class="apply-settings" onclick="closeModals()">Create resource</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <!-- footer -->
         <footer></footer>
@@ -1570,188 +1755,6 @@
                 </div>
                 <div class="qr-modal-footer">
                     <span class="close" onclick="closeModals()"><p id="bluedone">Done</p></span>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="desktop-add-new" class="modal">
-            <div class="desktop-addnew-content">
-
-                <div class="modal-header">
-                    <h2 class="h2modal">Add new resource</h2>
-                </div>
-                <div class="desktop-addnew-wrapper">
-                    <div class="modal-body">
-                        <section>
-                            <div class="desktop-settings-head-row">
-                                <h3>Details</h3>
-                                <span>Part 1 of 5</span>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <label for="settings-resource-name">Resource name</label>
-                                <input type="text" placeholder="Resource name" id="settings-resource-name"/>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <label for="settings-resource-group">Group</label>
-                                <div class="flex">
-                                    <select id="settings-resource-group">
-                                        <option>Machine</option>
-                                        <option>Cars</option>
-                                        <option>Washer</option>
-                                    </select>
-                                    <div class="green-btn green-btn-hacks"><span>+</span></div>
-                                </div>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <label for="settings-resource-desc">Description</label>
-                                <textarea id="settings-resource-desc" placeholder="Enter resource description"></textarea>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="desktop-settings-head-row">
-                                <h3>Service</h3>
-                                <span>Part 2 of 5</span>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <p>Type</p>
-                                <div class="desktop-settings-type-select" ng-init="type = 1">
-                                    <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
-                                </div>
-                            </div>
-
-                            <!-- Preventive -->
-                            <div ng-show="type === 1">
-                                <div class="desktop-settings-row">
-                                    <label for="desktop-settings-resource-ls">Last service</label>
-                                    <input type="text" id="desktop-settings-resource-ls" ng-model="desktopServiceLastService" ng-change="desktopNextServiceCalc()">
-                                </div>
-
-                                <div class="desktop-settings-row flex flex-b">
-                                    <div>
-                                        <label for="desktop-settings-resource-interval">Service interval</label>
-                                        <input type="number" id="desktop-settings-resource-interval" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceInterval">
-                                    </div>
-                                    <div class="w50">
-                                        <label for="desktop-settings-resource-interval-unit">Unit</label>
-                                        <select id="desktop-settings-resource-interval-unit" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="desktop-settings-row">
-                                    <label for="desktop-settings-resource-ns">Next service</label>
-                                    <input type="text" disabled id="desktop-settings-resource-ns" value="{{desktopNextService | date:'MM/dd/yyyy'}}">
-                                </div>
-                            </div>
-
-                            <!-- Predictive -->
-                            <div ng-show="type === 2">
-                                <div class="desktop-settings-row">
-                                    <label for="settings-resource-source">Source</label>
-                                    <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
-                                </div>
-
-                                <div class="desktop-settings-row flex flex-b">
-                                    <div>
-                                        <label for="settings-resource-start-value">Start value</label>
-                                        <input type="text" disabled id="settings-resource-start-value">
-                                    </div>
-
-                                    <div>
-                                        <label for="settings-resource-internal-value">Internal value</label>
-                                        <input type="text" id="settings-resource-internal-value">
-                                    </div>
-                                </div>
-
-                                <div class="desktop-settings-row">
-                                    <label for="settings-resource-time-range">Time range</label>
-                                    <select id="settings-resource-time-range">
-                                        <option>1 Week</option>
-                                        <option>1 Month</option>
-                                        <option>1 Year</option>
-                                    </select>
-                                </div>
-
-                                <div class="desktop-settings-row">
-                                    <label for="settings-resource-max-internal">Max interval days</label>
-                                    <input type="text" id="settings-resource-max-internal">
-                                </div>
-
-                                <div class="desktop-settings-row">
-                                    <label for="settings-resource-pred-ns">Next service calculated to be</label>
-                                    <input type="text" id="settings-resource-pred-ns" disabled>
-                                </div>
-
-                                <div class="desktop-settings-row">
-                                    <label for="settings-resource-valcalc">Value calculated to be</label>
-                                    <input type="text" id="settings-resource-valcalc" disabled>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="desktop-settings-head-row">
-                                <h3>Checklist</h3>
-                                <span>Part 3 of 5</span>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <p>To do's</p>
-                                <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="desktopAddnewTodoList">
-                                    <div class="todoItem" ng-repeat="x in desktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
-                                    <form ng-submit="desktopTodoAdd()" class="addTodo">
-                                        <input type="text" ng-model="desktopAddnewTodoInput" id="desktopAddnewTodoInput" placeholder="Add New">
-                                        <button type="submit" class="green-btn">Add</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="desktop-settings-head-row">
-                                <h3>Attachments</h3>
-                                <span>Part 4 of 5</span>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <p>Items</p>
-                                <div class="desktop-settings-todolist">
-                                    <div id="desktop-uploaded-attachments"></div>
-                                    <label class="desktop-file-upload-attach">
-                                        <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
-                                    </label>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <div class="desktop-settings-head-row">
-                                <h3>Notify me</h3>
-                                <span>Part 5 of 5</span>
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <label for="settings-resource-notify">E-mail addresses (seprate e-mails by comma)</label>
-                                <input type="text" id="settings-resource-notify" placeholder="Enter e-mail(s) to notify">
-                            </div>
-
-                            <div class="desktop-settings-row">
-                                <label for="settings-resource-daysb4service">Days before service</label>
-                                <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
-                            </div>
-
-
-                        </section>
-                    </div>
-                    <div class="qr-modal-footer">
-                        <button class="apply-settings" onclick="closeModals()">Create resource</button>
-                    </div>
                 </div>
             </div>
         </div>

@@ -308,7 +308,7 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    };
 
-   // Add new calculate next service
+   // Mobile Add new calculate next service
 
    $(function () {
       $("#step-2b-ls").datepicker();
@@ -346,11 +346,52 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    };
 
+   // Dasktop Add new calculate next service
+
+   $(function () {
+      $("#addnew-desktop-settings-resource-ls").datepicker();
+      
+//      $("#addnew-desktop-settings-resource-ls").datepicker({
+//              dateFormat: 'dd-mm-yy'
+//           });
+   });
+
+   $scope.addnewDesktopAddNewNextServiceCalc = function () {
+      let lastService = new Date($scope.addnewDesktopServiceLastService);
+      let serviceInterval = $scope.addnewDesktopServiceInterval;
+      let serviceIntervalUnit = $scope.addnewDesktopServiceUnit;
+
+      if ($scope.addnewDesktopServiceInterval !== undefined && $scope.addnewDesktopServiceUnit !== undefined) {
+         // If unit is days
+         if (serviceIntervalUnit.id == 1) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }
+         // If unit is weeks
+         if (serviceIntervalUnit.id == 2) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }
+         // If unit is months
+         if (serviceIntervalUnit.id == 3) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }
+         // If unit is years
+         if (serviceIntervalUnit.id == 4) {
+            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }
+      } else {
+         $scope.addnewDesktopNextService = '';
+      }
+
+   };
+
 
    // Resource settings checklist
 
-   // Mobile 
-
+   // Mobile add new
    $scope.addnewTodoList = [];
 
    let addnewTodoIndex = 0;
@@ -362,8 +403,8 @@ app.controller("mainCtrl", function ($scope, $http) {
       addnewTodoIndex++;
    };
 
-   // Desktop 
 
+   // Desktop settings
    $scope.desktopAddnewTodoList = [];
 
    let dekstopAddnewTodoIndex = 0;
@@ -373,6 +414,19 @@ app.controller("mainCtrl", function ($scope, $http) {
       $scope.desktopAddnewTodoInput = "";
       document.getElementById("desktopAddnewTodoInput").focus();
       dekstopAddnewTodoIndex++;
+   };
+
+
+   // Desktop add new
+   $scope.addnewDesktopAddnewTodoList = [];
+
+   let addnewDekstopAddnewTodoIndex = 0;
+
+   $scope.addnewDesktopTodoAdd = function () {
+      $scope.addnewDesktopAddnewTodoList.push({i: addnewDekstopAddnewTodoIndex, todoText: $scope.addnewDesktopAddnewTodoInput});
+      $scope.addnewDesktopAddnewTodoInput = "";
+      document.getElementById("addnewDesktopAddnewTodoInput").focus();
+      addnewDekstopAddnewTodoIndex++;
    };
 
 

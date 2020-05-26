@@ -26,7 +26,7 @@ $(document).ready(function () {
    });
 
 
-   // Add attachment (settings)
+   // Add attachment (Mobile settings)
    var attachmentList = "";
    $('.file-upload-attach').children("input").bind('change', function () {
       var fileName = '';
@@ -41,7 +41,7 @@ $(document).ready(function () {
    });
 
 
-   // Add attachment (add new)
+   // Add attachment (Mobile add new)
    var addnewAttachmentList = "";
    $('.addnew-file-upload-attach').children("input").bind('change', function () {
       var fileName = '';
@@ -56,7 +56,7 @@ $(document).ready(function () {
    });
 
 
-   // Add attachment (Desktop)
+   // Add attachment (Desktop settings)
    var desktopAttachmentList = "";
    $('.desktop-file-upload-attach').children("input").bind('change', function () {
       var fileName = '';
@@ -67,6 +67,21 @@ $(document).ready(function () {
 
          // Output attachment list to html
          $('#desktop-uploaded-attachments').html(desktopAttachmentList);
+      }
+   });
+
+
+   // Add attachment (Desktop add new)
+   var addnewDesktopAttachmentList = "";
+   $('.addnew-desktop-file-upload-attach').children("input").bind('change', function () {
+      var fileName = '';
+      fileName = $(this).val().split("\\").slice(-1)[0];
+
+      if (fileName.length > 0) {
+         addnewDesktopAttachmentList += "<div class='todoItem'><div>" + fileName + "</div> <div><img src='assets/icons/delete-icon-grey.svg' alt='Delete checkbox'></div></div>";
+
+         // Output attachment list to html
+         $('#addnew-desktop-uploaded-attachments').html(addnewDesktopAttachmentList);
       }
    });
 
