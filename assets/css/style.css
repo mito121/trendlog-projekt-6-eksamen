@@ -739,6 +739,10 @@ aside ul li:hover{
     padding:8px 20px;
 }
 
+.desktop-resources svg{
+    margin:0 5px;
+}
+
 .desktop-resources tr th{
     text-align:left;
 }
@@ -1109,6 +1113,14 @@ button:hover{
     background-color:#01CC01;
     display: inline-flex;
     color:white;
+}
+
+.add-attach span{
+    font-size:14px;
+}
+
+.add-attach svg{
+    height:21px;
 }
 
 .apply-settings{

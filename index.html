@@ -587,7 +587,7 @@
                                             <div class="mobile-settings-todolist">
                                                 <div id="addnew-uploaded-attachments"></div>
                                                 <label class="file-upload-attach addnew-file-upload-attach">
-                                                    <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                                    <input type="file"><div class="add-attach"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
                                                 </label>
                                             </div>
                                             <div class=" add-new-buttons flex flex-a">
@@ -681,8 +681,8 @@
                                     <div class="flex">
                                         <div class="flex">
                                             <label for="desktop-type">Type</label>
-                                            <select class="desktop-resources-input" id="desktop-type">
-                                                <option>All</option>
+                                            <select class="desktop-resources-input" id="desktop-type" ng-model="searchType">
+                                                <option value="">All</option>
                                                 <option>Preventive</option>
                                                 <option>Predictive</option>
                                             </select>
@@ -690,8 +690,8 @@
 
                                         <div class="flex">
                                             <label for="desktop-group">Group</label>
-                                            <select class="desktop-resources-input" id="desktop-group">
-                                                <option>All</option>
+                                            <select class="desktop-resources-input" id="desktop-group" ng-model="searchGroup">
+                                                <option value="">All</option>
                                                 <option>Machine</option>
                                                 <option>Car</option>
                                                 <option>Washer</option>
@@ -729,10 +729,20 @@
                                     <th></th>
                                 </tr>
 
-                                <tr dir-paginate="r in resources | filter: desktopSearch | itemsPerPage: entries" pagination-id="desktop" ng-click="selectRes(r.id)" class="desktop-resource" id="desktop-resource-{{r.id}}" ng-cloak>
+                                <tr dir-paginate="r in resources | filter: desktopSearch | filter: {type: searchType} | filter: {group: searchGroup} | itemsPerPage: entries" pagination-id="desktop" ng-click="selectRes(r.id)" class="desktop-resource" id="desktop-resource-{{r.id}}" ng-cloak>
                                     <td>{{r.id}}</td>
                                     <td>{{r.name}}</td>
-                                    <td>{{r.type}}</td>
+                                    <td class="flex">
+                                        <!-- Preventive icon -->
+                                        <svg ng-show="r.type =='Preventive'" style="width:17px;height:17px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        <!-- Predictive icon -->
+                                        <svg ng-show="r.type =='Predictive'" style="width:17px;height:17px" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M22,21H2V3H4V19H6V10H10V19H12V6H16V19H18V14H22V21Z" />
+                                        </svg>
+                                        {{r.type}}
+                                    </td>
                                     <td>{{r.group}}</td>
                                     <td><div ng-show="r.enabled === 'true'" class="enabled"></div><div ng-show="r.enabled === 'false'" class="disabled"></div></td>
                                     <td>{{r.lastService}}</td>
@@ -995,7 +1005,7 @@
 
                         <!-- ================ Desktop calendar ================== -->
 
-                        <!-- == Mobile calendar view == -->
+                        <!-- == Desktop calendar view == -->
                         <div id="desktop-calendar-view" ng-cloak ng-show="desktopView === 2">
                             <div class="desktop-calendar-wrapper">
                                 <div class="desktop-calendar-head">
@@ -1452,7 +1462,7 @@
                                         <div class="mobile-settings-todolist">
                                             <div id="uploaded-attachments"></div>
                                             <label class="file-upload-attach">
-                                                <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                                <input type="file"><div class="add-attach"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
                                             </label>
                                         </div>
                                     </div>
@@ -1622,7 +1632,7 @@
                                     <div class="desktop-settings-todolist">
                                         <div id="desktop-uploaded-attachments"></div>
                                         <label class="desktop-file-upload-attach">
-                                            <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                            <input type="file"><div class="add-attach"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
                                         </label>
                                     </div>
                                 </div>
@@ -1808,7 +1818,7 @@
                                         <div class="desktop-settings-todolist">
                                             <div id="addnew-desktop-uploaded-attachments"></div>
                                             <label class="addnew-desktop-file-upload-attach">
-                                                <input type="file"><div class="add-attach"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                                                <input type="file"><div class="add-attach"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
                                             </label>
                                         </div>
                                     </div>

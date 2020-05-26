@@ -194,7 +194,9 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '10', enabled: 'true', name: 'Rødbederuller', group: 'Machine', type: 'Predictive', nextService: '24-06-2021', lastService: '02-04-2024', percent: '33'},
       {id: '11', enabled: 'false', name: 'Rødbedehakker', group: 'Machine', type: 'Predictive', nextService: '31-09-2021', lastService: '08-07-2024', percent: '21'},
       {id: '12', enabled: 'false', name: 'Rødbedelytter', group: 'Machine', type: 'Predictive', nextService: '12-11-2021', lastService: '08-07-2004', percent: '13'},
-      {id: '13', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024', percent: '6'}
+      {id: '13', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024', percent: '6'},
+      {id: '14', enabled: 'true', name: 'Rødbedemobilen', group: 'Car', type: 'Predictive', nextService: '28-01-1995', lastService: '06-18-2018', percent: '54'},
+      {id: '15', enabled: 'false', name: 'Rødbedevogn', group: 'Car', type: 'Preventive', nextService: '28-01-1988', lastService: '06-08-2016', percent: '33'}
    ];
 
    // Mobile resource settings service units
@@ -216,7 +218,9 @@ app.controller("mainCtrl", function ($scope, $http) {
    $scope.mobileServiceUnit = $scope.resourceServiceUnits[0];
 
 
-   // Desktop select resource
+
+   //// Desktop select resource
+
    $scope.selected = 0;
    $scope.selectRes = function (id) {
       let item = $('#desktop-resource-' + id);
@@ -225,6 +229,12 @@ app.controller("mainCtrl", function ($scope, $http) {
       $scope.selected = 1;
    };
 
+$(document).ready(function(){
+   //// Desktop open service checklist
+   $('.desktop-resource').dblclick(function () {
+      alert("Resource checklist triggered!");
+   });
+});
 
 
 
@@ -350,7 +360,7 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    $(function () {
       $("#addnew-desktop-settings-resource-ls").datepicker();
-      
+
 //      $("#addnew-desktop-settings-resource-ls").datepicker({
 //              dateFormat: 'dd-mm-yy'
 //           });
