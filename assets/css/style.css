@@ -823,7 +823,7 @@ aside ul li:hover{
 .loading{
     width:60%;
     background-color:#fff;
-    border:1px solid #d3d3d3;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
     border-radius:5px;
     display:flex;
     justify-content: center;
@@ -2954,7 +2954,7 @@ button:hover{
 
     .loading{
         width:100%;
-        border:1px solid #d3d3d3;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
         border-radius:5px;
         display:flex;
         justify-content: center;
