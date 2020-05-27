@@ -1419,6 +1419,7 @@ button:hover{
     border-right: 2px solid #2AC319;
     display:flex;
     align-items:center;
+    justify-content:center;
 }
 
 .desktop-calendar-event-row div:last-child{
@@ -3337,7 +3338,7 @@ button:hover{
     justify-content: flex-end;
 }
 
-.repair-log .service-footer{
+.service-checklist .service-footer{
     position: initial;
 }
 
@@ -3359,6 +3360,8 @@ button:hover{
 
 #repair-description{
     background-color:#F0F0F0;
+    resize: none;
+    min-height: auto;
 }
 
 .repair-log-checklist{
@@ -3382,6 +3385,58 @@ button:hover{
 .repair-list-item{
     position:relative;
     margin-bottom:30px;
+}
+
+.service-attachment, .repair-log-checklist input[type=file]{
+    margin:6px 0;
+}
+
+.flex-wrap{
+    flex-wrap:wrap;
+}
+
+.service-image{
+    height:100px;
+    width:100px;
+    border-radius:5px;
+    background-color:#fff;
+    margin:6px;
+    border-radius:5px;
+}
+
+.service-image img{
+    border-radius:5px;
+    height:100px;
+    width:100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.service-image-upload{
+    height:100px;
+    width:100px;
+    border-radius:5px;
+    background-color:#fff;
+    margin:6px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.report-logo{
+    width: 70%;
+}
+
+.service-image-upload svg{
+    height:44px;
+}
+
+.service-attachment input{
+    width:100%;
+    margin-top: 6px;
+    margin-bottom: 6px !important;
+    color:#69B4FF !important;
+    background-color:#fff !important;
 }
 
 .repair-list-file-upload{

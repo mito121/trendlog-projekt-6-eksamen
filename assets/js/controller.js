@@ -443,10 +443,12 @@ app.controller("mainCtrl", function ($scope, $http) {
    //// Show service report
    $scope.showServiceReport = function(){
       $scope.serviceReportView = 1;
+//      window.scrollTo(0, 0);
    };
    //// Hide service report
    $scope.hideServiceReport = function(){
       $scope.serviceReportView = 0;
+//      window.scrollTo(0, 0);
    };
    
    //// Show service report
