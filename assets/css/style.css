@@ -1273,6 +1273,7 @@ button:hover{
     width:100%;
     text-align:center;
     border-collapse: collapse;
+    background-color:#fff;
 }
 
 .desktop-calendar-table tr:first-child{
@@ -1280,10 +1281,11 @@ button:hover{
     border-bottom:1px solid #707070;
     color:#707070;
     font-size:1em;
+    background-color:#eee;
 }
 
 .desktop-calendar-table tr{
-    color:white;
+    color:black;
     font-size:1.2em;
     margin:0 15px;
 }
@@ -1304,6 +1306,8 @@ button:hover{
 
 .calendar-current-date{
     position:relative;
+    z-index:999;
+    color:#fff;
 }
 
 .calendar-current-date::before{
@@ -1315,12 +1319,12 @@ button:hover{
     right: 0;
     height: 30px;
     width: 30px;
-    background-color: #D9534F !important;
+    background-color: #222 !important;
     z-index: -1;
 }
 
 .calendar-next-month{
-    color: #707070!important;
+    color: #d3d3d3 !important;
 }
 
 .calendar-expired{
@@ -2404,6 +2408,7 @@ button:hover{
         width:100%;
         text-align:center;
         border-collapse: collapse;
+        background-color:#fff;
     }
 
     .mobile-calendar-table tr:first-child{
@@ -2411,12 +2416,12 @@ button:hover{
         border-bottom:1px solid #707070;
         color:#707070;
         font-size:1em;
+        background-color:#eee;
     }
 
     .mobile-calendar-table tr{
-        color:white;
+        color:black;
         font-size:1.2em;
-
         margin:0 15px;
     }
 
@@ -2443,7 +2448,7 @@ button:hover{
     }
 
     .calendar-next-month{
-        color: #707070!important;
+        color: #d3d3d3 !important;
     }
 
     .calendar-expired{
