@@ -132,7 +132,7 @@ app.controller("mainCtrl", function ($scope, $http) {
    };
 
 
-   // Go to history tab
+   // Go to maintenance tab
    $scope.serviceTab = function () {
       $('.mobile-resource-dropdown').removeClass("expand-resource");
       $('html body').css("overflow", "auto");

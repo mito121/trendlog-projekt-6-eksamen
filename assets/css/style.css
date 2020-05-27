@@ -3421,6 +3421,7 @@ button:hover{
     display:flex;
     justify-content: center;
     align-items:center;
+    border:2px dashed #d3d3d3;
 }
 
 .report-logo{
@@ -3435,7 +3436,7 @@ button:hover{
     width:100%;
     margin-top: 6px;
     margin-bottom: 6px !important;
-    color:#69B4FF !important;
+    color:#007bff !important;
     background-color:#fff !important;
 }
 
@@ -3471,7 +3472,7 @@ button:hover{
     background-color: #fff;
     border: 1px solid #d3d3d3;
     border-radius: 0 0 5px 5px;
-    color: #69B4FF;
+    color: #007bff;
     padding: 2px 3px;
     margin-left:3px;
     display:inline;
@@ -3485,7 +3486,7 @@ button:hover{
     width:34px;
     border-radius:5px;
     border:1px solid #d3d3d3;
-    background-color:#01CC01;
+    background-color:#007bff;
 }
 
 .repair-unchecked{
@@ -3498,4 +3499,28 @@ button:hover{
 
 .repair-checked svg{
     height:24px;
+}
+
+.service-progress{
+    width:100%;
+    border-radius:5px;
+    border:1px solid #d3d3d3;
+    height:25px;
+    margin:6px 0;
+    position:relative;
+}
+
+.service-progress-text{
+    position:absolute;
+    left:0%;
+    color:#fff;
+    width:100%;
+    text-align:center;
+}
+
+.service-progress-bar{
+    width:60%;
+    background-color:#007bff;
+    height:100%;
+    border-radius:5px 0 0 5px;
 }
