@@ -384,13 +384,13 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    $scope.todoList = [];
 
-   let toDoId = 1;
+   let todoId = 1;
 
    $scope.todoAdd = function () {
-      $scope.todoList.push({i: toDoId, todoText: $scope.todoInput});
+      $scope.todoList.push({i: todoId, todoText: $scope.todoInput});
       $scope.todoInput = "";
       document.getElementById("todoInput").focus();
-      toDoId++;
+      todoId++;
    };
 
    // Mobile add new
