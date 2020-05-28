@@ -30,7 +30,6 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    // Expand resource drop down menu
    $scope.expandResourceDropDown = function (resource) {
-
       let item = $('#drop-down' + resource);
       item.toggleClass("expand-resource");
 
@@ -195,11 +194,11 @@ app.controller("mainCtrl", function ($scope, $http) {
       {id: '11', enabled: 'false', name: 'Rødbedehakker', group: 'Machine', type: 'Predictive', nextService: '31-09-2021', lastService: '08-07-2024', percent: '21'},
       {id: '12', enabled: 'false', name: 'Rødbedelytter', group: 'Machine', type: 'Predictive', nextService: '12-11-2021', lastService: '08-07-2004', percent: '13'},
       {id: '13', enabled: 'true', name: 'Rødbederetter', group: 'Machine', type: 'Preventive', nextService: '28-01-2021', lastService: '06-08-2024', percent: '6'},
-      {id: '14', enabled: 'true', name: 'Rødbedemobilen', group: 'Car', type: 'Predictive', nextService: '28-01-1995', lastService: '06-18-2018', percent: '54'},
-      {id: '15', enabled: 'false', name: 'Rødbedevogn', group: 'Car', type: 'Preventive', nextService: '28-01-1988', lastService: '06-08-2016', percent: '33'}
+      {id: '14', enabled: 'true', name: 'Rødbedemobilen', group: 'Car', type: 'Predictive', nextService: '06-18-2018', lastService: '28-01-1995', percent: '54'},
+      {id: '15', enabled: 'false', name: 'Rødbedevogn', group: 'Car', type: 'Preventive', nextService: '06-08-2016', lastService: '28-01-1988', percent: '33'}
    ];
 
-   // Mobile resource settings service units
+   // Resource settings service units
    $scope.resourceServiceUnits = [
       {id: 1, name: 'Days'},
       {id: 2, name: 'Weeks'},
@@ -253,26 +252,21 @@ app.controller("mainCtrl", function ($scope, $http) {
       let serviceIntervalUnit = $scope.mobileServiceUnit;
 
       if ($scope.mobileServiceInterval !== undefined && $scope.mobileServiceUnit !== undefined) {
-         // If unit is days
-         if (serviceIntervalUnit.id == 1) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+         
+         if (serviceIntervalUnit.id == 1) { // If unit is days
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.mobileNextService = nextService;
+         }else if (serviceIntervalUnit.id == 2) { // If unit is weeks
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.mobileNextService = nextService;
+         }else if (serviceIntervalUnit.id == 3) { // If unit is months
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.mobileNextService = nextService;
+         }else if (serviceIntervalUnit.id == 4) { // If unit is years
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
             $scope.mobileNextService = nextService;
          }
-         // If unit is weeks
-         if (serviceIntervalUnit.id == 2) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
-            $scope.mobileNextService = nextService;
-         }
-         // If unit is months
-         if (serviceIntervalUnit.id == 3) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
-            $scope.mobileNextService = nextService;
-         }
-         // If unit is years
-         if (serviceIntervalUnit.id == 4) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
-            $scope.mobileNextService = nextService;
-         }
+         
       } else {
          $scope.mobileNextService = '';
       }
@@ -292,26 +286,21 @@ app.controller("mainCtrl", function ($scope, $http) {
       let serviceIntervalUnit = $scope.desktopServiceUnit;
 
       if ($scope.desktopServiceInterval !== undefined && $scope.desktopServiceUnit !== undefined) {
-         // If unit is days
-         if (serviceIntervalUnit.id == 1) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+         
+         if (serviceIntervalUnit.id == 1) { // If unit is days
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.desktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 2) { // If unit is weeks
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.desktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 3) { // If unit is months
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.desktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 4) { // If unit is years
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
             $scope.desktopNextService = nextService;
          }
-         // If unit is weeks
-         if (serviceIntervalUnit.id == 2) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
-            $scope.desktopNextService = nextService;
-         }
-         // If unit is months
-         if (serviceIntervalUnit.id == 3) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
-            $scope.desktopNextService = nextService;
-         }
-         // If unit is years
-         if (serviceIntervalUnit.id == 4) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
-            $scope.desktopNextService = nextService;
-         }
+         
       } else {
          $scope.desktopNextService = '';
       }
@@ -330,26 +319,21 @@ app.controller("mainCtrl", function ($scope, $http) {
       let serviceIntervalUnit = $scope.addNewServiceUnit;
 
       if ($scope.addNewServiceInterval !== undefined && $scope.addNewServiceUnit !== undefined) {
-         // If unit is days
-         if (serviceIntervalUnit.id == 1) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+         
+         if (serviceIntervalUnit.id == 1) { // If unit is days
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.addNewNextService = nextService;
+         }else if (serviceIntervalUnit.id == 2) { // If unit is weeks
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.addNewNextService = nextService;
+         }else if (serviceIntervalUnit.id == 3) { // If unit is months
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.addNewNextService = nextService;
+         }else if (serviceIntervalUnit.id == 4) { // If unit is years
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
             $scope.addNewNextService = nextService;
          }
-         // If unit is weeks
-         if (serviceIntervalUnit.id == 2) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
-            $scope.addNewNextService = nextService;
-         }
-         // If unit is months
-         if (serviceIntervalUnit.id == 3) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
-            $scope.addNewNextService = nextService;
-         }
-         // If unit is years
-         if (serviceIntervalUnit.id == 4) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
-            $scope.addNewNextService = nextService;
-         }
+         
       } else {
          $scope.addNewNextService = '';
       }
@@ -372,26 +356,21 @@ app.controller("mainCtrl", function ($scope, $http) {
       let serviceIntervalUnit = $scope.addnewDesktopServiceUnit;
 
       if ($scope.addnewDesktopServiceInterval !== undefined && $scope.addnewDesktopServiceUnit !== undefined) {
-         // If unit is days
-         if (serviceIntervalUnit.id == 1) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+         
+         if (serviceIntervalUnit.id == 1) { // If unit is days
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'days').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 2) { // If unit is weeks
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 3) { // If unit is months
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
+            $scope.addnewDesktopNextService = nextService;
+         }else if (serviceIntervalUnit.id == 4) { // If unit is years
+            let nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
             $scope.addnewDesktopNextService = nextService;
          }
-         // If unit is weeks
-         if (serviceIntervalUnit.id == 2) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'weeks').calendar();
-            $scope.addnewDesktopNextService = nextService;
-         }
-         // If unit is months
-         if (serviceIntervalUnit.id == 3) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'months').calendar();
-            $scope.addnewDesktopNextService = nextService;
-         }
-         // If unit is years
-         if (serviceIntervalUnit.id == 4) {
-            var nextService = moment(lastService, "MM-DD-YYYY").add(serviceInterval, 'years').calendar();
-            $scope.addnewDesktopNextService = nextService;
-         }
+         
       } else {
          $scope.addnewDesktopNextService = '';
       }
