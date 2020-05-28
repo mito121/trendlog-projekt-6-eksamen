@@ -401,6 +401,19 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    // Resource settings checklist
 
+   // Mobile settings
+
+   $scope.todoList = [];
+
+   let toDoIndex = 0;
+
+   $scope.todoAdd = function () {
+      $scope.todoList.push({i: toDoIndex, todoText: $scope.todoInput});
+      $scope.todoInput = "";
+      document.getElementById("todoInput").focus();
+      toDoIndex++;
+   };
+
    // Mobile add new
    $scope.addnewTodoList = [];
 
@@ -438,21 +451,21 @@ app.controller("mainCtrl", function ($scope, $http) {
       document.getElementById("addnewDesktopAddnewTodoInput").focus();
       addnewDekstopAddnewTodoIndex++;
    };
-   
-   
+
+
    //// Show service report
-   $scope.showServiceReport = function(){
+   $scope.showServiceReport = function () {
       $scope.serviceReportView = 1;
 //      window.scrollTo(0, 0);
    };
    //// Hide service report
-   $scope.hideServiceReport = function(){
+   $scope.hideServiceReport = function () {
       $scope.serviceReportView = 0;
 //      window.scrollTo(0, 0);
    };
-   
+
    //// Show service report
-   $scope.showRepairLog = function(){
+   $scope.showRepairLog = function () {
       $scope.serviceReportView = 2;
    };
 

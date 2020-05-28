@@ -609,32 +609,10 @@
                                             <p>Step 5 of 5</p>
                                         </div>
                                         <div class="add-new-content">
-                                            <!-- POPOVER -->
-                                            <div class="popover-wrapper">
-                                                <label for="step-5-ea">E-mail address</label>
-                                                <img class="info-popover" id="popover12" src="assets/icons/infothicc-icon.svg" alt="Info">
-                                                <div class="popover" id="popover-12">
-                                                    <div class="popover-header"><div>Popover header</div> <img class="closePopover" src="assets/icons/close-icon.svg" alt="Close"></div>
-                                                    <div class="popover-body">
-                                                        The purpose of this popover is to provide additional information about this specific input field.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /POPOVER -->
-                                            <input type="text" id="step-5-ea" placeholder="Text here...">
-                                            <!-- POPOVER -->
-                                            <div class="popover-wrapper">
-                                                <label for="step-5-dbf">Days before service</label>
-                                                <img class="info-popover" id="popover13" src="assets/icons/infothicc-icon.svg" alt="Info">
-                                                <div class="popover" id="popover-13">
-                                                    <div class="popover-header"><div>Popover header</div> <img class="closePopover" src="assets/icons/close-icon.svg" alt="Close"></div>
-                                                    <div class="popover-body">
-                                                        The purpose of this popover is to provide additional information about this specific input field.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /POPOVER -->
-                                            <input type="text" id="step-5dbf" placeholder="Text here...">
+                                            <label for="step-5-ea">E-mail addresses</label>
+                                            <input type="text" id="step-5-ea" placeholder="E-mails to notify (seprate by comma)">
+                                            <label for="step-5-dbf">Days before service</label>
+                                            <input type="text" id="step-5dbf" placeholder="Days before notification">
                                             <div class="add-new-buttons flex flex-a">
                                                 <a href="#" class="add-new-button" ng-click="cancelNewResource()">Cancel</a>
                                                 <a href="#" class="add-new-button" ng-click="step = 4">Back</a>
@@ -1359,7 +1337,7 @@
                                     </div>
 
                                     <div class="mobile-settings-row">
-                                        <p>Type</p>
+                                        <div class="flex"><p>Type</p><img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></div>
                                         <div class="mobile-settings-type-select" ng-init="type = 1">
                                             <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
                                         </div>
@@ -1378,7 +1356,7 @@
                                                 <input type="number" id="settings-resource-interval" ng-change="nextServiceCalc()" ng-model="mobileServiceInterval">
                                             </div>
                                             <div class="w50">
-                                                <label for="settings-resource-interval-unit">Unit</label>
+                                                <label for="settings-resource-interval-unit" class="flex">Unit <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                 <select id="settings-resource-interval-unit" ng-change="nextServiceCalc()" ng-model="mobileServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                                 </select>
                                             </div>
@@ -1393,24 +1371,24 @@
                                     <!-- Predictive -->
                                     <div ng-show="type === 2">
                                         <div class="mobile-settings-row">
-                                            <label for="settings-resource-source">Source</label>
+                                            <label for="settings-resource-source" class="flex">Source<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
                                         </div>
 
                                         <div class="mobile-settings-row flex flex-b">
                                             <div>
-                                                <label for="settings-resource-start-value">Start value</label>
+                                                <label for="settings-resource-start-value" class="flex">Start value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                 <input type="text" disabled id="settings-resource-start-value">
                                             </div>
 
                                             <div>
-                                                <label for="settings-resource-internal-value">Internal value</label>
+                                                <label for="settings-resource-internal-value" class="flex">Internal value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                 <input type="text" id="settings-resource-internal-value">
                                             </div>
                                         </div>
 
                                         <div class="mobile-settings-row">
-                                            <label for="settings-resource-time-range">Time range</label>
+                                            <label for="settings-resource-time-range" class="flex">Time range<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <select id="settings-resource-time-range">
                                                 <option>1 Week</option>
                                                 <option>1 Month</option>
@@ -1419,7 +1397,7 @@
                                         </div>
 
                                         <div class="mobile-settings-row">
-                                            <label for="settings-resource-max-internal">Max interval days</label>
+                                            <label for="settings-resource-max-internal" class="flex">Max interval days<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" id="settings-resource-max-internal">
                                         </div>
 
@@ -1429,7 +1407,7 @@
                                         </div>
 
                                         <div class="mobile-settings-row">
-                                            <label for="settings-resource-valcalc">Value calculated to be</label>
+                                            <label for="settings-resource-valcalc" class="flex">Value calculated to be<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" id="settings-resource-valcalc" disabled>
                                         </div>
                                     </div>
@@ -1442,7 +1420,10 @@
                                     </div>
 
                                     <div class="mobile-settings-row">
-                                        <p>To do's</p>
+                                        <div class="flex">
+                                            <p>To do's</p>
+                                            <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                        </div>
                                         <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="todoList">
                                             <div class="todoItem" ng-repeat="x in todoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                             <form ng-submit="todoAdd()" class="addTodo">
@@ -1460,7 +1441,10 @@
                                     </div>
 
                                     <div class="mobile-settings-row">
-                                        <p>Items</p>
+                                        <div class="flex">
+                                            <p>Items</p>
+                                            <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                        </div>
                                         <div class="mobile-settings-todolist">
                                             <div id="uploaded-attachments"></div>
                                             <label class="file-upload-attach">
@@ -1486,7 +1470,18 @@
                                         <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
                                     </div>
 
-                                    <button id="apply-settings" ng-click="serviceTab()">Apply changes</button>
+                                    <div class="mobile-settings-row settings-border mt">
+                                        <div class="flex">
+                                            <p>Enable resource</p><img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                        </div>
+                                        <div class="flex flex-b">
+                                            <div class="toggle-resource" ng-init="activeToggle = 1">
+                                                <button ng-click="activeToggle = 1" ng-class="{resourceOn:activeToggle === 1}">On</button><button  ng-click="activeToggle = 0" ng-class="{resourceOff:activeToggle === 0}">Off</button>
+                                            </div>
+
+                                            <button class="apply-settings" ng-click="serviceTab()">Apply changes</button>
+                                        </div>
+                                    </div>
                                 </section>
                             </div>
                         </div>
@@ -1529,7 +1524,10 @@
                                 </div>
 
                                 <div class="desktop-settings-row">
-                                    <p>Type</p>
+                                    <div class="flex">
+                                        <p>Type</p>
+                                        <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                    </div>
                                     <div class="desktop-settings-type-select" ng-init="type = 1">
                                         <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
                                     </div>
@@ -1548,7 +1546,7 @@
                                             <input type="number" id="desktop-settings-resource-interval" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceInterval">
                                         </div>
                                         <div class="w47">
-                                            <label for="desktop-settings-resource-interval-unit">Unit</label>
+                                            <label for="desktop-settings-resource-interval-unit" class="flex">Unit <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <select id="desktop-settings-resource-interval-unit" ng-change="desktopNextServiceCalc()" ng-model="desktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                             </select>
                                         </div>
@@ -1563,24 +1561,24 @@
                                 <!-- Predictive -->
                                 <div ng-show="type === 2">
                                     <div class="desktop-settings-row">
-                                        <label for="settings-resource-source">Source</label>
+                                        <label for="settings-resource-source" class="flex">Source<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                         <div class="settings-source-input"><input type="text" disabled id="settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
                                     </div>
 
                                     <div class="desktop-settings-row flex flex-b">
                                         <div class="w47">
-                                            <label for="settings-resource-start-value">Start value</label>
+                                            <label for="settings-resource-start-value" class="flex">Start value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" disabled id="settings-resource-start-value">
                                         </div>
 
                                         <div class="w47">
-                                            <label for="settings-resource-internal-value">Internal value</label>
+                                            <label for="settings-resource-internal-value" class="flex">Internal value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" id="settings-resource-internal-value">
                                         </div>
                                     </div>
 
                                     <div class="desktop-settings-row">
-                                        <label for="settings-resource-time-range">Time range</label>
+                                        <label for="settings-resource-time-range" class="flex">Time range<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                         <select id="settings-resource-time-range">
                                             <option>1 Week</option>
                                             <option>1 Month</option>
@@ -1589,7 +1587,7 @@
                                     </div>
 
                                     <div class="desktop-settings-row">
-                                        <label for="settings-resource-max-internal">Max interval days</label>
+                                        <label for="settings-resource-max-internal" class="flex">Max interval days <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                         <input type="text" id="settings-resource-max-internal">
                                     </div>
 
@@ -1599,7 +1597,7 @@
                                     </div>
 
                                     <div class="desktop-settings-row">
-                                        <label for="settings-resource-valcalc">Value calculated to be</label>
+                                        <label for="settings-resource-valcalc" class="flex">Value calculated to be<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                         <input type="text" id="settings-resource-valcalc" disabled>
                                     </div>
                                 </div>
@@ -1612,7 +1610,10 @@
                                 </div>
 
                                 <div class="desktop-settings-row">
-                                    <p>To do's</p>
+                                    <div class="flex">
+                                        <p>To do's</p>
+                                        <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                    </div>
                                     <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="desktopAddnewTodoList">
                                         <div class="todoItem" ng-repeat="x in desktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                         <form ng-submit="desktopTodoAdd()" class="addTodo">
@@ -1630,7 +1631,10 @@
                                 </div>
 
                                 <div class="desktop-settings-row">
-                                    <p>Items</p>
+                                    <div class="flex">
+                                        <p>Items</p>
+                                        <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                    </div>
                                     <div class="desktop-settings-todolist">
                                         <div id="desktop-uploaded-attachments"></div>
                                         <label class="desktop-file-upload-attach">
@@ -1656,7 +1660,18 @@
                                     <input type="text" id="settings-resource-daysb4service" placeholder="Days before notification">
                                 </div>
 
-                                <button class="apply-settings" ng-click="serviceTab()">Apply changes</button>
+                                <div class="desktop-settings-row settings-border mt">
+                                    <div class="flex">
+                                        <p>Enable resource</p><img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                    </div>
+                                    <div class="flex flex-b">
+                                        <div class="toggle-resource" ng-init="activeToggle = 1">
+                                            <button ng-click="activeToggle = 1" ng-class="{resourceOn:activeToggle === 1}">On</button><button  ng-click="activeToggle = 0" ng-class="{resourceOff:activeToggle === 0}">Off</button>
+                                        </div>
+
+                                        <button class="apply-settings" ng-click="serviceTab()">Apply changes</button>
+                                    </div>
+                                </div>
                             </section>
                         </div>
 
@@ -1711,7 +1726,10 @@
                                 </div>
 
                                 <div class="desktop-settings-row">
-                                    <p>Type</p>
+                                    <div class="flex">
+                                        <p>Type</p>
+                                        <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                    </div>
                                     <div class="desktop-settings-type-select" ng-init="type = 1">
                                         <button ng-click="type = 1" ng-class="{activeType:type === 1}">Preventive</button><button ng-click="type = 2" ng-class="{activeType:type === 2}">Predictive</button>
                                     </div>
@@ -1732,7 +1750,7 @@
                                                     <input type="number" id="addnew-desktop-settings-resource-interval" ng-change="addnewDesktopAddNewNextServiceCalc()" ng-model="addnewDesktopServiceInterval">
                                                 </div>
                                                 <div class="w47">
-                                                    <label for="addnew-desktop-settings-resource-interval-unit">Unit</label>
+                                                    <label for="addnew-desktop-settings-resource-interval-unit" class="flex">Unit<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                     <select id="addnew-desktop-settings-resource-interval-unit" ng-change="addnewDesktopAddNewNextServiceCalc()" ng-model="addnewDesktopServiceUnit" ng-options="u as u.name for u in resourceServiceUnits track by u.id">
                                                     </select>
                                                 </div>
@@ -1749,24 +1767,24 @@
 
                                     <div ng-show="type === 2">
                                         <div class="desktop-settings-row">
-                                            <label for="addnew-settings-resource-source">Source</label>
+                                            <label for="addnew-settings-resource-source" class="flex">Source<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <div class="settings-source-input"><input type="text" disabled id="addnew-settings-resource-source"><div class="source-icon"><img src="assets/icons/cog-icon.svg" alt="Predictive source"/></div></div>
                                         </div>
 
                                         <div class="desktop-settings-row flex flex-b">
                                             <div class="w47">
-                                                <label for="addnew-settings-resource-start-value">Start value</label>
+                                                <label for="addnew-settings-resource-start-value" class="flex">Start value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                 <input type="text" disabled id="addnew-settings-resource-start-value">
                                             </div>
 
                                             <div class="w47">
-                                                <label for="addnew-settings-resource-internal-value">Internal value</label>
+                                                <label for="addnew-settings-resource-internal-value" class="flex">Internal value<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                                 <input type="text" id="addnew-settings-resource-internal-value">
                                             </div>
                                         </div>
 
                                         <div class="desktop-settings-row">
-                                            <label for="addnew-settings-resource-time-range">Time range</label>
+                                            <label for="addnew-settings-resource-time-range" class="flex">Time range<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <select id="addnew-settings-resource-time-range">
                                                 <option>1 Week</option>
                                                 <option>1 Month</option>
@@ -1775,7 +1793,7 @@
                                         </div>
 
                                         <div class="desktop-settings-row">
-                                            <label for="addnew-settings-resource-max-internal">Max interval days</label>
+                                            <label for="addnew-settings-resource-max-internal" class="flex">Max interval days<img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" id="addnew-settings-resource-max-internal">
                                         </div>
 
@@ -1785,7 +1803,7 @@
                                         </div>
 
                                         <div class="desktop-settings-row">
-                                            <label for="addnew-settings-resource-valcalc">Value calculated to be</label>
+                                            <label for="addnew-settings-resource-valcalc" class="flex">Value calculated to be <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information"></label>
                                             <input type="text" id="addnew-settings-resource-valcalc" disabled>
                                         </div>
                                     </div>
@@ -1798,7 +1816,10 @@
                                     </div>
 
                                     <div class="desktop-settings-row">
-                                        <p>To do's</p>
+                                        <div class="flex">
+                                            <p>To do's</p>
+                                            <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                        </div>
                                         <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="addnewDesktopAddnewTodoList">
                                             <div class="todoItem" ng-repeat="x in addnewDesktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                             <form ng-submit="addnewDesktopTodoAdd()" class="addTodo">
@@ -1816,7 +1837,10 @@
                                     </div>
 
                                     <div class="desktop-settings-row">
-                                        <p>Items</p>
+                                        <div class="flex">
+                                            <p>Items</p>
+                                            <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
+                                        </div>
                                         <div class="desktop-settings-todolist">
                                             <div id="addnew-desktop-uploaded-attachments"></div>
                                             <label class="addnew-desktop-file-upload-attach">
@@ -1843,7 +1867,8 @@
                                     </div>
                                 </section>
                         </div>
-                        <div class="qr-modal-footer">
+                        <div class="p-4 desktop-settings-row flex flex-b settings-border m-special">
+                            <button class="cancel" onclick="closeModals()">Cancel</button>
                             <button class="apply-settings" onclick="closeModals()">Create resource</button>
                         </div>
                     </div>
@@ -1943,12 +1968,12 @@
 
                         <div class="serviceblock">
                             <label for="repair-description">Checklist</label>
-                            
+
                             <div class="service-progress">
                                 <span class="service-progress-text">60% (3/5)</span>
                                 <div class="service-progress-bar"></div>
                             </div>
-                            
+
                             <div class="repair-log-checklist">
 
                                 <div class="repair-list-item">

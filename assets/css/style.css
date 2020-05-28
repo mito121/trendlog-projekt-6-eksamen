@@ -149,6 +149,13 @@ button{
 .ml-19{
     margin-left:19px !important;
 }
+.p-4{
+    padding:16px;
+}
+.m-special{
+    margin-top:16px;
+    margin: 0 15px !important;
+}
 .mx-auto{
     margin:0 auto !important;
 }
@@ -1141,13 +1148,29 @@ button:hover{
 .apply-settings{
     background-color:#007BFF;
     display:block;
-    margin:25px auto;
     color:white;
     border:1px solid #007BFF;
     border-radius:4px;
     padding:8px 12px;
     font-weight: 600;
     font-size: 15px;
+}
+
+.cancel{
+    background-color:#dc3545;
+    display:block;
+    color:white;
+    border:1px solid #dc3545;
+    border-radius:4px;
+    padding:8px 12px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.settings-border{
+    border-top: 2px solid #222;
+    margin-top:35px !important;
+    padding:15px 0;
 }
 
 .desktop-file-upload input[type=file]{
@@ -2864,17 +2887,6 @@ button:hover{
         color:white;
     }
 
-    #apply-settings{
-        background-color:#007BFF;
-        display:block;
-        margin:25px auto;
-        color:white;
-        border:1px solid #007BFF;
-        border-radius:4px;
-        padding:8px 12px;
-        font-weight: 600;
-        font-size: 15px;
-    }
 
 } /* tablet media query */
 
@@ -3528,4 +3540,45 @@ button:hover{
     background-color:#007bff;
     height:100%;
     border-radius:5px 0 0 5px;
+}
+
+/* Toggle resource */
+
+.toggle-resource {
+    width:33%;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+}
+
+.toggle-resource button:first-of-type{
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.toggle-resource button:last-of-type{
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.toggle-resource button{
+    height: 41px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    width: 50%;
+    padding: 6px 0;
+    background-color:#fff;
+}
+
+.resourceOn{
+    background-color: #007BFF !important;
+    border: 1px solid #007BFF !important;
+    color: white;
+}
+
+.resourceOff{
+    background-color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;
+    color: white;
 }
