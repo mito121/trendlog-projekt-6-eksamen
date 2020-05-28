@@ -5,13 +5,55 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!--== CSS ==-->
+
+        <!-- custom css -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 
+        <!--== JS ==-->
+
         <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- jQuery UI -->
+        <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+            integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+        crossorigin="anonymous"></script>
+
+        <!-- Moment.js -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
+        <!-- Angularjs -->
+        <script src="assets/js/angular.js"></script>
+
+        <!-- Angularjs route -->
+        <script src="assets/js/route.js"></script>
+
+        <!-- Angular UI sortable -->
+        <script src="assets/js/angular-sortable.js" type="text/javascript"></script>
+
+        <!-- Angularjs Pagination -->
+        <script src="assets/js/dirPagination.js" type="text/javascript"></script>
+
+        <!-- app -->
+        <script src="assets/js/app.js"></script>
+
+        <!-- controller -->
+        <script src="assets/js/controller.js"></script>
+
+        <!-- custom script -->
+        <script src="assets/js/script.js" defer></script>
     </head>
-    <body onload="loaded()" class="preload">
+    <body onload="loaded()" class="preload" ng-controller="mainCtrl" ng-app="trendlog_app">
         <div class="container">
+
+            <!-- Headings -->
             <h1 class="styleGuideHeader">Headlines</h1>
 
             <div class="flex styleGuideElement">
@@ -53,100 +95,160 @@
                 </div>
             </div>
 
-            <div class="flex styleGuideElement">
-                <div class="w40 mr">
-                    <h4>This is a heading</h4>
-                </div>
-                <div class="w60">
-                    <div class="code">
-                        <code>
-                            <span>&lt;h4>This is a heading&lt;/h4></span>
-                        </code>
-                    </div>
-                </div>
-            </div>
-
+            <!-- BUTTONS -->
             <h1 class="styleGuideHeader">Buttons</h1>
 
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-trendlog">
-                        Trendlog button
-                    </button>
+                    <button class="apply-settings">Submit</button>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-trendlog">Trendlog button&lt;/button></span>
+                        <span>&lt;button class="apply-settings">Submit&lt;/button></span>
                     </code>
                 </div>
             </div>
+
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-primary">
-                        Primary button
-                    </button>
+                    <button class="cancel">Cancel</button>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-primary">Primary button&lt;/button></span>
+                        <span>&lt;button class="cancel">Cancel&lt;/button></span>
                     </code>
                 </div>
             </div>
+
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-secondary">
-                        Secondary button
-                    </button>
+                    <div class="toggle-resource" ng-init="activeToggle = 1">
+                        <button ng-click="activeToggle = 1" ng-class="{resourceOn:activeToggle === 1}">On</button><button  ng-click="activeToggle = 0" ng-class="{resourceOff:activeToggle === 0}">Off</button>
+                    </div>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-secondary">Secondary button&lt;/button></span>
+                        <span>
+                            &lt;div class="toggle-resource" ng-init="activeToggle = 1"><br><br>
+                            &lt;button ng-click="activeToggle = 1" ng-class="{resourceOn:activeToggle === 1}">On&lt;/button>&lt;button  ng-click="activeToggle = 0" ng-class="{resourceOff:activeToggle === 0}">Off&lt;/button><br><br>
+                            &lt;/div>
+                        </span>
                     </code>
                 </div>
             </div>
+
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-success">
-                        Success button
-                    </button>
+                    <div class="add-new-buttons">
+                        <a href="#" class="add-new-button d-none">Cancel</a>
+                        <a href="#" class="add-new-button d-none">Back</a>
+                        <a href="#" class="add-new-button">Next</a>
+                    </div>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-success">Success button&lt;/button></span>
+                        <span>
+                            &lt;div class="add-new-buttons"><br>
+                            &lt;a href="#" class="add-new-button d-none">Cancel&lt;/a><br>
+                            &lt;a href="#" class="add-new-button d-none">Back&lt;/a><br>
+                            <mark>&lt;a href="#" class="add-new-button">Next&lt;/a></mark><br>
+                            &lt;/div>
+                        </span>
                     </code>
                 </div>
             </div>
+
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-warning">
-                        Warning button
-                    </button>
+                    <div class="add-new-buttons">
+                        <a href="#" class="add-new-button d-none">Cancel</a>
+                        <a href="#" class="add-new-button">Back</a>
+                        <a href="#" class="add-new-button d-none">Next</a>
+                    </div>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-warning">Warning button&lt;/button></span>
+                        <span>
+                            &lt;div class="add-new-buttons"><br>
+                            &lt;a href="#" class="add-new-button d-none">Cancel&lt;/a><br>
+                            <mark>&lt;a href="#" class="add-new-button">Back&lt;/a></mark><br>
+                            &lt;a href="#" class="add-new-button d-none">Next&lt;/a><br>
+                            &lt;/div>
+                        </span>
                     </code>
                 </div>
             </div>
+
             <div class="flex">
                 <div class="w40 mr">
-                    <button class="btn btn-danger">
-                        Danger button
-                    </button>
+                    <div class="add-new-buttons">
+                        <a href="#" class="add-new-button">Cancel</a>
+                        <a href="#" class="add-new-button d-none">Back</a>
+                        <a href="#" class="add-new-button d-none">Next</a>
+                    </div>
                 </div>
 
                 <div class="w60 code">
                     <code>
-                        <span>&lt;button class="btn btn-danger">Danger button&lt;/button></span>
+                        <span>
+                            &lt;div class="add-new-buttons"><br>
+                            <mark>&lt;a href="#" class="add-new-button">Cancel&lt;/a></mark><br>
+                            &lt;a href="#" class="add-new-button d-none">Back&lt;/a><br>
+                            &lt;a href="#" class="add-new-button d-none">Next&lt;/a><br>
+                            &lt;/div>
+                        </span>
                     </code>
                 </div>
             </div>
 
+            <div class="flex">
+                <div class="w40 mr">
+                    <label for="example-attachment-btn" class="desktop-file-upload-attach">
+                        <input type="file" id="example-attachment-btn"><div class="add-attach"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" /></svg><span>Add</span></div>
+                    </label>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>
+                            &lt;label for="example-attachment-btn" class="desktop-file-upload-attach"><br><br>
+                            &lt;input type="file" id="example-attachment-btn">&lt;div class="add-attach">&lt;svg viewBox="0 0 24 24">&lt;path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" />&lt;/svg>&lt;span>Add&lt;/span>&lt;/div><br><br>
+                            &lt;/label>
+                        </span>
+                    </code>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="w40 mr">
+                    <div class="green-btn green-btn-hacks m-0"><img src="assets/icons/add-icon.svg" alt="Add"></div>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;div class="green-btn green-btn-hacks m-0"><br>&lt;img src="assets/icons/add-icon.svg" alt="Add"><br>&lt;/div></span>
+                    </code>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="w40 mr">
+                    <button type="submit" class="green-btn m-0">Add</button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button type="submit" class="green-btn m-0">Add&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+
+            <!-- FONTS -->
             <h1 class="styleGuideHeader">Fonts</h1>
             <div class="flex">
                 <div class="w40 mr">
@@ -179,48 +281,87 @@
                 </div>
             </div>
 
-
+            <!-- FORMS -->
             <h1 class="styleGuideHeader">Forms</h1>
             <div class="flex">
                 <div class="w40 mr">
                     <form>
-                        <h1>Form Heading</h1>
+                        <div class="desktop-settings-head-row">
+                            <h3>Details</h3>
+                            <span>Part 1 of 5</span>
+                        </div>
 
-                        <input type="text" placeholder="Name"/>
-                        <input type="text" placeholder="E-mail"/>
-                        <input type="password" placeholder="Password"/>
+                        <div class="desktop-settings-row">
+                            <label for="addnew-settings-resource-name">Resource name</label>
+                            <input type="text" placeholder="Resource name" id="addnew-settings-resource-name"/>
+                        </div>
 
-                        <label class="file-upload">
-                            <input type="file"><span class="btn btn-success">Choose file</span><span>No file selected</span>
-                        </label>
+                        <div class="desktop-settings-row">
+                            <label for="addnew-settings-resource-group">Group</label>
+                            <div class="flex">
+                                <select id="addnew-settings-resource-group">
+                                    <option>Machine</option>
+                                    <option>Cars</option>
+                                    <option>Washer</option>
+                                </select>
+                                <div class="green-btn green-btn-hacks"><img src="assets/icons/add-icon.svg" alt="Add"></div>
+                            </div>
+                        </div>
 
-                        <textarea placeholder="Message"></textarea>
+                        <div class="desktop-settings-row">
+                            <label for="addnew-settings-resource-desc">Description</label>
+                            <textarea id="addnew-settings-resource-desc" placeholder="Enter resource description"></textarea>
+                        </div>
 
-                        <input class="btn btn-primary" type="submit" value="Send message" onclick="event.preventDefault()"/>
+                        <div class="desktop-settings-row flex flex-b">
+                            <button class="cancel">Cancel</button>
+                            <button class="apply-settings" type="submit">Submit</button>
+                        </div>
                     </form>
                 </div>
 
                 <div class="w60 code">
                     <code>
+
                         &lt;form><br>
-                        &lt;h1>Form Heading&lt;/h1><br><br>
+                        &lt;div class="desktop-settings-head-row"><br>
+                        &lt;h3>Details&lt;/h3><br>
+                        &lt;span>Part 1 of 5&lt;/span><br>
+                        &lt;/div><br><br>
 
-                        &lt;input type="text" placeholder="Name"/><br>
-                        &lt;input type="text" placeholder="E-mail"/><br>
-                        &lt;input type="password" placeholder="Password"/><br><br>
-                        
-                        &lt;label class="file-upload"><br>
-                        &lt;input type="file"><br>&lt;span class="btn btn-success">Choose file&lt;/span><br>&lt;span>No file selected&lt;/span>
-                        <br>&lt;/label><br><br>
+                        &lt;div class="desktop-settings-row"><br>
+                        &lt;label for="addnew-settings-resource-name">Resource name&lt;/label><br>
+                        &lt;input type="text" placeholder="Resource name" id="addnew-settings-resource-name"/><br>
+                        &lt;/div><br><br>
 
-                        &lt;textarea placeholder="Message">&lt;/textarea><br><br>
+                        &lt;div class="desktop-settings-row"><br>
+                        &lt;label for="addnew-settings-resource-group">Group&lt;/label><br>
+                        &lt;div class="flex"><br>
+                        &lt;select id="addnew-settings-resource-group"><br>
+                        &lt;option>Machine&lt;/option><br>
+                        &lt;option>Cars&lt;/option><br>
+                        &lt;option>Washer&lt;/option><br>
+                        &lt;/select><br>
+                        &lt;div class="green-btn green-btn-hacks">&lt;img src="assets/icons/add-icon.svg" alt="Add">&lt;/div><br>
+                        &lt;/div><br>
+                        &lt;/div><br><br>
 
-                        &lt;input class="btn btn-primary" type="submit" value="Send message"/><br>
+                        &lt;div class="desktop-settings-row"><br>
+                        &lt;label for="addnew-settings-resource-desc">Description&lt;/label><br>
+                        &lt;textarea id="addnew-settings-resource-desc" placeholder="Enter resource description">&lt;/textarea><br>
+                        &lt;/div><br><br>
+
+                        &lt;div class="desktop-settings-row flex flex-b"><br>
+                        &lt;button class="cancel">Cancel&lt;/button><br>
+                        &lt;button class="apply-settings" type="submit">Submit&lt;/button><br>
+                        &lt;/div><br>
                         &lt;/form>
+
+
+
                     </code>
                 </div>
             </div>
         </div><!-- container -->
-        <script src="assets/js/script.js"></script>
     </body>
 </html>

@@ -65,7 +65,7 @@ app.controller("mainCtrl", function ($scope, $http) {
       $('html body').css("overflow", "auto");
       let open = false;
    });
-
+   
    // Close mobile filter menu on X click
    $('#closeFilterMenu').click(function (e) {
       e.stopPropagation();

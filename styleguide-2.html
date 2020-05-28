@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trendlog.io | Styleguide</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body onload="loaded()" class="preload">
+        <div class="container">
+            <h1 class="styleGuideHeader">Headlines</h1>
+
+            <div class="flex styleGuideElement">
+                <div class="w40 mr">
+                    <h1>This is a heading</h1>
+                </div>
+                <div class="w60">
+                    <div class="code">
+                        <code>
+                            <span>&lt;h1>This is a heading&lt;/h1></span>
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex styleGuideElement">
+                <div class="w40 mr">
+                    <h2>This is a heading</h2>
+                </div>
+                <div class="w60">
+                    <div class="code">
+                        <code>
+                            <span>&lt;h2>This is a heading&lt;/h2></span>
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex styleGuideElement">
+                <div class="w40 mr">
+                    <h3>This is a heading</h3>
+                </div>
+                <div class="w60">
+                    <div class="code">
+                        <code>
+                            <span>&lt;h3>This is a heading&lt;/h3></span>
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex styleGuideElement">
+                <div class="w40 mr">
+                    <h4>This is a heading</h4>
+                </div>
+                <div class="w60">
+                    <div class="code">
+                        <code>
+                            <span>&lt;h4>This is a heading&lt;/h4></span>
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="styleGuideHeader">Buttons</h1>
+
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-trendlog">
+                        Trendlog button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-trendlog">Trendlog button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-primary">
+                        Primary button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-primary">Primary button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-secondary">
+                        Secondary button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-secondary">Secondary button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-success">
+                        Success button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-success">Success button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-warning">
+                        Warning button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-warning">Warning button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <button class="btn btn-danger">
+                        Danger button
+                    </button>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>&lt;button class="btn btn-danger">Danger button&lt;/button></span>
+                    </code>
+                </div>
+            </div>
+
+            <h1 class="styleGuideHeader">Fonts</h1>
+            <div class="flex">
+                <div class="w40 mr">
+                    <p>This is a regular paragraph.</p>
+                </div>
+                <div class="w60 code">
+                    <code>
+                        &lt;p>This is a regular paragraph.&lt;/p>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <p class="bold">This is a bold paragraph.</p>
+                </div>
+                <div class="w60 code">
+                    <code>
+                        &lt;p class="bold">This is a bold paragraph.&lt;/p>
+                    </code>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w40 mr">
+                    <a href="#" onclick="event.preventDefault()">This is a link.</a>
+                </div>
+                <div class="w60 code">
+                    <code>
+                        &lt;a href="#">This is a link.&lt;/a>
+                    </code>
+                </div>
+            </div>
+
+
+            <h1 class="styleGuideHeader">Forms</h1>
+            <div class="flex">
+                <div class="w40 mr">
+                    <form>
+                        <h1>Form Heading</h1>
+
+                        <input type="text" placeholder="Name"/>
+                        <input type="text" placeholder="E-mail"/>
+                        <input type="password" placeholder="Password"/>
+
+                        <label class="file-upload">
+                            <input type="file"><span class="btn btn-success">Choose file</span><span>No file selected</span>
+                        </label>
+
+                        <textarea placeholder="Message"></textarea>
+
+                        <input class="btn btn-primary" type="submit" value="Send message" onclick="event.preventDefault()"/>
+                    </form>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        &lt;form><br>
+                        &lt;h1>Form Heading&lt;/h1><br><br>
+
+                        &lt;input type="text" placeholder="Name"/><br>
+                        &lt;input type="text" placeholder="E-mail"/><br>
+                        &lt;input type="password" placeholder="Password"/><br><br>
+                        
+                        &lt;label class="file-upload"><br>
+                        &lt;input type="file"><br>&lt;span class="btn btn-success">Choose file&lt;/span><br>&lt;span>No file selected&lt;/span>
+                        <br>&lt;/label><br><br>
+
+                        &lt;textarea placeholder="Message">&lt;/textarea><br><br>
+
+                        &lt;input class="btn btn-primary" type="submit" value="Send message"/><br>
+                        &lt;/form>
+                    </code>
+                </div>
+            </div>
+        </div><!-- container -->
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

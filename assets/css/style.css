@@ -149,6 +149,9 @@ button{
 .ml-19{
     margin-left:19px !important;
 }
+.m-0{
+    margin:0 !important;
+}
 .p-4{
     padding:16px;
 }
@@ -159,6 +162,13 @@ button{
 .mx-auto{
     margin:0 auto !important;
 }
+.hidden{
+    visibility: hidden;
+    opacity:0;
+}
+.d-none{
+    display:none;
+}
 .green-btn{
     background-color:#01CC01;
     color:white;
@@ -166,6 +176,7 @@ button{
     width: 34px;
     margin: 4px 0 4px 5px;
     padding:4px;
+    border: none;
     border-radius:4px;
     display:flex;
     align-items:center;
@@ -173,6 +184,9 @@ button{
 }
 .green-btn-desktop:hover{
     cursor:pointer;
+}
+.green-btn:focus, .green-btn-desktop:focus{
+    outline:none;
 }
 .green-btn-desktop{
     background-color:#01CC01;
@@ -919,7 +933,7 @@ aside ul li:hover{
 }
 
 .desktop-history-header h1{
-    font-size:2.8em;
+    font-size: 2.5em;
 }
 
 
@@ -1154,6 +1168,16 @@ button:hover{
     padding:8px 12px;
     font-weight: 600;
     font-size: 15px;
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+}
+
+.apply-settings:hover{
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.apply-settings:active, .apply-settings:focus{
+    outline:none;
 }
 
 .cancel{
@@ -1165,6 +1189,16 @@ button:hover{
     padding:8px 12px;
     font-weight: 600;
     font-size: 15px;
+    transition: background-color 150ms ease-in-out, border-color 150ms ease-in-out;
+}
+
+.cancel:hover{
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.cancel:focus{
+    outline:none;
 }
 
 .settings-border{
@@ -1921,11 +1955,6 @@ button:hover{
         height:21px !important;
         margin-bottom: 1px;
         margin-left: 2px;
-    }
-
-    .hidden{
-        visibility: hidden;
-        opacity:0;
     }
 
     #desktop-history{
