@@ -546,7 +546,7 @@
                                                 </div>
                                             </div>
                                             <!-- /POPOVER -->
-                                            <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="addnewTodoList">
+                                            <div class="mobile-settings-todolist">
                                                 <div class="todoItem" ng-repeat="x in addnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                                 <form ng-submit="todoAdd()" class="addTodo">
                                                     <input type="text" ng-model="addnewTodoInput" id="addnewTodoInput" placeholder="Add New">
@@ -1424,7 +1424,7 @@
                                             <p>To do's</p>
                                             <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
                                         </div>
-                                        <div class="mobile-settings-todolist" ui-sortable="sortableOptions" ng-model="todoList">
+                                        <div class="mobile-settings-todolist">
                                             <div class="todoItem" ng-repeat="x in todoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                             <form ng-submit="todoAdd()" class="addTodo">
                                                 <input type="text" ng-model="todoInput" id="todoInput" placeholder="Add New">
@@ -1614,7 +1614,7 @@
                                         <p>To do's</p>
                                         <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
                                     </div>
-                                    <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="desktopAddnewTodoList">
+                                    <div class="desktop-settings-todolist">
                                         <div class="todoItem" ng-repeat="x in desktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                         <form ng-submit="desktopTodoAdd()" class="addTodo">
                                             <input type="text" ng-model="desktopAddnewTodoInput" id="desktopAddnewTodoInput" placeholder="Add New">
@@ -1820,7 +1820,7 @@
                                             <p>To do's</p>
                                             <img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
                                         </div>
-                                        <div class="desktop-settings-todolist" ui-sortable="sortableOptions" ng-model="addnewDesktopAddnewTodoList">
+                                        <div class="desktop-settings-todolist">
                                             <div class="todoItem" ng-repeat="x in addnewDesktopAddnewTodoList"><div>{{x.todoText}}</div> <div><img src="assets/icons/delete-icon-grey.svg" alt="Delete checkbox"></div></div>
                                             <form ng-submit="addnewDesktopTodoAdd()" class="addTodo">
                                                 <input type="text" ng-model="addnewDesktopAddnewTodoInput" id="addnewDesktopAddnewTodoInput" placeholder="Add New">

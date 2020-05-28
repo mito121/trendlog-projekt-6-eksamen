@@ -384,51 +384,51 @@ app.controller("mainCtrl", function ($scope, $http) {
 
    $scope.todoList = [];
 
-   let toDoIndex = 0;
+   let toDoId = 1;
 
    $scope.todoAdd = function () {
-      $scope.todoList.push({i: toDoIndex, todoText: $scope.todoInput});
+      $scope.todoList.push({i: toDoId, todoText: $scope.todoInput});
       $scope.todoInput = "";
       document.getElementById("todoInput").focus();
-      toDoIndex++;
+      toDoId++;
    };
 
    // Mobile add new
    $scope.addnewTodoList = [];
 
-   let addnewTodoIndex = 0;
+   let addnewTodoId = 1;
 
    $scope.todoAdd = function () {
-      $scope.addnewTodoList.push({i: addnewTodoIndex, todoText: $scope.addnewTodoInput});
+      $scope.addnewTodoList.push({i: addnewTodoId, todoText: $scope.addnewTodoInput});
       $scope.addnewTodoInput = "";
       document.getElementById("addnewTodoInput").focus();
-      addnewTodoIndex++;
+      addnewTodoId++;
    };
 
 
    // Desktop settings
    $scope.desktopAddnewTodoList = [];
 
-   let dekstopAddnewTodoIndex = 0;
+   let dekstopAddnewTodoId = 1;
 
    $scope.desktopTodoAdd = function () {
-      $scope.desktopAddnewTodoList.push({i: dekstopAddnewTodoIndex, todoText: $scope.desktopAddnewTodoInput});
+      $scope.desktopAddnewTodoList.push({i: dekstopAddnewTodoId, todoText: $scope.desktopAddnewTodoInput});
       $scope.desktopAddnewTodoInput = "";
       document.getElementById("desktopAddnewTodoInput").focus();
-      dekstopAddnewTodoIndex++;
+      dekstopAddnewTodoId++;
    };
 
 
    // Desktop add new
    $scope.addnewDesktopAddnewTodoList = [];
 
-   let addnewDekstopAddnewTodoIndex = 0;
+   let addnewDekstopAddnewTodoId = 0;
 
    $scope.addnewDesktopTodoAdd = function () {
-      $scope.addnewDesktopAddnewTodoList.push({i: addnewDekstopAddnewTodoIndex, todoText: $scope.addnewDesktopAddnewTodoInput});
+      $scope.addnewDesktopAddnewTodoList.push({i: addnewDekstopAddnewTodoId, todoText: $scope.addnewDesktopAddnewTodoInput});
       $scope.addnewDesktopAddnewTodoInput = "";
       document.getElementById("addnewDesktopAddnewTodoInput").focus();
-      addnewDekstopAddnewTodoIndex++;
+      addnewDekstopAddnewTodoId++;
    };
 
 
