@@ -2698,8 +2698,21 @@ button:hover{
     }
 
     #mobile-history-container h1{
-        font-size:2em;
+        font-size:25px;
         padding:0 20px;
+        font-weight:600;
+    }
+
+    .history-header{
+        margin: 0 20px;
+    }
+
+    .history-header h3{
+        font-size: 25px;
+        font-weight: 600;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #222;
+        margin: 20px 0 0 0;
     }
 
     .mobile-history-table-container{
