@@ -229,6 +229,9 @@ button{
     height:16px;
     margin:0 4px;
 }
+.info-popover:hover{
+    cursor:pointer;
+}
 .popover{
     max-width:200px;
     position: absolute;
