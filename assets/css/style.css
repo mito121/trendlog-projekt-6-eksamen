@@ -219,6 +219,10 @@ button{
     justify-content: center;
 }
 
+.green-btn:hover, .green-btn-desktop:hover{
+    cursor:pointer;
+}
+
 /* Popover info */
 .popover-wrapper{
     position:relative;
@@ -1943,6 +1947,10 @@ button:hover{
 
 .select-w-btn{
     margin-bottom: 10px;
+}
+
+.closePopover:hover{
+    cursor:pointer;
 }
 
 /* Mobilshit */
