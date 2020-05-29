@@ -13,10 +13,7 @@
         <!--== JS ==-->
 
         <!-- jQuery -->
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+        <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- jQuery UI -->
@@ -49,6 +46,17 @@
 
         <!-- custom script -->
         <script src="assets/js/script.js" defer></script>
+
+        <style>
+            #popover-example{
+                top: 42px ;
+                left: 0px;
+            }
+            #popover-example::after{
+                top: -10.5px;
+                left: 33px;
+            }
+        </style>
     </head>
     <body onload="loaded()" class="preload" ng-controller="mainCtrl" ng-app="trendlog_app">
         <div class="container">
@@ -201,6 +209,29 @@
                             &lt;a href="#" class="add-new-button d-none">Back&lt;/a><br>
                             &lt;a href="#" class="add-new-button d-none">Next&lt;/a><br>
                             &lt;/div>
+                        </span>
+                    </code>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="w40 mr">
+                    <div class="popover-wrapper">
+                        <p>Info</p>
+                        <img class="info-popover" id="popoverexample" src="assets/icons/infothicc-icon.svg" alt="Info">
+                        <div class="popover" id="popover-example">
+                            <div class="popover-header"><div>Popover header</div> <img class="closePopover" src="assets/icons/close-icon.svg" alt="Close"></div>
+                            <div class="popover-body">
+                                The purpose of this popover is to provide additional information about this specific input field.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w60 code">
+                    <code>
+                        <span>
+                            &lt;img class="info-popover" src="assets/icons/infothicc-icon.svg" alt="Additional information">
                         </span>
                     </code>
                 </div>

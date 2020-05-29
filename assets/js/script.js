@@ -95,6 +95,11 @@ $('.closePopover').click(function () {
 });
 
 
+$('#popoverexample').click(function () {
+   $('#popover-example').toggleClass("d-block");
+});
+
+
 $('#popover1').click(function () {
    $('#popover-1').toggleClass("d-block");
 });
